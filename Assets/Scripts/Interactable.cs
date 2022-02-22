@@ -7,6 +7,7 @@ public class Interactable : MonoBehaviour
     [Header("Interactable Components")]
     public int m_Health = 10;
     public GameObject m_DropPrefab;
+    public Vector2 m_SpawnCountExtents = new Vector2(1, 2);
 
     public void TakeDamage(int _Damage)
     {

@@ -52,6 +52,11 @@ public class CharacterMotor : MonoBehaviour
             m_AttackPoint.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
             Debug.Log("Moving Right");
         }
+
+        if(m_Movement.x == 0 && m_Movement.z == 0)
+        {
+            m_Rigid.velocity = Vector3.zero;
+        }
     }
 
     private void Attack()
@@ -65,6 +70,13 @@ public class CharacterMotor : MonoBehaviour
             foreach (Collider hit in objects)
             {
                 if (hit.GetComponent<Tree>() != null)
+                {
+                    m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
+                    hit.GetComponent<Interactable>().TakeDamage(5);
+                    //Instantiate(enemy.GetComponent<Interactable>().m_ParticlePrefab, m_AttackPoint.position, Quaternion.identity);
+                }
+
+                if (hit.GetComponent<Rock>() != null)
                 {
                     m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
                     hit.GetComponent<Interactable>().TakeDamage(5);

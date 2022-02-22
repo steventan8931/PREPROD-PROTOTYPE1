@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tree : Interactable
+public class Rock : Interactable
 {
     [Header("Tree Components")]
     public float m_DeathTimer = 0.0f;
     public float m_DespawnTimer = 1.0f;
+    public Transform[] m_RockSpawnPoints;
 
     private void Update()
     {
@@ -19,7 +20,7 @@ public class Tree : Interactable
                 int spawnCount = (int)Random.Range(m_SpawnCountExtents.x, m_SpawnCountExtents.y);
                 for (int i = 0; i < spawnCount; i++)
                 {
-                    Instantiate(m_DropPrefab, transform.position, Quaternion.Euler(Vector3.zero));
+                    Instantiate(m_DropPrefab, m_RockSpawnPoints[i].position, Quaternion.identity);
                 }
 
                 Destroy(gameObject);
