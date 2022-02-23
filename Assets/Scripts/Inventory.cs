@@ -7,6 +7,7 @@ public enum Items
 {
     Wood,
     Rock,
+    Sword,
 }
 
 public class Inventory : MonoBehaviour
