@@ -2,12 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Items
-{
-    Wood,
-    Rock,
-}
-
 public class ItemDrop : MonoBehaviour
 {
     public Items ItemType = new Items();
@@ -22,14 +16,6 @@ public class ItemDrop : MonoBehaviour
             cacheInventory = _other.GetComponent<Inventory>();
 
             cacheInventory.m_PressGText.enabled = true;
-            //G to collect
-            //if (Input.GetKeyDown(KeyCode.G))
-            //{
-            //    ChooseItem(cacheInventory);
-            //    cacheInventory.m_PressGText.enabled = false;
-            //    Destroy(gameObject);
-            //}
-
         }
     }
 
