@@ -59,13 +59,20 @@ public class CharacterMotor : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(m_AttackPoint.position, 0.5f);
+    }
+
     private void Attack()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !m_Attacked)
         {
             Debug.Log("Attacking");
 
-            Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 2);
+            Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 0.5f);
 
             foreach (Collider hit in objects)
             {
