@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour
 {
     public int m_WoodCount = 0;
     public int m_RockCount = 0;
+    public int m_Sword;
 
     public Text m_PressGText;
     public GameObject m_Inventory;
@@ -65,6 +66,7 @@ public class Inventory : MonoBehaviour
         if (_ItemCount >= 1)
         {
             _UIObject.SetActive(true);
+            _UIObject.GetComponent<ItemSlot>().EnableSlot(_ItemCount);
         }
         else
         {
