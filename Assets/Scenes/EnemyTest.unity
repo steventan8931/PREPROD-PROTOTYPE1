@@ -967,6 +967,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MoveSpeed: 5
+  m_Attacked: 0
+  m_AttackCooldown: 0.5
+  m_AttackPoint: {fileID: 0}
   m_Rigid: {fileID: 0}
 --- !u!1 &921641328
 GameObject:
