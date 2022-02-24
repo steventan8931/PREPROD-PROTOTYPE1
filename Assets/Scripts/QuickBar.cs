@@ -15,8 +15,6 @@ public class QuickBar : MonoBehaviour
 
     private void Update()
     {
-
-
         if (-Input.mouseScrollDelta.y > 0)
         {
             m_ActiveSlot++;
