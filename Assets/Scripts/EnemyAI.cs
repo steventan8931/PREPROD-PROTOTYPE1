@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public LayerMask groundMask, playermask;
     public FieldOfView enemyFOV;
+    public bool lastFrameInSight = false;
     [Range(1,2)]
     public int EnemyType;
 
@@ -19,6 +20,10 @@ public class EnemyAI : MonoBehaviour
     public float idleTime = 2.5f;
     float currIdleTime = 0f;
     public bool isIdling = false;
+    // var for confused
+    public float confuseTime = 2.5f;
+    public float currConfuseTime = 0f;
+    public bool isConfused = false;
     //var for attack
     public float attackCD;
     bool isAttacked;
@@ -38,19 +43,39 @@ public class EnemyAI : MonoBehaviour
         //check if player is in sight or in attackRange
         isPlayerInSight = enemyFOV.canSeePlayer;
         isPlayerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playermask);
+        if (lastFrameInSight == true && isPlayerInSight == false)
+        {
+            //lost visual of player
+            isConfused = true;
+            currConfuseTime = confuseTime;
+            Confusing();
+            
 
-        if (!isPlayerInSight && !isPlayerInAttackRange)
-        {
-            Patroling();
         }
-        if (isPlayerInSight && !isPlayerInAttackRange)
+        else if (isConfused == true)
         {
-            Chasing();
+            //stay in confused state
+            Confusing();
         }
-        if (isPlayerInAttackRange)
+        
+        else
         {
-            Attacking();
+            if (!isPlayerInSight && !isPlayerInAttackRange)
+            {
+                Patroling();
+            }
+            if (isPlayerInSight && !isPlayerInAttackRange)
+            {
+                currIdleTime = 0;
+                Chasing();
+            }
+            if (isPlayerInAttackRange)
+            {
+                Attacking();
+            }
         }
+        //save in sight bool
+        lastFrameInSight = isPlayerInSight;
     }
     private void Patroling()
     {
@@ -113,6 +138,7 @@ public class EnemyAI : MonoBehaviour
     }
     private void Idling()
     {
+        //idle after arrived at patrol point 
         if(isIdling == false)
         {
             isIdling = true;
@@ -130,6 +156,23 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
+
+    private void Confusing()
+    {
+        // enemy in confused state will not move
+        // enemy will enter confuse state if lost visual of player
+        if(currConfuseTime > 0)
+        {
+           currConfuseTime -= Time.deltaTime;
+           
+        }
+        if (currConfuseTime <= 0)
+        {
+            currConfuseTime = 0;
+            isConfused = false;
+        }
+
+    }
     private void ResetAttack()
     {
         isAttacked = false;
@@ -146,6 +189,6 @@ public class EnemyAI : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-    // Update is called once per frame
+    
 
 }
