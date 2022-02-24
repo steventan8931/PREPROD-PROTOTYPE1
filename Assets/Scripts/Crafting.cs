@@ -22,7 +22,7 @@ public class Crafting : MonoBehaviour
 
     private void Update()
     {
-        UpdateSlot(m_Inventory.m_WoodCount, m_SwordUI);
+        //UpdateSlot(m_Inventory.m_WoodCount, m_SwordUI);
 
         if (Input.GetKeyDown(KeyCode.C))
         {
