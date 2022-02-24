@@ -11,6 +11,7 @@ public class ItemSlot : MonoBehaviour
     public Items m_ItemType;
 
     private QuickBar m_Bar;
+    public bool m_RemoveFromBar = false;
     private bool cacheCanAddTobar = true;
 
     private void Awake()
@@ -40,7 +41,7 @@ public class ItemSlot : MonoBehaviour
 
                 if (cacheCanAddTobar)
                 {
-                    m_Bar.m_Slots[i].GetComponent<QuickBarSlot>().UseSlot(m_ItemType, m_Image);
+                    m_Bar.m_Slots[i].GetComponent<QuickBarSlot>().UseSlot(m_ItemType, m_Image, gameObject);
                     break;
                 }
             }
@@ -50,6 +51,7 @@ public class ItemSlot : MonoBehaviour
 
     public void EnableSlot(int _Count)
     {
+        m_RemoveFromBar = false;
         m_Count.text = _Count.ToString();
     }
 

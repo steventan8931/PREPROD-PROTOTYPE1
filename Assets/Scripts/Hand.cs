@@ -22,14 +22,5 @@ public class Hand : MonoBehaviour
     private void Update()
     {
 
-        if (m_Hand < ActiveInHand.Hand)
-        {
-            m_Hand = ActiveInHand.Sword;
-        }
-        if (m_Hand > ActiveInHand.Axe)
-        {
-            m_Hand = ActiveInHand.Hand;
-        }
-
     }
 }

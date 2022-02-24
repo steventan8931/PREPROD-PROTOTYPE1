@@ -28,11 +28,16 @@ public class Inventory : MonoBehaviour
     public GameObject m_WoodUI;
     public GameObject m_RockUI;
 
+    private QuickBar m_QuickBar;
+
     private void Start()
     {
+        m_QuickBar = FindObjectOfType<QuickBar>();
         m_PressGText.enabled = false;
-        UpdateInventory();
-
+        m_Inventory.SetActive(true);
+        ItemInInventory(m_WoodCount, m_WoodUI);
+        ItemInInventory(m_RockCount, m_RockUI);
+        m_Inventory.SetActive(false);
         //for (int i = 0; i < System.Enum.GetValues(typeof(Items)).Length; i++)
         //{
         //    m_ItemInInventory.Add(false);
@@ -51,11 +56,11 @@ public class Inventory : MonoBehaviour
 
     private void UpdateInventory()
     {
+        ItemInInventory(m_WoodCount, m_WoodUI);
+        ItemInInventory(m_RockCount, m_RockUI);
         if (m_InventoryOpen)
         {
             m_Inventory.SetActive(true);
-            ItemInInventory(m_WoodCount, m_WoodUI);
-            ItemInInventory(m_RockCount, m_RockUI);
         }
         else
         {
@@ -72,18 +77,17 @@ public class Inventory : MonoBehaviour
         }
         else
         {
+            _UIObject.GetComponent<ItemSlot>().m_RemoveFromBar = true;
+            //for (int i = 0; i < m_QuickBar.m_Slots.Length;i++)
+            //{
+            //    if (m_QuickBar.m_Slots[i].GetComponent<QuickBarSlot>().m_LinkedItemSlot.GetInstanceID() == _UIObject.GetInstanceID())
+            //    {
+            //        m_QuickBar.m_Slots[i].GetComponent<QuickBarSlot>().RemoveSlot();
+            //    }
+            //}
+
             _UIObject.SetActive(false);
         }
     }
 
-    //private void UpdateSlots()
-    //{
-    //    for (int i = 0; i < m_ItemSlots.Length; i++)
-    //    {
-    //        if (m_ItemSlots[i].m_IsSlotUsed)
-    //        {
-    //            m_ItemSlots[i].EnableSlot(m_WoodCount);
-    //        }
-    //    }
-    //}
 }
