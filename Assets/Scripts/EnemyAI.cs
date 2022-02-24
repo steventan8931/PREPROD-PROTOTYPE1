@@ -15,7 +15,10 @@ public class EnemyAI : MonoBehaviour
     public Vector3 patrolPoint;
     public bool isPatrolPointSet;
     public float patrolPointRange;
-
+    //var for idle
+    public float idleTime = 2.5f;
+    float currIdleTime = 0f;
+    public bool isIdling = false;
     //var for attack
     public float attackCD;
     bool isAttacked;
@@ -67,7 +70,11 @@ public class EnemyAI : MonoBehaviour
         //arrive patrol point
         if (distanceToPatrolPoint.magnitude < 1f)
         {
-            isPatrolPointSet = false; 
+            Idling();
+            if (isIdling == false)
+            {
+                isPatrolPointSet = false;
+            }
         }
     }
 
@@ -104,7 +111,25 @@ public class EnemyAI : MonoBehaviour
             Invoke(nameof(ResetAttack), attackCD);
         }
     }
-
+    private void Idling()
+    {
+        if(isIdling == false)
+        {
+            isIdling = true;
+        }
+        if(isIdling == true && currIdleTime == 0)
+        {
+            currIdleTime = idleTime;
+        }else if(isIdling == true && currIdleTime >0)
+        {
+            currIdleTime -= Time.deltaTime;
+            if(currIdleTime <=0)
+            {
+                currIdleTime = 0;
+                isIdling = false;
+            }
+        }
+    }
     private void ResetAttack()
     {
         isAttacked = false;
