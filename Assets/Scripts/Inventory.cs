@@ -78,14 +78,6 @@ public class Inventory : MonoBehaviour
         else
         {
             _UIObject.GetComponent<ItemSlot>().m_RemoveFromBar = true;
-            //for (int i = 0; i < m_QuickBar.m_Slots.Length;i++)
-            //{
-            //    if (m_QuickBar.m_Slots[i].GetComponent<QuickBarSlot>().m_LinkedItemSlot.GetInstanceID() == _UIObject.GetInstanceID())
-            //    {
-            //        m_QuickBar.m_Slots[i].GetComponent<QuickBarSlot>().RemoveSlot();
-            //    }
-            //}
-
             _UIObject.SetActive(false);
         }
     }
