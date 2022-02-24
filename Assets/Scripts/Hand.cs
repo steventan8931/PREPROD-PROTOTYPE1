@@ -30,13 +30,6 @@ public class Hand : MonoBehaviour
         {
             m_Hand = ActiveInHand.Hand;
         }
-        if (-Input.mouseScrollDelta.y > 0)
-        {
-            m_Hand++;
-        }
-        if (-Input.mouseScrollDelta.y < 0)
-        {
-            m_Hand--;
-        }
+
     }
 }

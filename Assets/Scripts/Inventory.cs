@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public enum Items
 {
+    Empty,
     Wood,
     Rock,
     Sword,
