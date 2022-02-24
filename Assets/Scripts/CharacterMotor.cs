@@ -52,6 +52,18 @@ public class CharacterMotor : MonoBehaviour
             m_AttackPoint.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
             Debug.Log("Moving Right");
         }
+
+        if(m_Movement.x == 0 && m_Movement.z == 0)
+        {
+            m_Rigid.velocity = Vector3.zero;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(m_AttackPoint.position, 0.5f);
     }
 
     private void Attack()
@@ -60,11 +72,18 @@ public class CharacterMotor : MonoBehaviour
         {
             Debug.Log("Attacking");
 
-            Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 2);
+            Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 0.5f);
 
             foreach (Collider hit in objects)
             {
                 if (hit.GetComponent<Tree>() != null)
+                {
+                    m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
+                    hit.GetComponent<Interactable>().TakeDamage(5);
+                    //Instantiate(enemy.GetComponent<Interactable>().m_ParticlePrefab, m_AttackPoint.position, Quaternion.identity);
+                }
+
+                if (hit.GetComponent<Rock>() != null)
                 {
                     m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
                     hit.GetComponent<Interactable>().TakeDamage(5);
