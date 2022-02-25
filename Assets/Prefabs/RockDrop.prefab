@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1476840990421050424}
   - component: {fileID: 5481467150691793989}
   - component: {fileID: 4983330211583372185}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RockDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453059838128417307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.0488725, y: 0.5, z: 9.953519}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2273430912356057907}
