@@ -69,7 +69,7 @@ public class EnemyAI : MonoBehaviour
                 currIdleTime = 0;
                 Chasing();
             }
-            if (isPlayerInAttackRange)
+            if (isPlayerInAttackRange && isPlayerInSight)
             {
                 Attacking();
             }
@@ -131,7 +131,18 @@ public class EnemyAI : MonoBehaviour
         if(!isAttacked)
         {
             // attack player
-
+            
+            if(EnemyType == 1)
+            {
+                //do melee attack 
+                Debug.Log("attacking (melee)");
+                // add trigger to attack animation
+            }
+            if (EnemyType == 2)
+            {
+                //do ranged attack
+                //add trigger to attack animation
+            }
             isAttacked = true;
             Invoke(nameof(ResetAttack), attackCD);
         }

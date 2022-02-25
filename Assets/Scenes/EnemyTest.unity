@@ -258,8 +258,8 @@ MonoBehaviour:
   confuseTime: 2.5
   currConfuseTime: 0
   isConfused: 0
-  attackCD: 0
-  attackRange: 0
+  attackCD: 3
+  attackRange: 1.15
   isPlayerInSight: 0
   isPlayerInAttackRange: 0
 --- !u!54 &227930589
