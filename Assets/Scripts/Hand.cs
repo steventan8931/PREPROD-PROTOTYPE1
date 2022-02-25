@@ -20,7 +20,7 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
-        if (cacheSlotIndex != m_QuickBar.m_ActiveSlot)
+        //if (cacheSlotIndex != m_QuickBar.m_ActiveSlot)
         {
             if (m_QuickBar.m_Slots[m_QuickBar.m_ActiveSlot].GetComponent<QuickBarSlot>().m_SlotUsed)
             {
