@@ -10050,6 +10050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CraftingCanvas: {fileID: 2047481142}
+  m_CraftingOpen: 0
 --- !u!4 &1582400041
 Transform:
   m_ObjectHideFlags: 0
@@ -10891,10 +10892,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2830024114d6a43be910d3fb2333cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RockPrefab: {fileID: 7936500782153714963, guid: 6325c741ff3939a40bfb7b4051fa9a0d,
+  m_RockPrefab: {fileID: 1817834035679230108, guid: 6552ee0dcc9fa7f429cf251659d37147,
     type: 3}
   m_WoodPrefab: {fileID: 7826331420616479552, guid: 178e39e624303334ebf408751e4f62c8,
     type: 3}
+  m_Inventory: {fileID: 0}
+  m_Crafting: {fileID: 0}
 --- !u!1 &1761350015
 GameObject:
   m_ObjectHideFlags: 0

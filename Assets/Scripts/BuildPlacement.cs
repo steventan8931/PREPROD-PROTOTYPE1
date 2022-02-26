@@ -35,6 +35,7 @@ public class BuildPlacement : MonoBehaviour
             {
                 m_CurrentPlaceableObject = Instantiate(m_BuildablePrefab);
                 m_CurrentPlaceableObject.layer = 2;
+                m_CurrentPlaceableObject.transform.GetChild(0).gameObject.layer = 2;
             }
 
         }
@@ -63,7 +64,7 @@ public class BuildPlacement : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo))
         {
             m_CurrentPlaceableObject.transform.position = hitInfo.point;
-            m_CurrentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+            //m_CurrentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
         }
 
         //If object has a collider
@@ -71,15 +72,19 @@ public class BuildPlacement : MonoBehaviour
         {
             if (hitInfo.collider.gameObject.CompareTag("Floor"))
             {
-                BoxCollider PlaceableCollider = m_CurrentPlaceableObject.gameObject.GetComponent<BoxCollider>();
+
+                BoxCollider PlaceableCollider = m_CurrentPlaceableObject.transform.GetChild(0).gameObject.GetComponent<BoxCollider>();
                 PlaceableCollider.isTrigger = true;
-                Vector3 BoxCenter = m_CurrentPlaceableObject.gameObject.transform.position + PlaceableCollider.center;
+                Vector3 BoxCenter = m_CurrentPlaceableObject.transform.GetChild(0).gameObject.transform.position + PlaceableCollider.center;
                 Vector3 HalfExtents = PlaceableCollider.size / 2;
+
+                m_CurrentPlaceableObject.GetComponent<SpriteRenderer>().color = new Vector4(0.4629316f, 0.827038f, 0.9716981f, 0.682353f);
 
                 if (Physics.CheckBox(BoxCenter, HalfExtents, Quaternion.identity))
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
+                        m_CurrentPlaceableObject.GetComponent<SpriteRenderer>().color = Color.white;
                         m_BuildController.UseItem(m_Hand.m_ItemType);
                         m_CurrentPlaceableObject.layer = 1;
                         PlaceableCollider.isTrigger = false;
@@ -87,6 +92,10 @@ public class BuildPlacement : MonoBehaviour
                     }
                 }
 
+            }
+            else
+            {
+                m_CurrentPlaceableObject.GetComponent<SpriteRenderer>().color = new Vector4(1.0f, 0.3553701f, 0.3349057f, 0.682353f);
             }
         }
     }
