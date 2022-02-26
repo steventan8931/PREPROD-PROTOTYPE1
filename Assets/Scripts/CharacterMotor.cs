@@ -24,8 +24,12 @@ public class CharacterMotor : MonoBehaviour
         m_Movement.x = Input.GetAxisRaw("Horizontal");
         m_Movement.z = Input.GetAxisRaw("Vertical");
 
-        UpdateStates();
-        Attack();
+        if (m_AttackPoint != null)
+        {
+            UpdateStates();
+            Attack();
+        }
+
         m_Rigid.MovePosition(m_Rigid.position + m_Movement * m_MoveSpeed * Time.deltaTime);
     }
 
@@ -63,7 +67,7 @@ public class CharacterMotor : MonoBehaviour
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(m_AttackPoint.position, 0.5f);
+        //Gizmos.DrawSphere(m_AttackPoint.position, 0.5f);
     }
 
     private void Attack()
