@@ -38,23 +38,20 @@ public class CharacterMotor : MonoBehaviour
         if (m_Movement.z < 0)
         {
             m_AttackPoint.localPosition = new Vector3(0.0f, 0.0f, -1.0f);
-            Debug.Log("Moving Down");
         }
         else if (m_Movement.z > 0)
         {
             m_AttackPoint.localPosition = new Vector3(0.0f, 0.0f, 1.0f);
-            Debug.Log("Moving Up");
         }
 
         if (m_Movement.x < 0)
         {
             m_AttackPoint.localPosition = new Vector3(-1.0f, 0.0f, 0.0f);
-            Debug.Log("Moving Left");
         }
         else if (m_Movement.x > 0)
         {
             m_AttackPoint.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
-            Debug.Log("Moving Right");
+
         }
 
         if(m_Movement.x == 0 && m_Movement.z == 0)
