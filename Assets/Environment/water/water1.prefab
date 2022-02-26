@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &261372715247305990
+--- !u!1 &1291306119446392455
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 261372715247305995}
-  - component: {fileID: 261372715247305988}
-  - component: {fileID: 261372715247305989}
-  - component: {fileID: 4013899318301288933}
+  - component: {fileID: 1291306119446392456}
+  - component: {fileID: 1291306119446392457}
+  - component: {fileID: 1291306119446392454}
+  - component: {fileID: 5502839645140588321}
   m_Layer: 0
-  m_Name: tree1
+  m_Name: water1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &261372715247305995
+--- !u!4 &1291306119446392456
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261372715247305990}
-  m_LocalRotation: {x: 0.24361935, y: -0, z: -0, w: 0.9698709}
-  m_LocalPosition: {x: 3.4437714, y: 9.49, z: -32.297318}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_GameObject: {fileID: 1291306119446392455}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 50.38876, y: -0.47, z: 10.72}
+  m_LocalScale: {x: 0.45654, y: 0.45654, z: 0.45654}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 28.201002, y: 0, z: 0}
---- !u!212 &261372715247305988
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!212 &1291306119446392457
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261372715247305990}
+  m_GameObject: {fileID: 1291306119446392455}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,28 +72,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 93d4990df21c26d43b673e7cd799cbd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 268e0257bd3e7b44294d32b563790439, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8.63, y: 11.94}
+  m_Size: {x: 15, y: 17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &261372715247305989
+--- !u!95 &1291306119446392454
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261372715247305990}
+  m_GameObject: {fileID: 1291306119446392455}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8ed66df5073662b4faba191e4767d1ec, type: 2}
+  m_Controller: {fileID: 9100000, guid: 62a02ca00aa929b4eb801a93d3a58b65, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -102,16 +102,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &4013899318301288933
+--- !u!65 &5502839645140588321
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261372715247305990}
+  m_GameObject: {fileID: 1291306119446392455}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.665365, y: 11.939999, z: 0.2000028}
-  m_Center: {x: -0.45977008, y: 0, z: 0}
+  m_Size: {x: 15, y: 17, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
