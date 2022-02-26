@@ -10,6 +10,7 @@ public class BuildPlacement : MonoBehaviour
 
     private BuildItemController m_BuildController;
     private Hand m_Hand;
+    private Items cacheItemType;
 
     private void Start()
     {
@@ -20,19 +21,33 @@ public class BuildPlacement : MonoBehaviour
     private void Update()
     {
         //Right click to remove item
-        if (Input.GetMouseButtonDown(1))
+        //if (Input.GetMouseButtonDown(1))
+        
+        if (!m_BuildController.CanBuild())
         {
-            if (m_CurrentPlaceableObject == null)
+            return;
+        }
+        if (m_CurrentPlaceableObject == null)
+        {
+            m_BuildablePrefab = m_BuildController.GetItem(m_Hand.m_ItemType);
+            cacheItemType = m_Hand.m_ItemType;
+            if (m_BuildablePrefab != null)
             {
-                m_BuildablePrefab = m_BuildController.GetItem(m_Hand.m_ItemType);
                 m_CurrentPlaceableObject = Instantiate(m_BuildablePrefab);
                 m_CurrentPlaceableObject.layer = 2;
             }
-            else
+
+        }
+        else
+        {
+            if (m_BuildController.GetItem(m_Hand.m_ItemType) == null || cacheItemType != m_Hand.m_ItemType) 
             {
                 Destroy(m_CurrentPlaceableObject);
+                m_BuildablePrefab = null;
             }
+
         }
+
 
         if (m_CurrentPlaceableObject != null)
         {
@@ -65,6 +80,7 @@ public class BuildPlacement : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
+                        m_BuildController.UseItem(m_Hand.m_ItemType);
                         m_CurrentPlaceableObject.layer = 1;
                         PlaceableCollider.isTrigger = false;
                         m_CurrentPlaceableObject = null;
