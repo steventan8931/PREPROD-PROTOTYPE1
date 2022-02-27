@@ -6,7 +6,7 @@ public class BuildItemController : MonoBehaviour
 {
     public GameObject m_RockPrefab;
     public GameObject m_WoodPrefab;
-
+    public GameObject m_BedrollPrefab;
 
     public Inventory m_Inventory;
     public Crafting m_Crafting;
@@ -28,6 +28,8 @@ public class BuildItemController : MonoBehaviour
             return true;
         }
     }
+
+    //Get Item for Building
     public GameObject GetItem(Items _ItemType)
     {
         switch (_ItemType)
@@ -40,6 +42,12 @@ public class BuildItemController : MonoBehaviour
                 return m_WoodPrefab;
             case Items.Sword:
                 return m_WoodPrefab;
+            case Items.Bedroll:
+                return m_BedrollPrefab;
+            case Items.Axe:
+                return null;
+            case Items.Pickaxe:
+                return null;
         }
 
         return null;
@@ -57,6 +65,9 @@ public class BuildItemController : MonoBehaviour
                 m_Inventory.m_WoodCount--;
                 break;
             case Items.Sword:
+                break;
+            case Items.Bedroll:
+                m_Inventory.m_BedrollCount--;
                 break;
         }
     }

@@ -9,12 +9,18 @@ public enum Items
     Wood,
     Rock,
     Sword,
+    Bedroll,
+    Pickaxe,
+    Axe,
 }
 
 public class Inventory : MonoBehaviour
 {
     public int m_WoodCount = 0;
     public int m_RockCount = 0;
+    public int m_BedrollCount = 0;
+    public int m_AxeCount = 0;
+    public int m_PickaxeCount = 0;
     public int m_Sword;
 
     public Text m_PressGText;
@@ -27,6 +33,8 @@ public class Inventory : MonoBehaviour
 
     public GameObject m_WoodUI;
     public GameObject m_RockUI;
+    public GameObject m_AxeUI;
+    public GameObject m_PickaxeUI;
 
     private QuickBar m_QuickBar;
 
@@ -55,6 +63,8 @@ public class Inventory : MonoBehaviour
     {
         ItemInInventory(m_WoodCount, m_WoodUI);
         ItemInInventory(m_RockCount, m_RockUI);
+        ItemInInventory(m_AxeCount, m_AxeUI);
+        ItemInInventory(m_PickaxeCount, m_PickaxeUI);
         if (m_InventoryOpen)
         {
             m_Inventory.SetActive(true);
