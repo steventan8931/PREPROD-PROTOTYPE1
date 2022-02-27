@@ -32,7 +32,10 @@ public class SpriteTranslucent : MonoBehaviour
             }
             else
             {
-                cacheSprite.color = Color.white;
+                if (cacheSprite != null)
+                {
+                    cacheSprite.color = Color.white;
+                }
             }
         }
     }

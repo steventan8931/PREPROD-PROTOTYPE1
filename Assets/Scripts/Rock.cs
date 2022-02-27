@@ -20,7 +20,8 @@ public class Rock : Interactable
                 int spawnCount = (int)Random.Range(m_SpawnCountExtents.x, m_SpawnCountExtents.y);
                 for (int i = 0; i < spawnCount; i++)
                 {
-                    Instantiate(m_DropPrefab, m_RockSpawnPoints[i].position, Quaternion.identity);
+                    //Instantiate(m_DropPrefab, m_RockSpawnPoints[i].position, Quaternion.identity);
+                    Instantiate(m_DropPrefab, transform.position, Quaternion.identity);
                 }
 
                 Destroy(gameObject);

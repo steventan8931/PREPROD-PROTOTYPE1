@@ -38,10 +38,7 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_WoodCount, m_WoodUI);
         ItemInInventory(m_RockCount, m_RockUI);
         m_Inventory.SetActive(false);
-        //for (int i = 0; i < System.Enum.GetValues(typeof(Items)).Length; i++)
-        //{
-        //    m_ItemInInventory.Add(false);
-        //}
+
     }
 
     private void Update()
