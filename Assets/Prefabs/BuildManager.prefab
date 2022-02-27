@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5638711221294094416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5638711221294094418}
+  - component: {fileID: 5638711221294094417}
+  - component: {fileID: 5638711221294094419}
+  m_Layer: 0
+  m_Name: BuildManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5638711221294094418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638711221294094416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5638711221294094417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638711221294094416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2dbc66f81c1d640a2b626ea38f0fe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BuildablePrefab: {fileID: 7936500782153714963, guid: 6325c741ff3939a40bfb7b4051fa9a0d,
+    type: 3}
+  m_CurrentPlaceableObject: {fileID: 0}
+--- !u!114 &5638711221294094419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638711221294094416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2830024114d6a43be910d3fb2333cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RockPrefab: {fileID: 1817834035679230108, guid: 6552ee0dcc9fa7f429cf251659d37147,
+    type: 3}
+  m_WoodPrefab: {fileID: 261372715247305990, guid: 15f4628b0436e9745b5f444a1b7c160e,
+    type: 3}
+  m_Inventory: {fileID: 0}
+  m_Crafting: {fileID: 0}
