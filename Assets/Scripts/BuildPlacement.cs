@@ -35,7 +35,7 @@ public class BuildPlacement : MonoBehaviour
             {
                 m_CurrentPlaceableObject = Instantiate(m_BuildablePrefab);
                 m_CurrentPlaceableObject.layer = 2;
-                m_CurrentPlaceableObject.transform.GetChild(0).gameObject.layer = 2;
+                //m_CurrentPlaceableObject.transform.GetChild(0).gameObject.layer = 2;
             }
 
         }
@@ -73,9 +73,9 @@ public class BuildPlacement : MonoBehaviour
             if (hitInfo.collider.gameObject.CompareTag("Floor"))
             {
 
-                BoxCollider PlaceableCollider = m_CurrentPlaceableObject.transform.GetChild(0).gameObject.GetComponent<BoxCollider>();
+                BoxCollider PlaceableCollider = m_CurrentPlaceableObject.gameObject.GetComponent<BoxCollider>();
                 PlaceableCollider.isTrigger = true;
-                Vector3 BoxCenter = m_CurrentPlaceableObject.transform.GetChild(0).gameObject.transform.position + PlaceableCollider.center;
+                Vector3 BoxCenter = m_CurrentPlaceableObject.transform.position + PlaceableCollider.center;
                 Vector3 HalfExtents = PlaceableCollider.size / 2;
 
                 m_CurrentPlaceableObject.GetComponent<SpriteRenderer>().color = new Vector4(0.4629316f, 0.827038f, 0.9716981f, 0.682353f);

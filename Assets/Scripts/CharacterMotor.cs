@@ -11,12 +11,17 @@ public class CharacterMotor : MonoBehaviour
 
     public Transform m_AttackPoint;
     public Rigidbody m_Rigid;
+    public GameObject m_Sprite;
+    public Animator m_Animation;
     private Vector3 m_Movement;
 
     private void Start()
     {
         m_Rigid = GetComponent<Rigidbody>();
         m_AttackMaxCooldown = m_AttackCooldown;
+        m_Sprite = transform.GetChild(0).gameObject;
+        m_Animation = m_Sprite.GetComponent<Animator>();
+
     }
 
     private void Update()
@@ -24,7 +29,7 @@ public class CharacterMotor : MonoBehaviour
         m_Movement.x = Input.GetAxisRaw("Horizontal");
         m_Movement.z = Input.GetAxisRaw("Vertical");
 
-        if (m_AttackPoint != null)
+        //if (m_AttackPoint != null)
         {
             UpdateStates();
             Attack();
@@ -38,25 +43,35 @@ public class CharacterMotor : MonoBehaviour
         if (m_Movement.z < 0)
         {
             m_AttackPoint.localPosition = new Vector3(0.0f, 0.0f, -1.0f);
+            //m_Sprite.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
         }
         else if (m_Movement.z > 0)
         {
             m_AttackPoint.localPosition = new Vector3(0.0f, 0.0f, 1.0f);
+            //m_Sprite.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
         }
 
         if (m_Movement.x < 0)
         {
             m_AttackPoint.localPosition = new Vector3(-1.0f, 0.0f, 0.0f);
+            m_Sprite.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
+
         }
         else if (m_Movement.x > 0)
         {
             m_AttackPoint.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
+            m_Sprite.transform.localScale = new Vector3(-0.5f, 0.5f, 1.0f);
 
         }
 
         if(m_Movement.x == 0 && m_Movement.z == 0)
         {
             m_Rigid.velocity = Vector3.zero;
+            m_Animation.SetBool("IsWalking", false);
+        }
+        else
+        {
+            m_Animation.SetBool("IsWalking", true);
         }
     }
 
@@ -64,7 +79,7 @@ public class CharacterMotor : MonoBehaviour
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
-        //Gizmos.DrawSphere(m_AttackPoint.position, 0.5f);
+        Gizmos.DrawSphere(m_AttackPoint.position, 1.0f);
     }
 
     private void Attack()
@@ -73,20 +88,21 @@ public class CharacterMotor : MonoBehaviour
         {
             Debug.Log("Attacking");
 
-            Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 0.5f);
+            Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 1.0f);
 
             foreach (Collider hit in objects)
             {
                 if (hit.GetComponent<Tree>() != null)
                 {
-                    m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
+                    Debug.Log("hit tree");
+                    //m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
                     hit.GetComponent<Interactable>().TakeDamage(5);
                     //Instantiate(enemy.GetComponent<Interactable>().m_ParticlePrefab, m_AttackPoint.position, Quaternion.identity);
                 }
 
                 if (hit.GetComponent<Rock>() != null)
                 {
-                    m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
+                    //m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
                     hit.GetComponent<Interactable>().TakeDamage(5);
                     //Instantiate(enemy.GetComponent<Interactable>().m_ParticlePrefab, m_AttackPoint.position, Quaternion.identity);
                 }
@@ -104,7 +120,7 @@ public class CharacterMotor : MonoBehaviour
         }
         else
         {
-            m_AttackPoint.GetComponent<Renderer>().material.color = Color.black; //Temp
+            //m_AttackPoint.GetComponent<Renderer>().material.color = Color.black; //Temp
         }
     }
 }

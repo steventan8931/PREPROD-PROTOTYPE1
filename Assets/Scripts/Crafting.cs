@@ -15,7 +15,7 @@ public class Crafting : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             m_CraftingCanvas.SetActive(!m_CraftingCanvas.activeInHierarchy);
-            m_CraftingOpen = !m_CraftingCanvas.activeInHierarchy;
+            m_CraftingOpen = m_CraftingCanvas.activeInHierarchy;
         }
     }
 
