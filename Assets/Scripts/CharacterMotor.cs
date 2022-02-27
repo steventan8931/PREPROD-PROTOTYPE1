@@ -64,7 +64,7 @@ public class CharacterMotor : MonoBehaviour
 
         }
 
-        if(m_Movement.x == 0 && m_Movement.z == 0)
+        if (m_Movement.x == 0 && m_Movement.z == 0)
         {
             m_Rigid.velocity = Vector3.zero;
             m_Animation.SetBool("IsWalking", false);
@@ -79,7 +79,7 @@ public class CharacterMotor : MonoBehaviour
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(m_AttackPoint.position, 1.0f);
+        Gizmos.DrawSphere(m_AttackPoint.position, 3.0f);
     }
 
     private void Attack()
@@ -88,7 +88,7 @@ public class CharacterMotor : MonoBehaviour
         {
             Debug.Log("Attacking");
 
-            Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 1.0f);
+            Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 3.0f);
 
             foreach (Collider hit in objects)
             {
@@ -106,21 +106,27 @@ public class CharacterMotor : MonoBehaviour
                     hit.GetComponent<Interactable>().TakeDamage(5);
                     //Instantiate(enemy.GetComponent<Interactable>().m_ParticlePrefab, m_AttackPoint.position, Quaternion.identity);
                 }
+
+                if (hit.GetComponent<EnemyAI>() != null)
+                {
+                    hit.GetComponent<EnemyAI>().takeDmg(25);
+                }
+                m_Attacked = true;
+
             }
-            m_Attacked = true;
-        }
-        if (m_Attacked)
-        {
-            m_AttackCooldown -= Time.deltaTime;
-            if (m_AttackCooldown <= 0)
+            if (m_Attacked)
             {
-                m_AttackCooldown = m_AttackMaxCooldown;
-                m_Attacked = false;
+                m_AttackCooldown -= Time.deltaTime;
+                if (m_AttackCooldown <= 0)
+                {
+                    m_AttackCooldown = m_AttackMaxCooldown;
+                    m_Attacked = false;
+                }
             }
-        }
-        else
-        {
-            //m_AttackPoint.GetComponent<Renderer>().material.color = Color.black; //Temp
+            else
+            {
+                //m_AttackPoint.GetComponent<Renderer>().material.color = Color.black; //Temp
+            }
         }
     }
 }

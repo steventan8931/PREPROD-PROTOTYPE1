@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 634419876843645087}
   - component: {fileID: 2497385185990702381}
   - component: {fileID: 3002270005802718099}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7722587164897427489}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HandItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1017626695182102481}
   - component: {fileID: 5242450486269473711}
   - component: {fileID: 9147157235723547938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 5979941253404055232}
   - component: {fileID: 5979941253404055233}
   - component: {fileID: 3184392703117211180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,9 +337,9 @@ GameObject:
   - component: {fileID: 5979941254154368355}
   - component: {fileID: 6962818502399173988}
   - component: {fileID: 6654409728011707766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -502,7 +502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5979941254814820322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CamOffset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 2803562328610713377}
   - component: {fileID: 1595156797138120879}
   - component: {fileID: 3058965169257806293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}

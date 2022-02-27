@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 4.5
-  angle: 23
+  angle: 76
   playerRef: {fileID: 0}
   targetMask:
     serializedVersion: 2
@@ -249,6 +249,7 @@ MonoBehaviour:
   enemyFOV: {fileID: 227930587}
   lastFrameInSight: 0
   EnemyType: 1
+  HitPoints: 50
   speed: 3
   patrolPoint: {x: 0, y: 0, z: 0}
   isPatrolPointSet: 0
@@ -259,7 +260,9 @@ MonoBehaviour:
   currConfuseTime: 0
   isConfused: 0
   attackCD: 3
-  attackRange: 1.15
+  EnemyProjectile: {fileID: 7849290221825467846, guid: 0567af604c3bbb8448c3f9f485b20c2d,
+    type: 3}
+  attackRange: 2.06
   isPlayerInSight: 0
   isPlayerInAttackRange: 0
 --- !u!54 &227930589
@@ -350,7 +353,6 @@ Transform:
   m_LocalScale: {x: 0.6235, y: 0.6235, z: 0.6235}
   m_Children:
   - {fileID: 573419453}
-  - {fileID: 319186323}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -468,36 +470,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &319186322
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 319186323}
-  m_Layer: 0
-  m_Name: CamOffset
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &319186323
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319186322}
-  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 6, z: -6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 227930593}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &573419452
 GameObject:
