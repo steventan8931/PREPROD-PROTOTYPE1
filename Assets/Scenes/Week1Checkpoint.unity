@@ -8173,6 +8173,16 @@ PrefabInstance:
       objectReference: {fileID: 1599568571}
     - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
         type: 3}
+      propertyPath: m_RockCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
+      propertyPath: m_WoodCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
       propertyPath: m_PressGText
       value: 
       objectReference: {fileID: 1600193185}
