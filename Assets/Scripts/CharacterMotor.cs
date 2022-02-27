@@ -35,6 +35,11 @@ public class CharacterMotor : MonoBehaviour
             Attack();
         }
 
+        //m_Rigid.AddForceAtPosition(m_Movement * m_MoveSpeed * Time.deltaTime, transform.position, ForceMode.Impulse);
+        //if (m_Rigid.velocity.magnitude > m_MoveSpeed)
+        //{
+        //    m_Rigid.velocity = m_Rigid.velocity.normalized * m_MoveSpeed;
+        //}
         m_Rigid.MovePosition(m_Rigid.position + m_Movement * m_MoveSpeed * Time.deltaTime);
     }
 
@@ -64,7 +69,7 @@ public class CharacterMotor : MonoBehaviour
 
         }
 
-        if(m_Movement.x == 0 && m_Movement.z == 0)
+        if (m_Movement.x == 0 && m_Movement.z == 0)
         {
             m_Rigid.velocity = Vector3.zero;
             m_Animation.SetBool("IsWalking", false);
@@ -88,6 +93,7 @@ public class CharacterMotor : MonoBehaviour
         {
             Debug.Log("Attacking");
 
+
             Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 1.0f);
 
             foreach (Collider hit in objects)
@@ -106,8 +112,13 @@ public class CharacterMotor : MonoBehaviour
                     hit.GetComponent<Interactable>().TakeDamage(5);
                     //Instantiate(enemy.GetComponent<Interactable>().m_ParticlePrefab, m_AttackPoint.position, Quaternion.identity);
                 }
+
+                if (hit.GetComponent<EnemyAI>() != null)
+                {
+                    hit.GetComponent<EnemyAI>().takeDmg(25);
+                }
+                m_Attacked = true;
             }
-            m_Attacked = true;
         }
         if (m_Attacked)
         {
@@ -124,3 +135,4 @@ public class CharacterMotor : MonoBehaviour
         }
     }
 }
+

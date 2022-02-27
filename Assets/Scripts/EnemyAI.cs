@@ -10,7 +10,7 @@ public class EnemyAI : MonoBehaviour
     public bool lastFrameInSight = false;
     [Range(1,2)]
     public int EnemyType;
-
+    public float HitPoints;
     public float speed;
     //var for patrol
     public Vector3 patrolPoint;
@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
     //var for attack
     public float attackCD;
     bool isAttacked;
-
+    public GameObject EnemyProjectile;
     //state
     public float attackRange;
     public bool isPlayerInSight, isPlayerInAttackRange;
@@ -47,6 +47,7 @@ public class EnemyAI : MonoBehaviour
         {
             //lost visual of player
             isConfused = true;
+            Debug.Log("confused!");
             currConfuseTime = confuseTime;
             Confusing();
             
@@ -141,7 +142,11 @@ public class EnemyAI : MonoBehaviour
             if (EnemyType == 2)
             {
                 //do ranged attack
+                Rigidbody rb = Instantiate(EnemyProjectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+                rb.AddForce(transform.forward * 8f, ForceMode.Impulse);
                 //add trigger to attack animation
+
             }
             isAttacked = true;
             Invoke(nameof(ResetAttack), attackCD);
@@ -201,5 +206,12 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
     
-
+    public void takeDmg(float dmg)
+    {
+        HitPoints -= dmg;
+        if(HitPoints <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
