@@ -1529,6 +1529,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (melee)
       objectReference: {fileID: 0}
+    - target: {fileID: 6571994469190714607, guid: 40d038c5b14ad7c47a433e00c5d2c469,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40d038c5b14ad7c47a433e00c5d2c469, type: 3}
 --- !u!4 &511355131 stripped
@@ -3899,6 +3904,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (ranged)
+      objectReference: {fileID: 0}
+    - target: {fileID: 944249583522000994, guid: f7c4ba0801c419043bae493b83d3a37f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 944249583882202630, guid: f7c4ba0801c419043bae493b83d3a37f,
         type: 3}

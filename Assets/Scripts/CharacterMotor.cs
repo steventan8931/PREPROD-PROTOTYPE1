@@ -79,7 +79,7 @@ public class CharacterMotor : MonoBehaviour
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(m_AttackPoint.position, 3.0f);
+        Gizmos.DrawSphere(m_AttackPoint.position, 1.0f);
     }
 
     private void Attack()
@@ -88,7 +88,8 @@ public class CharacterMotor : MonoBehaviour
         {
             Debug.Log("Attacking");
 
-            Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 3.0f);
+
+            Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 1.0f);
 
             foreach (Collider hit in objects)
             {
@@ -112,21 +113,21 @@ public class CharacterMotor : MonoBehaviour
                     hit.GetComponent<EnemyAI>().takeDmg(25);
                 }
                 m_Attacked = true;
-
             }
-            if (m_Attacked)
+        }
+        if (m_Attacked)
+        {
+            m_AttackCooldown -= Time.deltaTime;
+            if (m_AttackCooldown <= 0)
             {
-                m_AttackCooldown -= Time.deltaTime;
-                if (m_AttackCooldown <= 0)
-                {
-                    m_AttackCooldown = m_AttackMaxCooldown;
-                    m_Attacked = false;
-                }
+                m_AttackCooldown = m_AttackMaxCooldown;
+                m_Attacked = false;
             }
-            else
-            {
-                //m_AttackPoint.GetComponent<Renderer>().material.color = Color.black; //Temp
-            }
+        }
+        else
+        {
+            //m_AttackPoint.GetComponent<Renderer>().material.color = Color.black; //Temp
         }
     }
 }
+
