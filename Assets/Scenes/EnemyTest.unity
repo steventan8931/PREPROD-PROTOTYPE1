@@ -248,7 +248,8 @@ MonoBehaviour:
     m_Bits: 256
   enemyFOV: {fileID: 227930587}
   lastFrameInSight: 0
-  EnemyType: 2
+  EnemyType: 1
+  HitPoints: 50
   speed: 3
   patrolPoint: {x: 0, y: 0, z: 0}
   isPatrolPointSet: 0

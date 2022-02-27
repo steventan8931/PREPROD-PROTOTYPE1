@@ -10,7 +10,7 @@ public class EnemyAI : MonoBehaviour
     public bool lastFrameInSight = false;
     [Range(1,2)]
     public int EnemyType;
-
+    public float HitPoints;
     public float speed;
     //var for patrol
     public Vector3 patrolPoint;
@@ -206,5 +206,12 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
     
-
+    public void takeDmg(float dmg)
+    {
+        HitPoints -= dmg;
+        if(HitPoints <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
