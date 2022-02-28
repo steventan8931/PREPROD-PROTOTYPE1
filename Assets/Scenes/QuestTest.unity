@@ -1050,11 +1050,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quest:
-    isActive: 0
     title: Wood Collector
     description: Gather 4 woods
     woodReward: 2
     rockReward: 2
+    goal:
+      goalType: 0
+      requiredAmount: 4
+      currentAmount: 0
   playerInventory: {fileID: 0}
   questWindow: {fileID: 1240827271}
   titleText: {fileID: 1051349719}
