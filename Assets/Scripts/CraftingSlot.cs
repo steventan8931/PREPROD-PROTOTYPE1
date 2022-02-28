@@ -19,7 +19,6 @@ public class CraftingSlot : MonoBehaviour
     private void Update()
     {
         CheckTotalCost();
-
         if (m_EnoughMaterials)
         {
             GetComponent<Button>().interactable = true;
@@ -49,6 +48,15 @@ public class CraftingSlot : MonoBehaviour
             case Items.Sword:
                 m_Inventory.m_Sword++;
                 break;
+            case Items.Pickaxe:
+                m_Inventory.m_PickaxeCount++;
+                break;
+            case Items.Axe:
+                m_Inventory.m_AxeCount++;
+                break;
+            case Items.Bedroll:
+                m_Inventory.m_BedrollCount++;
+                break;
         }
     }
     private void RemoveItemsFromInventory()
@@ -61,13 +69,17 @@ public class CraftingSlot : MonoBehaviour
 
     private void RemoveItem(Items _ItemName, int _CostIndex)
     {
+        if (_CostIndex == m_CraftingMaterials.Length)
+        {
+            _CostIndex--;
+        }
         switch (_ItemName)
         {
             case Items.Wood:
-                m_Inventory.m_WoodCount -= m_MaterialCost[_CostIndex - 1];
+                m_Inventory.m_WoodCount -= m_MaterialCost[_CostIndex];
                 break;
             case Items.Rock:
-                m_Inventory.m_RockCount -= m_MaterialCost[_CostIndex - 1];
+                m_Inventory.m_RockCount -= m_MaterialCost[_CostIndex];
                 break;
         }
     }
@@ -76,6 +88,7 @@ public class CraftingSlot : MonoBehaviour
     {
        for (int i = 0; i < m_CraftingMaterials.Length; i++)
         {
+            //Debug.Log(i);
             if (!CheckItemCost(m_CraftingMaterials[i], m_MaterialCost[i]))
             {
                 m_EnoughMaterials = false;
@@ -86,17 +99,25 @@ public class CraftingSlot : MonoBehaviour
 
     private bool CheckItemCost(Items _ItemName, int _CostIndex)
     {
-        switch (_ItemName)
+        if (_CostIndex == m_CraftingMaterials.Length)
         {
+            _CostIndex--;
+        }
+        if (_CostIndex > m_CraftingMaterials.Length)
+        {
+            _CostIndex -= 2;
+        }
+        switch (_ItemName)
+        {         
             case Items.Wood:
-                if (m_Inventory.m_WoodCount >= m_MaterialCost[_CostIndex-1])
+                if (m_Inventory.m_WoodCount >= m_MaterialCost[_CostIndex])
                 {
                     m_EnoughMaterials = true;
                     return true;
                 }
                 break;
             case Items.Rock:
-                if (m_Inventory.m_RockCount >= m_MaterialCost[_CostIndex-1])
+                if (m_Inventory.m_RockCount >= m_MaterialCost[_CostIndex])
                 {
                     m_EnoughMaterials = true;
                     return true;

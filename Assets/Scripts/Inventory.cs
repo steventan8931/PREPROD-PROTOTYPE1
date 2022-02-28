@@ -12,6 +12,7 @@ public enum Items
     Bedroll,
     Pickaxe,
     Axe,
+    Fireplace,
 }
 
 public class Inventory : MonoBehaviour
