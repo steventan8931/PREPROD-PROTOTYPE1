@@ -722,8 +722,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf941f3f4961c04facd58b109966f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CraftingMaterials: 0100000002000000
-  m_MaterialCost: 0100000002000000
+  m_CraftMaterials:
+  - ItemType: 1
+    ItemCost: 1
+  - ItemType: 2
+    ItemCost: 2
   m_CraftingOutcome: 6
   m_EnoughMaterials: 0
 --- !u!1 &1668323136097535462
@@ -7713,8 +7716,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf941f3f4961c04facd58b109966f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CraftingMaterials: 0100000002000000
-  m_MaterialCost: 0100000003000000
+  m_CraftMaterials:
+  - ItemType: 1
+    ItemCost: 1
+  - ItemType: 2
+    ItemCost: 3
   m_CraftingOutcome: 5
   m_EnoughMaterials: 0
 --- !u!1 &4114234433539673303
@@ -11635,8 +11641,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf941f3f4961c04facd58b109966f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CraftingMaterials: 01000000
-  m_MaterialCost: 02000000
+  m_CraftMaterials:
+  - ItemType: 1
+    ItemCost: 2
   m_CraftingOutcome: 4
   m_EnoughMaterials: 0
 --- !u!1 &4622812532876966926
@@ -12823,8 +12830,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf941f3f4961c04facd58b109966f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CraftingMaterials: 0100000002000000
-  m_MaterialCost: 0300000002000000
+  m_CraftMaterials:
+  - ItemType: 1
+    ItemCost: 3
+  - ItemType: 2
+    ItemCost: 2
   m_CraftingOutcome: 7
   m_EnoughMaterials: 0
 --- !u!1 &7079021691786300823

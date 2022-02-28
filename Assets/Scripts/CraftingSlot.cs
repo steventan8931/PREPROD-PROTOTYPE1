@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public struct ItemCosts
+{
+    public Items ItemType;
+    public int ItemCost;
+}
+
 public class CraftingSlot : MonoBehaviour
 {
-    public Items[] m_CraftingMaterials;
-    public int[] m_MaterialCost;
+    public List<ItemCosts> m_CraftMaterials;
     public Items m_CraftingOutcome;
     public bool m_EnoughMaterials = false;
     private Inventory m_Inventory;
@@ -14,6 +20,7 @@ public class CraftingSlot : MonoBehaviour
     private void Start()
     {
         m_Inventory = FindObjectOfType<Inventory>();
+        Debug.Log("start size  = " + m_CraftMaterials.Count);
     }
 
     private void Update()
@@ -31,93 +38,58 @@ public class CraftingSlot : MonoBehaviour
 
     public void CraftItem()
     {
-        AddItemToInventory(m_CraftingOutcome);
+        m_Inventory.AddItemToInventory(m_CraftingOutcome);
         RemoveItemsFromInventory();
     }
 
-    private void AddItemToInventory(Items _ItemName)
-    {
-        switch (_ItemName)
-        {
-            case Items.Wood:
-                m_Inventory.m_WoodCount++;
-                break;
-            case Items.Rock:
-                m_Inventory.m_RockCount++;
-                break;
-            case Items.Sword:
-                m_Inventory.m_Sword++;
-                break;
-            case Items.Pickaxe:
-                m_Inventory.m_PickaxeCount++;
-                break;
-            case Items.Axe:
-                m_Inventory.m_AxeCount++;
-                break;
-            case Items.Bedroll:
-                m_Inventory.m_BedrollCount++;
-                break;
-        }
-    }
     private void RemoveItemsFromInventory()
     {
-        for (int i = 0; i < m_CraftingMaterials.Length; i++)
+        for (int i = 0; i < m_CraftMaterials.Count; i++)
         {
-            RemoveItem(m_CraftingMaterials[i], m_MaterialCost[i]);
+            RemoveItem(m_CraftMaterials[i]);
         }
     }
 
-    private void RemoveItem(Items _ItemName, int _CostIndex)
+    private void RemoveItem(ItemCosts _Cost)
     {
-        if (_CostIndex == m_CraftingMaterials.Length)
-        {
-            _CostIndex--;
-        }
-        switch (_ItemName)
+
+        switch (_Cost.ItemType)
         {
             case Items.Wood:
-                m_Inventory.m_WoodCount -= m_MaterialCost[_CostIndex];
+                m_Inventory.m_WoodCount -= _Cost.ItemCost;
                 break;
             case Items.Rock:
-                m_Inventory.m_RockCount -= m_MaterialCost[_CostIndex];
+                m_Inventory.m_RockCount -= _Cost.ItemCost;
                 break;
         }
     }
 
     private void CheckTotalCost()
     {
-       for (int i = 0; i < m_CraftingMaterials.Length; i++)
+        foreach (ItemCosts item in m_CraftMaterials)
         {
-            //Debug.Log(i);
-            if (!CheckItemCost(m_CraftingMaterials[i], m_MaterialCost[i]))
+            if (!CheckItemCost(item))
             {
                 m_EnoughMaterials = false;
                 break;
             }
         }
+
     }
 
-    private bool CheckItemCost(Items _ItemName, int _CostIndex)
+    private bool CheckItemCost(ItemCosts _Cost)
     {
-        if (_CostIndex == m_CraftingMaterials.Length)
+        switch (_Cost.ItemType)
         {
-            _CostIndex--;
-        }
-        if (_CostIndex > m_CraftingMaterials.Length)
-        {
-            _CostIndex -= 2;
-        }
-        switch (_ItemName)
-        {         
             case Items.Wood:
-                if (m_Inventory.m_WoodCount >= m_MaterialCost[_CostIndex])
+                if (m_Inventory.m_WoodCount >= _Cost.ItemCost)
                 {
                     m_EnoughMaterials = true;
                     return true;
                 }
                 break;
             case Items.Rock:
-                if (m_Inventory.m_RockCount >= m_MaterialCost[_CostIndex])
+                if (m_Inventory.m_RockCount >= _Cost.ItemCost)
                 {
                     m_EnoughMaterials = true;
                     return true;
