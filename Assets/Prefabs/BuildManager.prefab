@@ -65,6 +65,7 @@ MonoBehaviour:
     type: 3}
   m_BedrollPrefab: {fileID: 7262291153682165684, guid: 0635aabfd31dcb1429f7bb8a3b2120f0,
     type: 3}
-  m_FireplacePrefab: {fileID: 0}
+  m_FireplacePrefab: {fileID: 2904700784035099971, guid: 4ed672ab3d36b1047a9df651f5480d91,
+    type: 3}
   m_Inventory: {fileID: 0}
   m_Crafting: {fileID: 0}

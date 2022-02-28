@@ -52,7 +52,6 @@ public class CraftingSlot : MonoBehaviour
 
     private void RemoveItem(ItemCosts _Cost)
     {
-
         switch (_Cost.ItemType)
         {
             case Items.Wood:

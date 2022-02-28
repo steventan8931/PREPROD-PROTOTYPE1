@@ -123,4 +123,32 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void RemoveItemFromInventory(Items _ItemName)
+    {
+        switch (_ItemName)
+        {
+            case Items.Wood:
+                m_WoodCount--;
+                break;
+            case Items.Rock:
+                m_RockCount--;
+                break;
+            case Items.Sword:
+                m_Sword--;
+                break;
+            case Items.Pickaxe:
+                m_PickaxeCount--;
+                break;
+            case Items.Axe:
+                m_AxeCount--;
+                break;
+            case Items.Bedroll:
+                m_BedrollCount--;
+                break;
+            case Items.Fireplace:
+                m_FireplaceCount--;
+                break;
+        }
+    }
+
 }

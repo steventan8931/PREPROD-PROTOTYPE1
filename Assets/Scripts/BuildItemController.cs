@@ -59,19 +59,6 @@ public class BuildItemController : MonoBehaviour
     //Remove item from inventory after usage
     public void UseItem(Items _ItemType)
     {
-        switch (_ItemType)
-        {
-            case Items.Rock:
-                m_Inventory.m_RockCount--;
-                break;
-            case Items.Wood:
-                m_Inventory.m_WoodCount--;
-                break;
-            case Items.Sword:
-                break;
-            case Items.Bedroll:
-                m_Inventory.m_BedrollCount--;
-                break;
-        }
+        m_Inventory.RemoveItemFromInventory(_ItemType);
     }
 }
