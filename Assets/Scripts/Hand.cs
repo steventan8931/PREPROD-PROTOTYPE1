@@ -24,6 +24,7 @@ public class Hand : MonoBehaviour
         {
             if (m_QuickBar.m_Slots[m_QuickBar.m_ActiveSlot].GetComponent<QuickBarSlot>().m_SlotUsed)
             {
+                //m_HandObjects.UnEquip();
                 m_ItemType = m_QuickBar.m_Slots[m_QuickBar.m_ActiveSlot].GetComponent<QuickBarSlot>().m_BarItemType;
                 m_HandObjects.Equip(m_ItemType);
             }
