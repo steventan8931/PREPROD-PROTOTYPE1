@@ -477,9 +477,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_WoodCount: 0
   m_RockCount: 0
-  m_BedrollCount: 0
   m_AxeCount: 0
   m_PickaxeCount: 0
+  m_BedrollCount: 0
+  m_FireplaceCount: 0
   m_Sword: 0
   m_PressGText: {fileID: 0}
   m_Inventory: {fileID: 0}
@@ -488,6 +489,8 @@ MonoBehaviour:
   m_RockUI: {fileID: 0}
   m_AxeUI: {fileID: 0}
   m_PickaxeUI: {fileID: 0}
+  m_BedrollUI: {fileID: 0}
+  m_FireplaceUI: {fileID: 0}
 --- !u!114 &6654409728011707766
 MonoBehaviour:
   m_ObjectHideFlags: 0

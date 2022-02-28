@@ -1166,6 +1166,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 82017023}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &396573913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1954040035000620071, guid: 100c4b71942042146a2076d26f35b14f,
+    type: 3}
+  m_PrefabInstance: {fileID: 538943250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &400138732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6924,6 +6930,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15f4628b0436e9745b5f444a1b7c160e, type: 3}
+--- !u!1 &1898131010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6296041804597686547, guid: 100c4b71942042146a2076d26f35b14f,
+    type: 3}
+  m_PrefabInstance: {fileID: 538943250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1919563249 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 261372715247305995, guid: 15f4628b0436e9745b5f444a1b7c160e,
@@ -8482,6 +8494,11 @@ PrefabInstance:
       objectReference: {fileID: 871579614}
     - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
         type: 3}
+      propertyPath: m_BedrollUI
+      value: 
+      objectReference: {fileID: 1898131010}
+    - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
       propertyPath: m_Inventory
       value: 
       objectReference: {fileID: 1599568571}
@@ -8505,6 +8522,11 @@ PrefabInstance:
       propertyPath: m_PressGText
       value: 
       objectReference: {fileID: 1600193185}
+    - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
+      propertyPath: m_FireplaceUI
+      value: 
+      objectReference: {fileID: 396573913}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 188e9af7cd68e2444a9baf21daef1979, type: 3}
 --- !u!1001 &3491946807179411934

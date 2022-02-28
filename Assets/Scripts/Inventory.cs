@@ -19,9 +19,10 @@ public class Inventory : MonoBehaviour
 {
     public int m_WoodCount = 0;
     public int m_RockCount = 0;
-    public int m_BedrollCount = 0;
     public int m_AxeCount = 0;
     public int m_PickaxeCount = 0;
+    public int m_BedrollCount = 0;
+    public int m_FireplaceCount;
     public int m_Sword;
 
     public Text m_PressGText;
@@ -36,6 +37,8 @@ public class Inventory : MonoBehaviour
     public GameObject m_RockUI;
     public GameObject m_AxeUI;
     public GameObject m_PickaxeUI;
+    public GameObject m_BedrollUI;
+    public GameObject m_FireplaceUI;
 
     private QuickBar m_QuickBar;
 
@@ -66,6 +69,8 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_RockCount, m_RockUI);
         ItemInInventory(m_AxeCount, m_AxeUI);
         ItemInInventory(m_PickaxeCount, m_PickaxeUI);
+        ItemInInventory(m_FireplaceCount, m_FireplaceUI);
+        ItemInInventory(m_BedrollCount, m_BedrollUI);
         if (m_InventoryOpen)
         {
             m_Inventory.SetActive(true);
@@ -111,6 +116,9 @@ public class Inventory : MonoBehaviour
                 break;
             case Items.Bedroll:
                 m_BedrollCount++;
+                break;
+            case Items.Fireplace:
+                m_FireplaceCount++;
                 break;
         }
     }

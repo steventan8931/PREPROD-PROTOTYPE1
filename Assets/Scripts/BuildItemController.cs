@@ -7,6 +7,7 @@ public class BuildItemController : MonoBehaviour
     public GameObject m_RockPrefab;
     public GameObject m_WoodPrefab;
     public GameObject m_BedrollPrefab;
+    public GameObject m_FireplacePrefab;
 
     public Inventory m_Inventory;
     public Crafting m_Crafting;
@@ -48,6 +49,8 @@ public class BuildItemController : MonoBehaviour
                 return null;
             case Items.Pickaxe:
                 return null;
+            case Items.Fireplace:
+                return m_FireplacePrefab;
         }
 
         return null;
