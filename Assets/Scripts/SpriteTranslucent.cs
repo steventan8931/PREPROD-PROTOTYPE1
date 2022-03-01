@@ -28,7 +28,14 @@ public class SpriteTranslucent : MonoBehaviour
             if (hitInfo.collider.transform.GetComponent<SpriteRenderer>())
             {
                 cacheSprite = hitInfo.collider.transform.GetComponent<SpriteRenderer>();
-                hitInfo.collider.transform.GetComponent<SpriteRenderer>().color = new Vector4(1.0f, 1.0f, 1.0f, 0.5f);
+                if (hitInfo.collider.transform.GetComponent<BuildableObject>())
+                {
+                    if (hitInfo.collider.transform.GetComponent<BuildableObject>().m_Collidable)
+                    {
+                        hitInfo.collider.transform.GetComponent<SpriteRenderer>().color = new Vector4(1.0f, 1.0f, 1.0f, 0.5f);
+                    }
+                }
+
             }
             else
             {

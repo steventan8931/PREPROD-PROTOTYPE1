@@ -13,6 +13,7 @@ public enum Items
     Pickaxe,
     Axe,
     Fireplace,
+    Tent,
 }
 
 public class Inventory : MonoBehaviour
@@ -24,6 +25,7 @@ public class Inventory : MonoBehaviour
     public int m_BedrollCount = 0;
     public int m_FireplaceCount;
     public int m_Sword;
+    public int m_TentCount;
 
     public Text m_PressGText;
     public GameObject m_Inventory;
@@ -39,7 +41,7 @@ public class Inventory : MonoBehaviour
     public GameObject m_PickaxeUI;
     public GameObject m_BedrollUI;
     public GameObject m_FireplaceUI;
-
+    public GameObject m_TentUI;
     private QuickBar m_QuickBar;
 
     public Quest m_playerQuest;
@@ -72,6 +74,8 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_PickaxeCount, m_PickaxeUI);
         ItemInInventory(m_FireplaceCount, m_FireplaceUI);
         ItemInInventory(m_BedrollCount, m_BedrollUI);
+        ItemInInventory(m_TentCount, m_TentUI);
+
         if (m_InventoryOpen)
         {
             m_Inventory.SetActive(true);
@@ -123,6 +127,9 @@ public class Inventory : MonoBehaviour
             case Items.Fireplace:
                 m_FireplaceCount++;
                 break;
+            case Items.Tent:
+                m_TentCount++;
+                break;
         }
     }
 
@@ -150,6 +157,9 @@ public class Inventory : MonoBehaviour
                 break;
             case Items.Fireplace:
                 m_FireplaceCount--;
+                break;
+            case Items.Tent:
+                m_TentCount--;
                 break;
         }
     }
