@@ -6,6 +6,7 @@ using TMPro;
 public class QuestGiver : MonoBehaviour
 {
     public Quest quest;
+    public Quest quest1;
 
     public Inventory playerInventory;
 
@@ -28,9 +29,9 @@ public class QuestGiver : MonoBehaviour
     public void openQuestWindow()
     {
         questWindow.SetActive(true);
-        titleText.text = quest.title;
-        descriptionText.text = quest.description;
-        woodText.text = quest.woodReward.ToString();
-        rockText.text = quest.rockReward.ToString();
+        titleText.text = quest1.title;
+        descriptionText.text = quest1.description;
+        woodText.text = quest1.woodReward.ToString();
+        rockText.text = quest1.rockReward.ToString();
     }
 }
