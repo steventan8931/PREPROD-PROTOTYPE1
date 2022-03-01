@@ -32,11 +32,16 @@ public class EnemyAI : MonoBehaviour
     public float attackRange;
     public bool isPlayerInSight, isPlayerInAttackRange;
 
+
+    //for quest
+    public Quest quest;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
+        quest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
     }
     void Update()
     {
@@ -211,7 +216,20 @@ public class EnemyAI : MonoBehaviour
         HitPoints -= dmg;
         if(HitPoints <= 0)
         {
-            Destroy(gameObject);
+            deathFunc();
         }
+    }
+
+    void deathFunc()
+    {
+        if(EnemyType == 1)
+        {
+            quest.goal.MeleeEnemyKilled();
+        }
+        if(EnemyType == 2)
+        {
+            quest.goal.RangedEnemyKilled();
+        }
+        Destroy(gameObject);
     }
 }

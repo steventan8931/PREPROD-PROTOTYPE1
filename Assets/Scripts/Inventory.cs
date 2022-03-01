@@ -42,6 +42,7 @@ public class Inventory : MonoBehaviour
 
     private QuickBar m_QuickBar;
 
+    public Quest m_playerQuest;
     private void Start()
     {
         m_QuickBar = FindObjectOfType<QuickBar>();
@@ -50,7 +51,7 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_WoodCount, m_WoodUI);
         ItemInInventory(m_RockCount, m_RockUI);
         m_Inventory.SetActive(false);
-
+        m_playerQuest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
     }
 
     private void Update()
@@ -101,9 +102,11 @@ public class Inventory : MonoBehaviour
         {
             case Items.Wood:
                 m_WoodCount++;
+                m_playerQuest.goal.WoodGathered();
                 break;
             case Items.Rock:
                 m_RockCount++;
+                m_playerQuest.goal.RockGathered();
                 break;
             case Items.Sword:
                 m_Sword++;

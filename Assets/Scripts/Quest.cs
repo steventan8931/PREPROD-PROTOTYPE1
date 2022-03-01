@@ -10,4 +10,9 @@ public class Quest
     public string description;
     public int woodReward;
     public int rockReward;
+    public bool isCompleted;
+
+    public QuestGoal goal;
+
+    public bool isFinalQuest;
 }
