@@ -35,6 +35,10 @@ public class SpriteTranslucent : MonoBehaviour
                         hitInfo.collider.transform.GetComponent<SpriteRenderer>().color = new Vector4(1.0f, 1.0f, 1.0f, 0.5f);
                     }
                 }
+                else
+                {
+                    hitInfo.collider.transform.GetComponent<SpriteRenderer>().color = new Vector4(1.0f, 1.0f, 1.0f, 0.5f);
+                }
 
             }
             else

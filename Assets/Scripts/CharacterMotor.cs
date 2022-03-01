@@ -35,13 +35,13 @@ public class CharacterMotor : MonoBehaviour
             UpdateStates();
             Attack();
         }
-
+        m_Rigid.velocity = m_Movement * m_MoveSpeed * Time.fixedDeltaTime;
         //m_Rigid.AddForceAtPosition(m_Movement * m_MoveSpeed * Time.deltaTime, transform.position, ForceMode.Impulse);
         //if (m_Rigid.velocity.magnitude > m_MoveSpeed)
         //{
         //    m_Rigid.velocity = m_Rigid.velocity.normalized * m_MoveSpeed;
         //}
-        m_Rigid.MovePosition(m_Rigid.position + m_Movement * m_MoveSpeed * Time.deltaTime);
+        //m_Rigid.MovePosition(m_Rigid.position + m_Movement * m_MoveSpeed * Time.deltaTime);
     }
 
     private void UpdateStates()
