@@ -49,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -98,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Health: 10
   m_DropPrefab: {fileID: 453059838128417307, guid: a87d62414dc2baa408120231393536d7,
+    type: 3}
+  m_DamagePrefab: {fileID: 3108390969642634794, guid: 6503053593698cf48aac54ab464f6795,
     type: 3}
   m_SpawnCountExtents: {x: 1, y: 2}
   m_DeathTimer: 0

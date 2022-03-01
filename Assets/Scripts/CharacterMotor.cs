@@ -14,6 +14,7 @@ public class CharacterMotor : MonoBehaviour
     public GameObject m_Sprite;
     public Animator m_Animation;
     private Vector3 m_Movement;
+    private Hand m_Hand;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class CharacterMotor : MonoBehaviour
         m_AttackMaxCooldown = m_AttackCooldown;
         m_Sprite = transform.GetChild(0).gameObject;
         m_Animation = m_Sprite.GetComponent<Animator>();
-
+        m_Hand = GetComponent<Hand>();
     }
 
     private void Update()
@@ -102,20 +103,20 @@ public class CharacterMotor : MonoBehaviour
                 {
                     Debug.Log("hit tree");
                     //m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
-                    hit.GetComponent<Interactable>().TakeDamage(5);
-                    //Instantiate(enemy.GetComponent<Interactable>().m_ParticlePrefab, m_AttackPoint.position, Quaternion.identity);
+                    hit.GetComponent<Interactable>().TakeDamage(m_Hand.GetTreeDamage());
+                    Instantiate(hit.GetComponent<Interactable>().m_DamagePrefab, m_AttackPoint.position, Quaternion.identity);
                 }
 
                 if (hit.GetComponent<Rock>() != null)
                 {
                     //m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
-                    hit.GetComponent<Interactable>().TakeDamage(5);
-                    //Instantiate(enemy.GetComponent<Interactable>().m_ParticlePrefab, m_AttackPoint.position, Quaternion.identity);
+                    hit.GetComponent<Interactable>().TakeDamage(m_Hand.GetRockDamage());
+                    Instantiate(hit.GetComponent<Interactable>().m_DamagePrefab, m_AttackPoint.position, Quaternion.identity);
                 }
 
                 if (hit.GetComponent<EnemyAI>() != null)
                 {
-                    hit.GetComponent<EnemyAI>().takeDmg(25);
+                    hit.GetComponent<EnemyAI>().takeDmg(m_Hand.GetEnemyDamage());
                 }
                 m_Attacked = true;
             }
