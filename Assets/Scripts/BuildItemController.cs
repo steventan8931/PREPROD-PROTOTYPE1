@@ -6,7 +6,8 @@ public class BuildItemController : MonoBehaviour
 {
     public GameObject m_RockPrefab;
     public GameObject m_WoodPrefab;
-
+    public GameObject m_BedrollPrefab;
+    public GameObject m_FireplacePrefab;
 
     public Inventory m_Inventory;
     public Crafting m_Crafting;
@@ -28,6 +29,8 @@ public class BuildItemController : MonoBehaviour
             return true;
         }
     }
+
+    //Get Item for Building
     public GameObject GetItem(Items _ItemType)
     {
         switch (_ItemType)
@@ -40,6 +43,14 @@ public class BuildItemController : MonoBehaviour
                 return m_WoodPrefab;
             case Items.Sword:
                 return m_WoodPrefab;
+            case Items.Bedroll:
+                return m_BedrollPrefab;
+            case Items.Axe:
+                return null;
+            case Items.Pickaxe:
+                return null;
+            case Items.Fireplace:
+                return m_FireplacePrefab;
         }
 
         return null;
@@ -48,16 +59,6 @@ public class BuildItemController : MonoBehaviour
     //Remove item from inventory after usage
     public void UseItem(Items _ItemType)
     {
-        switch (_ItemType)
-        {
-            case Items.Rock:
-                m_Inventory.m_RockCount--;
-                break;
-            case Items.Wood:
-                m_Inventory.m_WoodCount--;
-                break;
-            case Items.Sword:
-                break;
-        }
+        m_Inventory.RemoveItemFromInventory(_ItemType);
     }
 }

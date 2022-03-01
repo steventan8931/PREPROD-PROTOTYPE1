@@ -6,10 +6,11 @@ public class HandObjects : MonoBehaviour
 {
     public GameObject[] m_Object;
 
-    public int m_WeaponIndex = 0;
+    public int m_WeaponIndex = 99;
 
     public void Equip(Items _ItemType)
     {
+        UnEquip();
         for (int i = 0; i < m_Object.Length; i++)
         {
             if (m_Object[i].GetComponent<HandItem>().m_ItemType == _ItemType)
@@ -18,8 +19,11 @@ public class HandObjects : MonoBehaviour
             }
         }
 
-        UnEquip();
-        m_Object[m_WeaponIndex].SetActive(true);
+        if (m_WeaponIndex != 99)
+        {
+            m_Object[m_WeaponIndex].SetActive(true);
+        }
+
     }
 
     public void UnEquip()
@@ -28,5 +32,6 @@ public class HandObjects : MonoBehaviour
         {
             m_Object[i].SetActive(false);
         }
+        m_WeaponIndex = 99;
     }
 }
