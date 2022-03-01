@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using TMPro;
 public class QuestGiver : MonoBehaviour
 {
-    public Quest quest;
-    public Quest quest1;
-
+    public Quest CurrQuest;
+    public Quest[] quests;
+    int questIndex = 0;
     public Inventory playerInventory;
 
     public GameObject questWindow;
@@ -18,20 +18,44 @@ public class QuestGiver : MonoBehaviour
     private void Awake()
     {
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        CurrQuest = quests[0];
     }
     private void Update()
     {
+        if(CurrQuest.goal.IsReached() == true)
+        {
+            CurrQuest.isCompleted = true;
+            Debug.Log("quest completed!");
+        }
+        if(CurrQuest.isCompleted && questIndex < quests.Length)
+        {
+            questIndex++;
+            CurrQuest = quests[questIndex];
+            refreshQuest();
+        }
         if(Input.GetKeyDown(KeyCode.Q))
         {
             openQuestWindow();
         }
+
+      //  if (Input.GetKeyDown(KeyCode.M))
+     //   {
+    //        CurrQuest.isCompleted = true;
+    //    }
+
     }
     public void openQuestWindow()
     {
         questWindow.SetActive(true);
-        titleText.text = quest1.title;
-        descriptionText.text = quest1.description;
-        woodText.text = quest1.woodReward.ToString();
-        rockText.text = quest1.rockReward.ToString();
+        refreshQuest();
+        
+    }
+
+    void refreshQuest()
+    {
+        titleText.text = CurrQuest.title;
+        descriptionText.text = CurrQuest.description;
+        woodText.text = CurrQuest.woodReward.ToString();
+        rockText.text = CurrQuest.rockReward.ToString();
     }
 }

@@ -26,9 +26,15 @@ public class QuestGoal
             currentAmount++;
     }
 
-    public void EnemyKilled()
+    public void MeleeEnemyKilled()
     {
-        if (goalType == GoalType.Kill)
+        if (goalType == GoalType.KillMelee)
+            currentAmount++;
+    }
+
+    public void RangedEnemyKilled()
+    {
+        if (goalType == GoalType.KillRanged)
             currentAmount++;
     }
 }
@@ -37,5 +43,6 @@ public enum GoalType
 {
     GatheringWood,
     GatheringRock,
-    Kill
+    KillMelee,
+    KillRanged
 }

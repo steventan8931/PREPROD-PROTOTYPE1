@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goal : MonoBehaviour
+public class Goal 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   public string Description { get; set; }
+   public bool Completed { get; set; }
+   public int CurrentAmount { get; set; }
+   public int RequiredAmount { get; set; }
+   
+   public virtual void Init()
+   {
+       //for init
 
-    // Update is called once per frame
-    void Update()
+   }
+   public void Evaluate()
+   {
+        if(CurrentAmount >= RequiredAmount)
+        {
+            Complete();
+        }
+   }
+
+    public void Complete()
     {
-        
+        Completed = true;
     }
 }
