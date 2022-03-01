@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cfa59cf7f7ddcc40b8bcb33dc9716b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MoveSpeed: 5
+  m_MoveSpeed: 200
   m_Attacked: 0
   m_AttackCooldown: 0.5
   m_AttackPoint: {fileID: 6469376707914874727}
@@ -482,6 +482,7 @@ MonoBehaviour:
   m_BedrollCount: 0
   m_FireplaceCount: 0
   m_Sword: 0
+  m_TentCount: 0
   m_PressGText: {fileID: 0}
   m_Inventory: {fileID: 0}
   m_InventoryOpen: 0
@@ -491,6 +492,19 @@ MonoBehaviour:
   m_PickaxeUI: {fileID: 0}
   m_BedrollUI: {fileID: 0}
   m_FireplaceUI: {fileID: 0}
+  m_TentUI: {fileID: 0}
+  m_playerQuest:
+    isActive: 0
+    title: 
+    description: 
+    woodReward: 0
+    rockReward: 0
+    isCompleted: 0
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
+    isFinalQuest: 0
 --- !u!114 &6654409728011707766
 MonoBehaviour:
   m_ObjectHideFlags: 0
