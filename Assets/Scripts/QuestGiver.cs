@@ -25,6 +25,8 @@ public class QuestGiver : MonoBehaviour
         if(CurrQuest.goal.IsReached() == true)
         {
             CurrQuest.isCompleted = true;
+            playerInventory.m_WoodCount += CurrQuest.woodReward;
+            playerInventory.m_RockCount += CurrQuest.rockReward;
             Debug.Log("quest completed!");
         }
         if(CurrQuest.isCompleted && questIndex < quests.Length)

@@ -1087,6 +1087,28 @@ MonoBehaviour:
       requiredAmount: 2
       currentAmount: 0
     isFinalQuest: 0
+  - isActive: 0
+    title: Melee Hunter
+    description: Kill 3 melee enemies
+    woodReward: 3
+    rockReward: 1
+    isCompleted: 0
+    goal:
+      goalType: 2
+      requiredAmount: 3
+      currentAmount: 0
+    isFinalQuest: 0
+  - isActive: 0
+    title: Ranged Hunter
+    description: Kill 3 ranged enemies
+    woodReward: 1
+    rockReward: 3
+    isCompleted: 0
+    goal:
+      goalType: 3
+      requiredAmount: 3
+      currentAmount: 0
+    isFinalQuest: 0
   playerInventory: {fileID: 0}
   questWindow: {fileID: 1240827271}
   titleText: {fileID: 1051349719}
