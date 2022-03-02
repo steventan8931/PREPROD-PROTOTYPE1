@@ -17,13 +17,18 @@ public class QuestGoal
     public void WoodGathered()
     {
         if(goalType == GoalType.GatheringWood)
+
            currentAmount++;
     }
 
     public void RockGathered()
     {
+
         if (goalType == GoalType.GatheringRock)
+        {
+            Debug.Log("gathered rock!");
             currentAmount++;
+        }
     }
 
     public void MeleeEnemyKilled()

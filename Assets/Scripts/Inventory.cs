@@ -53,17 +53,19 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_WoodCount, m_WoodUI);
         ItemInInventory(m_RockCount, m_RockUI);
         m_Inventory.SetActive(false);
-        m_playerQuest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
+        //m_playerQuest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
     }
 
     private void Update()
     {
+        m_playerQuest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
+        Debug.Log("updating quest!");
         if (Input.GetKeyDown(KeyCode.I))
         {
             m_InventoryOpen = !m_InventoryOpen;
         }
         UpdateInventory();
-
+        
     }
 
     private void UpdateInventory()
