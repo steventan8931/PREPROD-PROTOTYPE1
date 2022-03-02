@@ -1067,7 +1067,7 @@ MonoBehaviour:
   quests:
   - isActive: 0
     title: Wood Collector
-    description: Gather 4 woods
+    description: Gather 2 woods
     woodReward: 2
     rockReward: 2
     isCompleted: 0
@@ -1078,7 +1078,7 @@ MonoBehaviour:
     isFinalQuest: 0
   - isActive: 0
     title: Rock Collector
-    description: Gather 4 rocks
+    description: Gather 2 rocks
     woodReward: 2
     rockReward: 2
     isCompleted: 0
