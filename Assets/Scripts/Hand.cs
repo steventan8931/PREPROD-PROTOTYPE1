@@ -24,6 +24,7 @@ public class Hand : MonoBehaviour
         {
             if (m_QuickBar.m_Slots[m_QuickBar.m_ActiveSlot].GetComponent<QuickBarSlot>().m_SlotUsed)
             {
+                //m_HandObjects.UnEquip();
                 m_ItemType = m_QuickBar.m_Slots[m_QuickBar.m_ActiveSlot].GetComponent<QuickBarSlot>().m_BarItemType;
                 m_HandObjects.Equip(m_ItemType);
             }
@@ -36,5 +37,42 @@ public class Hand : MonoBehaviour
         cacheSlotIndex = m_QuickBar.m_ActiveSlot;
 
     }
+    public int GetTreeDamage()
+    {
+        switch (m_ItemType)
+        {
+            case Items.Pickaxe:
+                return 3;
+            case Items.Axe:
+                return 5;
+            default:
+                return 2;
+        }
+    }
 
+    public int GetRockDamage()
+    {
+        switch (m_ItemType)
+        {
+            case Items.Pickaxe:
+                return 5;
+            case Items.Axe:
+                return 3;
+            default:
+                return 1;
+        }
+    }
+
+    public int GetEnemyDamage()
+    {
+        switch (m_ItemType)
+        {
+            case Items.Pickaxe:
+                return 20;
+            case Items.Axe:
+                return 20;
+            default:
+                return 10;
+        }
+    }
 }

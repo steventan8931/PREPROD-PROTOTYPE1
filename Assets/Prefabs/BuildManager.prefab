@@ -63,5 +63,11 @@ MonoBehaviour:
     type: 3}
   m_WoodPrefab: {fileID: 261372715247305990, guid: 15f4628b0436e9745b5f444a1b7c160e,
     type: 3}
+  m_BedrollPrefab: {fileID: 7798474508208348259, guid: 6ee41f5dbe7648c498024a501c0f1995,
+    type: 3}
+  m_FireplacePrefab: {fileID: 6450412780441531350, guid: 56e6fd965d3a9f544a013ccf8a626dbd,
+    type: 3}
+  m_TentPrefab: {fileID: 2758353041827096599, guid: af53d92c504ca824fa91e1c957190d78,
+    type: 3}
   m_Inventory: {fileID: 0}
   m_Crafting: {fileID: 0}

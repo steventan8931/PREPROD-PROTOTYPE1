@@ -29,15 +29,16 @@ public class ItemDrop : MonoBehaviour
     }
     private void ChooseItem(Inventory _Inventory)
     {
-        switch (ItemType)
-        {
-            case Items.Wood:
-                _Inventory.m_WoodCount++;
-                break;
-            case Items.Rock:
-                _Inventory.m_RockCount++;
-                break;
-        }
+        _Inventory.AddItemToInventory(ItemType);
+        //switch (ItemType)
+        //{
+        //    case Items.Wood:
+        //        _Inventory.m_WoodCount++;
+        //        break;
+        //    case Items.Rock:
+        //        _Inventory.m_RockCount++;
+        //        break;
+        //}
     }
 
     private void Update()

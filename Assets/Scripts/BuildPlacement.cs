@@ -36,7 +36,6 @@ public class BuildPlacement : MonoBehaviour
                 m_CurrentPlaceableObject = Instantiate(m_BuildablePrefab);
                 m_CurrentPlaceableObject.layer = 2;
                 m_CurrentPlaceableObject.GetComponent<BoxCollider>().isTrigger = true;
-                //m_CurrentPlaceableObject.transform.GetChild(0).gameObject.layer = 2;
             }
 
         }
@@ -64,7 +63,8 @@ public class BuildPlacement : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo))
         {
-            m_CurrentPlaceableObject.transform.position = hitInfo.point;
+            m_CurrentPlaceableObject.transform.position = new Vector3(hitInfo.point.x,
+                hitInfo.point.y + m_CurrentPlaceableObject.GetComponent<BuildableObject>().m_HeightCenter, hitInfo.point.z);
             //m_CurrentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
         }
 
@@ -88,7 +88,10 @@ public class BuildPlacement : MonoBehaviour
                         m_CurrentPlaceableObject.GetComponent<SpriteRenderer>().color = Color.white;
                         m_BuildController.UseItem(m_Hand.m_ItemType);
                         m_CurrentPlaceableObject.layer = 1;
-                        PlaceableCollider.isTrigger = false;
+                        if (m_CurrentPlaceableObject.GetComponent<BuildableObject>().m_Collidable)
+                        {
+                            PlaceableCollider.isTrigger = false;
+                        }
                         m_CurrentPlaceableObject = null;
                     }
                 }
