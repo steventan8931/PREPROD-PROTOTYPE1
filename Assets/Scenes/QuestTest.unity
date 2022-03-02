@@ -1726,6 +1726,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0280d7b93d54d45ac0503e9def7c9d, type: 3}
+--- !u!1 &456549251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8699692781965247250, guid: 100c4b71942042146a2076d26f35b14f,
+    type: 3}
+  m_PrefabInstance: {fileID: 538943250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &464615262
 GameObject:
   m_ObjectHideFlags: 0
@@ -4128,6 +4134,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 954212146}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &845886272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3043571844047254319, guid: 100c4b71942042146a2076d26f35b14f,
+    type: 3}
+  m_PrefabInstance: {fileID: 538943250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &856731745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1981411225420980286, guid: 7119ab9cad80b5f40b8054d34288f44a,
@@ -4530,6 +4542,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 487065116}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &967498661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4838743054029158630, guid: 100c4b71942042146a2076d26f35b14f,
+    type: 3}
+  m_PrefabInstance: {fileID: 538943250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &973902464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4875,6 +4893,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 527dbdf46c877514c9d4bf7aad6771ef, type: 3}
+--- !u!1 &1024517113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1954040035000620071, guid: 100c4b71942042146a2076d26f35b14f,
+    type: 3}
+  m_PrefabInstance: {fileID: 538943250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1051349717
 GameObject:
   m_ObjectHideFlags: 0
@@ -5196,6 +5220,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 261372715247305995, guid: 15f4628b0436e9745b5f444a1b7c160e,
     type: 3}
   m_PrefabInstance: {fileID: 1733963154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1180179366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6296041804597686547, guid: 100c4b71942042146a2076d26f35b14f,
+    type: 3}
+  m_PrefabInstance: {fileID: 538943250}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1180283178
 PrefabInstance:
@@ -9372,9 +9402,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
         type: 3}
+      propertyPath: m_AxeUI
+      value: 
+      objectReference: {fileID: 967498661}
+    - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
       propertyPath: m_RockUI
       value: 
       objectReference: {fileID: 1209741101}
+    - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
+      propertyPath: m_TentUI
+      value: 
+      objectReference: {fileID: 845886272}
     - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
         type: 3}
       propertyPath: m_WoodUI
@@ -9382,14 +9422,29 @@ PrefabInstance:
       objectReference: {fileID: 871579614}
     - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
         type: 3}
+      propertyPath: m_BedrollUI
+      value: 
+      objectReference: {fileID: 1180179366}
+    - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
       propertyPath: m_Inventory
       value: 
       objectReference: {fileID: 1599568571}
     - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
         type: 3}
+      propertyPath: m_PickaxeUI
+      value: 
+      objectReference: {fileID: 456549251}
+    - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
       propertyPath: m_PressGText
       value: 
       objectReference: {fileID: 1600193185}
+    - target: {fileID: 6962818502399173988, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
+      propertyPath: m_FireplaceUI
+      value: 
+      objectReference: {fileID: 1024517113}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 188e9af7cd68e2444a9baf21daef1979, type: 3}
 --- !u!1001 &3491946807179411934
