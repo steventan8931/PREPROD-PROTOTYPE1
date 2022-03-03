@@ -48,9 +48,15 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         quest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
+        if(EnemyType == 2)
+        {
+            EnemyProjectile.GetComponent<EnemyBulletScr>().damage = dmgVal;
+        }
     }
     void Update()
     {
+        // update quest 
+        quest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
         //check if player is in sight or in attackRange
         isPlayerInSight = enemyFOV.canSeePlayer;
         isPlayerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playermask);

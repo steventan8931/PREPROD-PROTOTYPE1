@@ -22,7 +22,7 @@ public class EnemyBulletScr : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             //do damage
-
+            collision.gameObject.GetComponent<CharacterMotor>().takeDmg(damage);
             //destroy itself
             Destroy(gameObject);
         }
