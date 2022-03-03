@@ -15,6 +15,8 @@ public class QuestGiver : MonoBehaviour
     public TextMeshProUGUI descriptionText;
     public TextMeshProUGUI woodText;
     public TextMeshProUGUI rockText;
+    public TextMeshProUGUI currAmount;
+    public TextMeshProUGUI requiredAmount;
     private void Awake()
     {
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -22,6 +24,8 @@ public class QuestGiver : MonoBehaviour
     }
     private void Update()
     {
+        updateAmount();
+
         if(CurrQuest.goal.IsReached() == true)
         {
             CurrQuest.isCompleted = true;
@@ -35,7 +39,7 @@ public class QuestGiver : MonoBehaviour
             CurrQuest = quests[questIndex];
             refreshQuest();
         }
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Q) )
         {
             openQuestWindow();
         }
@@ -48,8 +52,14 @@ public class QuestGiver : MonoBehaviour
     }
     public void openQuestWindow()
     {
-        questWindow.SetActive(true);
-        refreshQuest();
+        if (questWindow.activeSelf == false)
+        {
+            questWindow.SetActive(true);
+            refreshQuest();
+        }else
+        {
+            questWindow.SetActive(false);
+        }
         
     }
 
@@ -59,5 +69,11 @@ public class QuestGiver : MonoBehaviour
         descriptionText.text = CurrQuest.description;
         woodText.text = CurrQuest.woodReward.ToString();
         rockText.text = CurrQuest.rockReward.ToString();
+    }
+
+    void updateAmount()
+    {
+        currAmount.text = CurrQuest.goal.currentAmount.ToString();
+        requiredAmount.text = CurrQuest.goal.requiredAmount.ToString();
     }
 }
