@@ -61,6 +61,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,6 +86,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &6571994469190714603
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -127,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  player: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 512
@@ -139,6 +141,9 @@ MonoBehaviour:
   EnemyType: 1
   HitPoints: 50
   speed: 3
+  ghostChaseSpd: 0
+  dmgVal: 30
+  playerMotor: {fileID: 0}
   patrolPoint: {x: 0, y: 0, z: 0}
   isPatrolPointSet: 0
   patrolPointRange: 5
@@ -153,6 +158,18 @@ MonoBehaviour:
   attackRange: 2.06
   isPlayerInSight: 0
   isPlayerInAttackRange: 0
+  quest:
+    isActive: 0
+    title: 
+    description: 
+    woodReward: 0
+    rockReward: 0
+    isCompleted: 0
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
+    isFinalQuest: 0
 --- !u!114 &6571994469190714606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +261,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
