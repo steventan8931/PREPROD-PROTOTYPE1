@@ -59,7 +59,7 @@ public class Inventory : MonoBehaviour
     private void Update()
     {
         m_playerQuest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
-        Debug.Log("updating quest!");
+        //Debug.Log("updating quest!");
         if (Input.GetKeyDown(KeyCode.I))
         {
             m_InventoryOpen = !m_InventoryOpen;
