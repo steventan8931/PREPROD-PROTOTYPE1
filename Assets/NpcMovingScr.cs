@@ -10,7 +10,8 @@ public class NpcMovingScr : MonoBehaviour
 
     public NavMeshAgent agent;
     public LayerMask groundMask, playermask;
-
+    //check is talking or not
+    public DialogueTrigger talkTrigger;
     //var for patrol
     public Vector3 patrolPoint;
     public bool isPatrolPointSet;
@@ -25,12 +26,16 @@ public class NpcMovingScr : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        talkTrigger = GetComponent<DialogueTrigger>();
         agent.speed = speed;
     }
     // Update is called once per frame
     void Update()
     {
-        Patroling();
+        if (talkTrigger.m_IsTalking == false)
+        {
+            Patroling();
+        }
     }
 
     private void Patroling()
