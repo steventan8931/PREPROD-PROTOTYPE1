@@ -155,6 +155,8 @@ MonoBehaviour:
   attackCD: 3
   EnemyProjectile: {fileID: 7849290221825467846, guid: 0567af604c3bbb8448c3f9f485b20c2d,
     type: 3}
+  isLastFrameFlee: 0
+  avoidDist: 4
   attackRange: 2.06
   isPlayerInSight: 0
   isPlayerInAttackRange: 0

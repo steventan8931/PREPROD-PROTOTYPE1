@@ -3088,7 +3088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &666244278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3117,7 +3117,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: c9d1097a26347694f96b4ff548b23a4b, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a01305ccc7a29ac47ae7c9431a57b774, type: 2}
 --- !u!4 &666244279
 Transform:
   m_ObjectHideFlags: 0
@@ -8246,7 +8246,7 @@ PrefabInstance:
     - target: {fileID: 694453419355290513, guid: 54ff6e7ef69e041448234af4d1057a5b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.89
       objectReference: {fileID: 0}
     - target: {fileID: 694453419355290513, guid: 54ff6e7ef69e041448234af4d1057a5b,
         type: 3}
