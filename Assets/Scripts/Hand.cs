@@ -59,7 +59,7 @@ public class Hand : MonoBehaviour
             case Items.Axe:
                 return 3;
             default:
-                return 10;
+                return 1;
         }
     }
 
