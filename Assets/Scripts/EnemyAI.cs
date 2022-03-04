@@ -33,6 +33,10 @@ public class EnemyAI : MonoBehaviour
     public float attackCD;
     bool isAttacked;
     public GameObject EnemyProjectile;
+
+    //var for flee from fire
+    public bool isLastFrameFlee = false;
+    public float avoidDist;
     //state
     public float attackRange;
     public bool isPlayerInSight, isPlayerInAttackRange;
@@ -60,6 +64,17 @@ public class EnemyAI : MonoBehaviour
         //check if player is in sight or in attackRange
         isPlayerInSight = enemyFOV.canSeePlayer;
         isPlayerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playermask);
+
+        GameObject closestFire = FindClosestObj("FirePlace");
+        float distance = Mathf.Infinity;
+        if (closestFire != null)
+        {
+            distance = Vector3.Distance(transform.position, closestFire.transform.position);
+            Debug.Log("enemy to fire distance: " + distance);
+        
+        }
+
+
         if (lastFrameInSight == true && isPlayerInSight == false)
         {
             //lost visual of player
@@ -75,7 +90,14 @@ public class EnemyAI : MonoBehaviour
             //stay in confused state
             Confusing();
         }
-        
+        else if(distance < avoidDist)
+        {
+            isPatrolPointSet = false;
+            Vector3 distToFire = transform.position - closestFire.transform.position;
+            Vector3 newLoc = transform.position + distToFire;
+            agent.SetDestination(newLoc);
+           
+        }
         else
         {
             if (!isPlayerInSight && !isPlayerInAttackRange)
@@ -214,7 +236,29 @@ public class EnemyAI : MonoBehaviour
         isAttacked = false;
     }
 
-
+    private void fleeFromFire()
+    {
+        
+    }
+    public GameObject FindClosestObj(string Tag)
+    {
+        GameObject[] objCollection;
+        objCollection = GameObject.FindGameObjectsWithTag(Tag);
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in objCollection)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
+    }
 
 
 
