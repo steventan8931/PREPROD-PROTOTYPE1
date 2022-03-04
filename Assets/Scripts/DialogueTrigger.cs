@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour
     public bool m_FirstTimeDialogue = true;
     private bool m_Colliding = false;
     private CharacterMotor m_Player;
+    public bool m_IsTalking = false;
 
     private void OnTriggerEnter(Collider _other)
     {
@@ -62,11 +63,11 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void TriggerFirstTimeDialogue()
     {
-        DialogueManager.Instance.StartDialogue(m_Dialogue[0]);
+        DialogueManager.Instance.StartDialogue(m_Dialogue[0],this);
     }
 
     public void TriggerRepeatDialogue()
     {
-        DialogueManager.Instance.StartDialogue(m_Dialogue[1]);
+        DialogueManager.Instance.StartDialogue(m_Dialogue[1],this);
     }
 }

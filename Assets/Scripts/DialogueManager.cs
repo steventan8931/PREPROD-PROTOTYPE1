@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     private CharacterMotor m_Player;
     private float cacheSpeed = 0;
+    private DialogueTrigger cacheNPC;
 
     private void Awake()
     {
@@ -30,9 +31,11 @@ public class DialogueManager : MonoBehaviour
         cacheSpeed = m_Player.m_MoveSpeed;
     }
 
-    public void StartDialogue(Dialogue _Dialogue)
+    public void StartDialogue(Dialogue _Dialogue, DialogueTrigger m_NPC)
     {
         m_Player.m_MoveSpeed = 0;
+        cacheNPC = m_NPC;
+        cacheNPC.m_IsTalking = true;
         m_DialogueCanvas.SetActive(true);
         m_NameText.text = _Dialogue.m_Name;
 
@@ -60,6 +63,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        cacheNPC.m_IsTalking = false;
         m_Player.m_MoveSpeed = cacheSpeed;
         m_DialogueCanvas.SetActive(false);
     }
