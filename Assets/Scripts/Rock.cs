@@ -24,6 +24,8 @@ public class Rock : Interactable
                     Instantiate(m_DropPrefab, transform.position, Quaternion.identity);
                 }
 
+
+                ObjectRespwaner.Instance.m_Rocks.Remove(gameObject);
                 Destroy(gameObject);
             }
 

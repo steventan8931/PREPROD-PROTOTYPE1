@@ -8,6 +8,7 @@ public class CharacterMotor : MonoBehaviour
     public bool m_Attacked = false;
     public float m_AttackCooldown = 0.5f;
     private float m_AttackMaxCooldown = 0.0f;
+    public float hitpoints = 150f;
 
     public Transform m_AttackPoint;
     public Rigidbody m_Rigid;
@@ -16,6 +17,7 @@ public class CharacterMotor : MonoBehaviour
     private Vector3 m_Movement;
     private Hand m_Hand;
 
+    
     private void Start()
     {
         m_Rigid = GetComponent<Rigidbody>();
@@ -60,13 +62,13 @@ public class CharacterMotor : MonoBehaviour
         if (m_Movement.x < 0)
         {
             m_AttackPoint.localPosition = new Vector3(-1.0f, 0.0f, 0.0f);
-            m_Sprite.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
+            m_Sprite.transform.localScale = new Vector3(0.2f, 0.2f, 1.0f);
 
         }
         else if (m_Movement.x > 0)
         {
             m_AttackPoint.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
-            m_Sprite.transform.localScale = new Vector3(-0.5f, 0.5f, 1.0f);
+            m_Sprite.transform.localScale = new Vector3(-0.2f, 0.2f, 1.0f);
 
         }
 
@@ -133,6 +135,16 @@ public class CharacterMotor : MonoBehaviour
         else
         {
             //m_AttackPoint.GetComponent<Renderer>().material.color = Color.black; //Temp
+        }
+    }
+
+    public void takeDmg (float dmg)
+    {
+        hitpoints -= dmg;
+        if(hitpoints <= 0)
+        {
+            hitpoints = 0;
+            // death func
         }
     }
 }

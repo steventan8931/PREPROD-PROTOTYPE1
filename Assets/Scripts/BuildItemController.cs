@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BuildItemController : MonoBehaviour
 {
-    public GameObject m_RockPrefab;
-    public GameObject m_WoodPrefab;
     public GameObject m_BedrollPrefab;
     public GameObject m_FireplacePrefab;
     public GameObject m_TentPrefab;
@@ -39,11 +37,9 @@ public class BuildItemController : MonoBehaviour
             case Items.Empty:
                 return null;
             case Items.Rock:
-                return m_RockPrefab;
+                return null;
             case Items.Wood:
-                return m_WoodPrefab;
-            case Items.Sword:
-                return m_WoodPrefab;
+                return null;
             case Items.Bedroll:
                 return m_BedrollPrefab;
             case Items.Axe:

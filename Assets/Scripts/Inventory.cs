@@ -45,6 +45,8 @@ public class Inventory : MonoBehaviour
     private QuickBar m_QuickBar;
 
     public Quest m_playerQuest;
+
+    public bool m_Unlocked = true;
     private void Start()
     {
         m_QuickBar = FindObjectOfType<QuickBar>();
@@ -54,16 +56,30 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_RockCount, m_RockUI);
         m_Inventory.SetActive(false);
         //m_playerQuest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
+
+        //For when we need to lock inventory
+        //m_Unlocked = false;
+
+    }
+
+    public void UnlockInventory()
+    {
+        m_Unlocked = true;
     }
 
     private void Update()
     {
         m_playerQuest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
-        Debug.Log("updating quest!");
-        if (Input.GetKeyDown(KeyCode.I))
+        //Debug.Log("updating quest!");
+
+        if (m_Unlocked)
         {
-            m_InventoryOpen = !m_InventoryOpen;
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                m_InventoryOpen = !m_InventoryOpen;
+            }
         }
+
         UpdateInventory();
         
     }
