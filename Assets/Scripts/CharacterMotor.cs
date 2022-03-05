@@ -62,13 +62,13 @@ public class CharacterMotor : MonoBehaviour
         if (m_Movement.x < 0)
         {
             m_AttackPoint.localPosition = new Vector3(-1.0f, 0.0f, 0.0f);
-            m_Sprite.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
+            m_Sprite.transform.localScale = new Vector3(0.2f, 0.2f, 1.0f);
 
         }
         else if (m_Movement.x > 0)
         {
             m_AttackPoint.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
-            m_Sprite.transform.localScale = new Vector3(-0.5f, 0.5f, 1.0f);
+            m_Sprite.transform.localScale = new Vector3(-0.2f, 0.2f, 1.0f);
 
         }
 
