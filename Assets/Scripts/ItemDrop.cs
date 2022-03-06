@@ -7,6 +7,7 @@ public class ItemDrop : MonoBehaviour
     public Items ItemType = new Items();
     private bool m_IsColliding = false;
     private Inventory cacheInventory;
+    private CharacterMotor m_Player;
 
     private void OnTriggerStay(Collider _other)
     {
@@ -14,6 +15,7 @@ public class ItemDrop : MonoBehaviour
         {
             m_IsColliding = true;
             cacheInventory = _other.GetComponent<Inventory>();
+            m_Player = _other.GetComponent<CharacterMotor>();
 
             cacheInventory.m_PressGText.enabled = true;
         }
@@ -49,6 +51,8 @@ public class ItemDrop : MonoBehaviour
             {
                 ChooseItem(cacheInventory);
                 cacheInventory.m_PressGText.enabled = false;
+                m_Player.m_Animation.ResetTrigger("Attacking");
+                m_Player.m_Animation.SetTrigger("Attacking");
                 Destroy(gameObject);
             }
         }
