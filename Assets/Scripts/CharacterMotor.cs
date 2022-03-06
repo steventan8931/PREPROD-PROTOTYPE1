@@ -9,6 +9,7 @@ public class CharacterMotor : MonoBehaviour
     public float m_AttackCooldown = 0.5f;
     private float m_AttackMaxCooldown = 0.0f;
     public float hitpoints = 150f;
+    private bool cacheDead = false;
 
     public Transform m_AttackPoint;
     public Rigidbody m_Rigid;
@@ -16,7 +17,7 @@ public class CharacterMotor : MonoBehaviour
     public Animator m_Animation;
     private Vector3 m_Movement;
     private Hand m_Hand;
-
+    
     
     private void Start()
     {
@@ -32,6 +33,17 @@ public class CharacterMotor : MonoBehaviour
         m_Movement.x = Input.GetAxisRaw("Horizontal");
         m_Movement.z = Input.GetAxisRaw("Vertical");
 
+        //dont move if dead
+        if (hitpoints <= 0)
+        {
+            //Revive
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                m_Animation.SetBool("IsDead", false);
+                hitpoints = 150;
+            }
+            return;
+        }
         //if (m_AttackPoint != null)
         {
             UpdateStates();
@@ -145,7 +157,19 @@ public class CharacterMotor : MonoBehaviour
         if(hitpoints <= 0)
         {
             hitpoints = 0;
+
             // death func
+            if (!cacheDead)
+            {
+                m_Animation.ResetTrigger("Dying");
+                m_Animation.SetTrigger("Dying");
+            }
+            cacheDead = true;
+            m_Animation.SetBool("IsDead", true);
+        }
+        else
+        {
+            cacheDead = false;
         }
     }
 }
