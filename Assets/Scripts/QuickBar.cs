@@ -7,6 +7,8 @@ public class QuickBar : MonoBehaviour
 {
     public GameObject[] m_Slots;
     public int m_ActiveSlot = 0;
+    public Sprite m_Selected;
+    public Sprite m_NotSelected;
 
     private void Start()
     {
@@ -46,9 +48,9 @@ public class QuickBar : MonoBehaviour
 
         for (int i = 0; i < m_Slots.Length; i++)
         {
-            m_Slots[i].GetComponent<Image>().color = Color.white;
+            m_Slots[i].GetComponent<Image>().sprite = m_NotSelected;
         }
-        m_Slots[m_ActiveSlot].GetComponent<Image>().color = Color.red;
+        m_Slots[m_ActiveSlot].GetComponent<Image>().sprite = m_Selected;
 
     }
 }
