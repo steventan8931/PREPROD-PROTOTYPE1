@@ -50,7 +50,6 @@ public class CharacterMotor : MonoBehaviour
             Attack();
         }
         m_Rigid.velocity = m_Movement * m_MoveSpeed * Time.fixedDeltaTime;
-        Debug.Log("let me move");
         //m_Rigid.AddForceAtPosition(m_Movement * m_MoveSpeed * Time.deltaTime, transform.position, ForceMode.Impulse);
         //if (m_Rigid.velocity.magnitude > m_MoveSpeed)
         //{
