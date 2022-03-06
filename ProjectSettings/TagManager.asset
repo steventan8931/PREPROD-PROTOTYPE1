@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - QuestGiver
   - FirePlace
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Player
   - Ground
   - Enemy
-  - 
+  - Wall
   - 
   - 
   - 
