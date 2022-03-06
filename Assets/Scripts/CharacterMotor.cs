@@ -96,8 +96,8 @@ public class CharacterMotor : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !m_Attacked)
         {
             Debug.Log("Attacking");
-
-
+            m_Animation.ResetTrigger("Attacking");
+            m_Animation.SetTrigger("Attacking");
             Collider[] objects = Physics.OverlapSphere(m_AttackPoint.position, 1.0f);
 
             foreach (Collider hit in objects)
