@@ -23,6 +23,9 @@ public class NpcMovingScr : MonoBehaviour
     float currIdleTime = 0f;
     public bool isIdling = false;
 
+    //var for animation
+    public Animator animator;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -36,6 +39,11 @@ public class NpcMovingScr : MonoBehaviour
         {
             Patroling();
         }
+        else
+        {
+            animator.SetBool("IsIdling", true);
+            animator.SetBool("IsWalking", false);
+        }
     }
 
     private void Patroling()
@@ -48,6 +56,7 @@ public class NpcMovingScr : MonoBehaviour
         if (isPatrolPointSet)
         {
             agent.SetDestination(patrolPoint);
+            animator.SetBool("IsWalking", true);
 
         }
 
@@ -57,9 +66,13 @@ public class NpcMovingScr : MonoBehaviour
         if (distanceToPatrolPoint.magnitude < 1f)
         {
             Idling();
+            animator.SetBool("IsIdling", true);
+            animator.SetBool("IsWalking", false);
             if (isIdling == false)
             {
                 isPatrolPointSet = false;
+                animator.SetBool("IsIdling", false);
+                animator.SetBool("IsWalking", true);
             }
         }
     }
