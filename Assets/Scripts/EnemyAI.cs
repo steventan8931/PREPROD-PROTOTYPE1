@@ -154,7 +154,8 @@ public class EnemyAI : MonoBehaviour
 
         patrolPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if(Physics.Raycast(patrolPoint,-transform.up,2f,groundMask))
+        NavMeshPath patrolPath = new NavMeshPath();
+        if(Physics.Raycast(patrolPoint,-transform.up,2f,groundMask) && (agent.CalculatePath(patrolPoint, patrolPath) && patrolPath.status == NavMeshPathStatus.PathComplete))
         {
             isPatrolPointSet = true;
         }
