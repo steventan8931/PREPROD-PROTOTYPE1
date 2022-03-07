@@ -41,6 +41,8 @@ public class EnemyAI : MonoBehaviour
     public float attackRange;
     public bool isPlayerInSight, isPlayerInAttackRange;
 
+    //for spawner
+    public EnemySpawner spawner;
 
     //for quest
     public Quest quest;
@@ -51,6 +53,7 @@ public class EnemyAI : MonoBehaviour
         playerMotor = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMotor>();
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
+        spawner = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<EnemySpawner>();
         quest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
         if(EnemyType == 2)
         {
@@ -289,6 +292,7 @@ public class EnemyAI : MonoBehaviour
         {
             quest.goal.RangedEnemyKilled();
         }
+        spawner.enemyCount--;
         Destroy(gameObject);
     }
 }

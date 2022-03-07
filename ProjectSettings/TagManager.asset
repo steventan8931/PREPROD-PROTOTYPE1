@@ -9,6 +9,7 @@ TagManager:
   - QuestGiver
   - FirePlace
   - Wall
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX
