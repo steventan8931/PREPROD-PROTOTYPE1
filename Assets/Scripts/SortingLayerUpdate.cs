@@ -18,7 +18,6 @@ public class SortingLayerUpdate : MonoBehaviour
             else
             {
                 other.gameObject.transform.GetChild(0).GetComponent<PlayerSpriteLayer>().Behind();
-                Debug.Log("Tocuehd");
             }
         }
     }
