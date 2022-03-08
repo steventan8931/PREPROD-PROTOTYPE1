@@ -12,30 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.75
+    m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 19
+    m_Value: 0
     min: -100
     max: 100
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.9858491, g: 1, b: 0.8820755, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
   hueShift:
-    m_OverrideState: 0
-    m_Value: 17
+    m_OverrideState: 1
+    m_Value: 16
     min: -180
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: 26
+    m_Value: 12
     min: -100
     max: 100
 --- !u!114 &-3262867989046340557
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfbdbb87d3286943a057f7791b43141, type: 3}
   m_Name: ChannelMixer
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   redOutRedIn:
     m_OverrideState: 1
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70afe9e12c7a7ed47911bb608a23a8ff, type: 3}
   m_Name: SplitToning
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
@@ -136,13 +136,13 @@ MonoBehaviour:
     showEyeDropper: 1
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   balance:
     m_OverrideState: 1
-    m_Value: -4
+    m_Value: 2
     min: -100
     max: 100
 --- !u!114 &-835447284736978241
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   color:
     m_OverrideState: 1
@@ -272,14 +272,14 @@ MonoBehaviour:
   active: 0
   m_AdvancedMode: 0
   lift:
-    m_OverrideState: 0
-    m_Value: {x: 0.9959536, y: 0.8968828, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 0.9795404, y: 1, z: 0.97899, w: 0}
   gamma:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 0.9545877, z: 0.9672272, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.9641305, z: 0.97252345, w: 0}
   gain:
-    m_OverrideState: 0
-    m_Value: {x: 0.9967991, y: 0.97657585, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.99692416, z: 0.98769736, w: 0}
 --- !u!114 &714889607913097372
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb4b772797da9440885e8bd939e9560, type: 3}
   m_Name: ColorCurves
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   master:
     m_OverrideState: 1
@@ -350,8 +350,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.84911245
-          value: 0.918239
+          time: 0.83475786
+          value: 0.92727274
           inSlope: 0.83170414
           outSlope: 0.83170414
           tangentMode: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
@@ -551,17 +551,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
   m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.8516609, y: 1, z: 0.80782604, w: 0}
+    m_Value: {x: 0.96344465, y: 1, z: 0.95303434, w: 0}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 0.9637319, y: 1, z: 0.9956937, w: 0}
+    m_Value: {x: 1, y: 0.94970655, z: 0.95834494, w: 0}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 0.9939511, y: 1, z: 0.96156645, w: 0}
+    m_Value: {x: 0.9905173, y: 0.9899403, z: 1, w: 0}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
