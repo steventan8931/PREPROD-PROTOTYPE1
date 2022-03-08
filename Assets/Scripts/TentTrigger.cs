@@ -11,7 +11,7 @@ public class TentTrigger : MonoBehaviour
 
     private void Start()
     {
-        m_Animation = GetComponent<Animator>();
+        //m_Animation = GetComponent<Animator>();
     }
 
     private void OnTriggerStay(Collider other)

@@ -11,7 +11,7 @@ public class ChestTrigger : MonoBehaviour
     private AudioManager m_Audio;
     private void Start()
     {
-        m_Animation = GetComponent<Animator>();
+        //m_Animation = GetComponent<Animator>();
     }
 
     private void OnTriggerStay(Collider other)

@@ -35,6 +35,10 @@ public class BuildPlacement : MonoBehaviour
             {
                 m_CurrentPlaceableObject = Instantiate(m_BuildablePrefab);
                 m_CurrentPlaceableObject.layer = 2;
+                for (int i = 0; i < m_CurrentPlaceableObject.transform.childCount; i++)
+                {
+                    m_CurrentPlaceableObject.transform.GetChild(i).gameObject.layer = 2;
+                }
                 m_CurrentPlaceableObject.GetComponent<BoxCollider>().isTrigger = true;
             }
 
@@ -87,7 +91,11 @@ public class BuildPlacement : MonoBehaviour
                     {
                         m_CurrentPlaceableObject.GetComponent<SpriteRenderer>().color = Color.white;
                         m_BuildController.UseItem(m_Hand.m_ItemType);
-                        m_CurrentPlaceableObject.layer = 1;
+                        m_CurrentPlaceableObject.layer = 0;
+                        for (int i = 0; i < m_CurrentPlaceableObject.transform.childCount; i++)
+                        {
+                            m_CurrentPlaceableObject.transform.GetChild(i).gameObject.layer = 0;
+                        }
                         if (m_CurrentPlaceableObject.GetComponent<BuildableObject>().m_Collidable)
                         {
                             PlaceableCollider.isTrigger = false;
