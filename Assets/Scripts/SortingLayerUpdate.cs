@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SortingLayerUpdate : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class SortingLayerUpdate : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<CharacterMotor>())
+        if (other.GetComponent<CharacterMotor>() || other.GetComponent<NavMeshAgent>())
         {
             if (isFront)
             {

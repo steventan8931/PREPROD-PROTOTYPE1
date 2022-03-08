@@ -22386,11 +22386,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 469879164411598264, guid: 54ff6e7ef69e041448234af4d1057a5b,
-        type: 3}
-      propertyPath: patrolPointRange
-      value: 6.51
-      objectReference: {fileID: 0}
     - target: {fileID: 5249392258320092851, guid: 54ff6e7ef69e041448234af4d1057a5b,
         type: 3}
       propertyPath: m_RootOrder

@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1743736681
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 93d4990df21c26d43b673e7cd799cbd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -183,8 +183,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.590259, y: 0.88398045, z: 4.3642397}
-  m_Center: {x: -0.07482529, y: -5.6383166, z: -2.2344515}
+  m_Size: {x: 9.590259, y: 6.784189, z: 9.07018}
+  m_Center: {x: -0.07482529, y: -2.6882498, z: 0.11855936}
 --- !u!114 &71700043612063643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,8 +241,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.580395, y: 0.96201324, z: 4.3597517}
-  m_Center: {x: -0.07482529, y: -5.5992894, z: -2.23445}
+  m_Size: {x: 9.580395, y: 3.5077865, z: 6.924878}
+  m_Center: {x: -0.07482529, y: -6.8722024, z: -3.5169759}
 --- !u!114 &4606630926950141710
 MonoBehaviour:
   m_ObjectHideFlags: 0
