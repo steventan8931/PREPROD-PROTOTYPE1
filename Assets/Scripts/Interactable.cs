@@ -11,6 +11,9 @@ public class Interactable : MonoBehaviour
     public GameObject m_DamagePrefab;
     public Vector2 m_SpawnCountExtents = new Vector2(1, 2);
     public ObjectRespwaner m_Respawner;
+
+    private AudioManager m_audio;
+
     public void TakeDamage(int _Damage)
     {
         m_DamagePrefab.GetComponent<TextMeshPro>().text = _Damage.ToString();
