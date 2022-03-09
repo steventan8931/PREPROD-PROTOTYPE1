@@ -174,6 +174,7 @@ MonoBehaviour:
       requiredAmount: 0
       currentAmount: 0
     isFinalQuest: 0
+  enemyAnimator: {fileID: 2538319675862883568}
 --- !u!114 &944249583522000995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 4.5
-  angle: 76
+  angle: 103
   playerRef: {fileID: 0}
   targetMask:
     serializedVersion: 2
@@ -389,17 +390,17 @@ PrefabInstance:
     - target: {fileID: -8463067402653751969, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0
+      value: 0.0000019073486
       objectReference: {fileID: 0}
     - target: {fileID: -8463067402653751969, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.0026745796
+      value: 0.0026917458
       objectReference: {fileID: 0}
     - target: {fileID: -8463067402653751969, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Center.z
-      value: 0.0000019073686
+      value: 2.0040858e-11
       objectReference: {fileID: 0}
     - target: {fileID: -8463067402653751969, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
@@ -414,7 +415,7 @@ PrefabInstance:
     - target: {fileID: -8463067402653751969, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Extent.z
-      value: 0.000000018348544
+      value: 0.00000001834847
       objectReference: {fileID: 0}
     - target: {fileID: 4573368172035005879, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
@@ -424,12 +425,12 @@ PrefabInstance:
     - target: {fileID: 4573368172035005879, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.0023460388
+      value: -0.0023431778
       objectReference: {fileID: 0}
     - target: {fileID: 4573368172035005879, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Center.z
-      value: 0.0000019088384
+      value: -0.000000015964883
       objectReference: {fileID: 0}
     - target: {fileID: 4573368172035005879, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
@@ -444,7 +445,7 @@ PrefabInstance:
     - target: {fileID: 4573368172035005879, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Extent.z
-      value: 0.000001937719
+      value: 0.000000047824752
       objectReference: {fileID: 0}
     - target: {fileID: 7186108299802543318, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
