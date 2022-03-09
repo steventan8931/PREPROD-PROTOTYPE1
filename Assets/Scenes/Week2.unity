@@ -4184,6 +4184,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40d038c5b14ad7c47a433e00c5d2c469, type: 3}
+--- !u!1 &336285829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6604281277060181055, guid: 188e9af7cd68e2444a9baf21daef1979,
+    type: 3}
+  m_PrefabInstance: {fileID: 3184392704129826834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &340783199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6908283165524245282, guid: 2d0280d7b93d54d45ac0503e9def7c9d,
@@ -6701,6 +6707,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &538411849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8406215119886786183, guid: 188e9af7cd68e2444a9baf21daef1979,
+    type: 3}
+  m_PrefabInstance: {fileID: 3184392704129826834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &541863499
 GameObject:
   m_ObjectHideFlags: 0
@@ -8422,12 +8434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f93eeca8a6d775429d3f401889665c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &748261804 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7300795816639106112, guid: 188e9af7cd68e2444a9baf21daef1979,
-    type: 3}
-  m_PrefabInstance: {fileID: 3184392704129826834}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &756933089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12986,14 +12992,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4911683327560513715, guid: c2731467821debc438418f660c2d536e,
         type: 3}
+      propertyPath: m_Object.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911683327560513715, guid: c2731467821debc438418f660c2d536e,
+        type: 3}
       propertyPath: m_Object.Array.data[0]
       value: 
-      objectReference: {fileID: 748261804}
+      objectReference: {fileID: 336285829}
     - target: {fileID: 4911683327560513715, guid: c2731467821debc438418f660c2d536e,
         type: 3}
       propertyPath: m_Object.Array.data[1]
       value: 
-      objectReference: {fileID: 1708517864}
+      objectReference: {fileID: 538411849}
+    - target: {fileID: 4911683327560513715, guid: c2731467821debc438418f660c2d536e,
+        type: 3}
+      propertyPath: m_Object.Array.data[2]
+      value: 
+      objectReference: {fileID: 336285829}
+    - target: {fileID: 4911683327560513715, guid: c2731467821debc438418f660c2d536e,
+        type: 3}
+      propertyPath: m_Object.Array.data[3]
+      value: 
+      objectReference: {fileID: 538411849}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2731467821debc438418f660c2d536e, type: 3}
 --- !u!4 &1229446116 stripped
@@ -18149,12 +18170,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1708517864 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5358823774850350840, guid: 188e9af7cd68e2444a9baf21daef1979,
-    type: 3}
-  m_PrefabInstance: {fileID: 3184392704129826834}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1712874085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1291306119446392456, guid: 527dbdf46c877514c9d4bf7aad6771ef,
@@ -23041,6 +23056,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4466412516496937517, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.047974747
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466412516496937517, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.9988486
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295500825919402968, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00003500655
+      objectReference: {fileID: 0}
     - target: {fileID: 5979941254154368356, guid: 188e9af7cd68e2444a9baf21daef1979,
         type: 3}
       propertyPath: m_RootOrder
