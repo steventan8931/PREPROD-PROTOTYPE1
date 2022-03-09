@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 4962025128215324278}
   - component: {fileID: 4962025128215324273}
   - component: {fileID: 4962025128215324272}
+  - component: {fileID: 412288754}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -265,3 +266,33 @@ MonoBehaviour:
   m_Animation: {fileID: 4962025127860186507}
   m_IsColliding: 0
   m_ChestOpen: 0
+--- !u!114 &412288754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962025128215324274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d038f20d15592145aa475c04c9f67d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WoodCount: 0
+  m_RockCount: 0
+  m_AxeCount: 0
+  m_PickaxeCount: 0
+  m_BedrollCount: 0
+  m_FireplaceCount: 0
+  m_ChestCount: 0
+  m_TentCount: 0
+  m_Slots: []
+  m_ChestCanvas: {fileID: 0}
+  m_WoodUI: {fileID: 0}
+  m_RockUI: {fileID: 0}
+  m_AxeUI: {fileID: 0}
+  m_PickaxeUI: {fileID: 0}
+  m_BedrollUI: {fileID: 0}
+  m_FireplaceUI: {fileID: 0}
+  m_TentUI: {fileID: 0}
+  m_ChestUI: {fileID: 0}
