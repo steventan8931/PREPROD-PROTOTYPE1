@@ -11,6 +11,9 @@ public class ChestTrigger : MonoBehaviour
 
     private Chest m_Chest;
     private AudioManager m_Audio;
+
+    private CanvasManager canvas;
+
     private void Start()
     {
         //m_Animation = GetComponent<Animator>();
@@ -41,15 +44,19 @@ public class ChestTrigger : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                m_Chest.m_ChestCanvas.SetActive(!m_ChestOpen);
                 m_Chest.Assign();
                 AudioManager.Instance.PlayAudio("chestopen");
                 m_ChestOpen = !m_ChestOpen;
             }
         }
 
+
         if (m_ChestOpen)
         {
+            if (CanvasManager.Instance.m_CanOpen)
+            {
+                m_Chest.m_ChestCanvas.SetActive(true);
+            }
             m_Chest.ManagedUpdate();
             m_Player.m_CanMove = false;
             m_Animation.SetBool("open", true);
@@ -60,6 +67,7 @@ public class ChestTrigger : MonoBehaviour
             {
                 m_Player.m_CanMove = true;
             }
+            m_Chest.m_ChestCanvas.SetActive(false);
             m_Animation.SetBool("open", false);
         }
     }

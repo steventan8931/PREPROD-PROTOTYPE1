@@ -48,6 +48,9 @@ public class Inventory : MonoBehaviour
     public Quest m_playerQuest;
 
     public bool m_Unlocked = true;
+
+    private CanvasManager canvas;
+
     private void Start()
     {
         m_QuickBar = FindObjectOfType<QuickBar>();
@@ -98,7 +101,10 @@ public class Inventory : MonoBehaviour
 
         if (m_InventoryOpen)
         {
-            m_Inventory.SetActive(true);
+            if (CanvasManager.Instance.m_CanOpen)
+            {
+                m_Inventory.SetActive(true);
+            }
         }
         else
         {
