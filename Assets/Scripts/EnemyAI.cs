@@ -105,7 +105,8 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            if (!isPlayerInSight && !isPlayerInAttackRange)
+            // if (!isPlayerInSight && !isPlayerInAttackRange)
+            if (!isPlayerInSight )
             {
                 Patroling();
                 //enemyAnimator.SetBool("IsAttacking", false);
@@ -203,7 +204,7 @@ public class EnemyAI : MonoBehaviour
                // rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
               //  rb.AddForce(transform.forward * 8f, ForceMode.Impulse);
                 rb.AddForce(fireDir * 32f, ForceMode.Impulse);
-                rb.AddForce(fireDir * 8f, ForceMode.Impulse);
+               // rb.AddForce(fireDir * 8f, ForceMode.Impulse);
                 //add trigger to attack animation
                 enemyAnimator.SetBool("IsAttacking", true);
             }

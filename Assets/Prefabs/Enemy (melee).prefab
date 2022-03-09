@@ -157,8 +157,8 @@ MonoBehaviour:
   EnemyProjectile: {fileID: 7849290221825467846, guid: 0567af604c3bbb8448c3f9f485b20c2d,
     type: 3}
   isLastFrameFlee: 0
-  avoidDist: 4
-  attackRange: 2.06
+  avoidDist: 0
+  attackRange: 1.7
   isPlayerInSight: 0
   isPlayerInAttackRange: 0
   spawner: {fileID: 0}
@@ -173,6 +173,10 @@ MonoBehaviour:
       goalType: 0
       requiredAmount: 0
       currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      cacheNPC: {fileID: 0}
     isFinalQuest: 0
   enemyAnimator: {fileID: 7981754428118287293}
 --- !u!114 &6571994469190714606
