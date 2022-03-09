@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject m_DialogueCanvas;
     public Text m_NameText;
     public Text m_DialogueText;
+    public Image m_Image;
     public Queue<string> m_Sentences;
     public GameObject m_QuickBar;
 
@@ -40,6 +41,7 @@ public class DialogueManager : MonoBehaviour
         cacheNPC.m_IsTalking = true;
         m_DialogueCanvas.SetActive(true);
         m_NameText.text = _Dialogue.m_Name;
+        m_Image.sprite = m_NPC.m_Sprite;
 
         m_Sentences.Clear();
 

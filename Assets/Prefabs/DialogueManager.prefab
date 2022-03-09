@@ -675,3 +675,5 @@ MonoBehaviour:
   m_DialogueCanvas: {fileID: 8258038027161708378}
   m_NameText: {fileID: 8258038027123901473}
   m_DialogueText: {fileID: 8258038027266212971}
+  m_Image: {fileID: 8258038026843510691}
+  m_QuickBar: {fileID: 0}

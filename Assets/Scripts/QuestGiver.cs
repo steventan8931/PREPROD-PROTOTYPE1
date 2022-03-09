@@ -20,6 +20,7 @@ public class QuestGiver : MonoBehaviour
     public TextMeshProUGUI requiredAmount;
 
     DialogueTrigger cacheNPC;
+    public DialogueTrigger playerDialogue;
 
     private void Awake()
     {
@@ -32,9 +33,13 @@ public class QuestGiver : MonoBehaviour
         {
             quest.goal.m_Inventory = playerInventory;
             quest.goal.m_Crafting = m_CraftingManager;
+            quest.goal.playerDialogue = playerDialogue;
         }
     }
-
+    private void Start()
+    {
+        playerDialogue.TriggerDialogueIndex(0);
+    }
     private void LinkNPC()
     {
         if (CurrQuest.goal.goalType >= GoalType.PlaceBedroll)

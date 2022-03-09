@@ -13,6 +13,7 @@ public class QuestGoal
 
     public GameObject m_NPC;
     public DialogueTrigger cacheNPC;
+    public DialogueTrigger playerDialogue;
 
     public bool IsReached()
     {
@@ -83,13 +84,17 @@ public class QuestGoal
         {
             case GoalType.GatheringWood:
                 m_Inventory.m_Unlocked = true;
+                playerDialogue.TriggerDialogueIndex(1); //Open inventory to see items
                 break;
             case GoalType.GatheringRock:
                 m_Crafting.UnlockCrafting();
+                playerDialogue.TriggerDialogueIndex(2); //see what i can craft
                 break;
             case GoalType.CraftWeapon:
+                playerDialogue.TriggerDialogueIndex(3); //I should make a bedroll
                 break;
             case GoalType.CraftBedroll:
+                playerDialogue.TriggerDialogueIndex(4); //set spawn point
                 break;
             case GoalType.PlaceBedroll:
                 m_NPC.SetActive(true);
