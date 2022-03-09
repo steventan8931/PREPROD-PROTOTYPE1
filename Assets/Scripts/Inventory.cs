@@ -110,6 +110,7 @@ public class Inventory : MonoBehaviour
     {
         if (_ItemCount >= 1)
         {
+            _UIObject.GetComponent<ItemSlot>().AddToBar();
             _UIObject.SetActive(true);
             _UIObject.GetComponent<ItemSlot>().EnableSlot(_ItemCount);
         }

@@ -45,7 +45,6 @@ public class ItemSlot : MonoBehaviour
                     break;
                 }
             }
-
         }
     }
 
