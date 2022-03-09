@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.08
   contrast:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -7
     min: -100
     max: 100
   colorFilter:
@@ -29,13 +29,13 @@ MonoBehaviour:
     showAlpha: 0
     showEyeDropper: 1
   hueShift:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 16
     min: -180
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: 12
+    m_Value: 16
     min: -100
     max: 100
 --- !u!114 &-3262867989046340557
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 0
 --- !u!114 &-2722043235888324931
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   redOutRedIn:
     m_OverrideState: 1
-    m_Value: 146
+    m_Value: 126
     min: -200
     max: 200
   redOutGreenIn:
@@ -142,7 +142,7 @@ MonoBehaviour:
     showEyeDropper: 1
   balance:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: -23
     min: -100
     max: 100
 --- !u!114 &-835447284736978241
@@ -209,11 +209,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.07843138, g: 0.37686056, b: 0.44313726, a: 1}
+    m_Value: {r: 0.5, g: 0.22063483, b: 0.1014151, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -222,12 +222,12 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.294
+    m_Value: 0.207
     min: 0
     max: 1
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.381
+    m_Value: 0.228
     min: 0.01
     max: 1
   rounded:
@@ -314,26 +314,26 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.21893491
-          value: 0.20125788
-          inSlope: 0.6146852
-          outSlope: 0.6146852
+          time: 0.24924012
+          value: 0.22077924
+          inSlope: 0.059006594
+          outSlope: 0.059006594
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.3964497
-          value: 0.3333333
-          inSlope: 1.105427
-          outSlope: 1.105427
+          time: 0.4005848
+          value: 0.36024845
+          inSlope: 1.0621116
+          outSlope: 1.0621116
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.6035503
-          value: 0.4528302
+          time: 0.6023392
+          value: 0.60248446
           inSlope: 0.4251574
           outSlope: 0.4251574
           tangentMode: 0
@@ -341,8 +341,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.75147927
-          value: 0.836478
+          time: 0.70467836
+          value: 0.9130435
           inSlope: 1.6352205
           outSlope: 1.6352205
           tangentMode: 0
@@ -350,8 +350,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.83475786
-          value: 0.92727274
+          time: 0.81578946
+          value: 0.9254658
           inSlope: 0.83170414
           outSlope: 0.83170414
           tangentMode: 0
@@ -527,16 +527,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: 6
+    m_Value: 2
     min: -100
     max: 100
   tint:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 18
     min: -100
     max: 100
 --- !u!114 &6044180890308959155
@@ -551,17 +551,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
   m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.96344465, y: 1, z: 0.95303434, w: 0}
+    m_Value: {x: 0.8475647, y: 0.82069236, z: 1, w: -0.25917923}
   midtones:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {x: 1, y: 0.94970655, z: 0.95834494, w: 0}
   highlights:
-    m_OverrideState: 1
-    m_Value: {x: 0.9905173, y: 0.9899403, z: 1, w: 0}
+    m_OverrideState: 0
+    m_Value: {x: 0.9905173, y: 0.9899403, z: 1, w: 0.021598278}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
