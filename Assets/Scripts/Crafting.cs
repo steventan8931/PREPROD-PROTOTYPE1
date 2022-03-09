@@ -15,7 +15,7 @@ public class Crafting : MonoBehaviour
 
     private void Start()
     {
-        // m_Unlocked = false;        
+         m_Unlocked = false;        
     }
 
     public void UnlockCrafting()

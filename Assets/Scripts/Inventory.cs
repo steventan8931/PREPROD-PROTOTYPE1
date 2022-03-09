@@ -62,7 +62,7 @@ public class Inventory : MonoBehaviour
         //m_playerQuest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
 
         //For when we need to lock inventory
-        //m_Unlocked = false;
+        m_Unlocked = false;
 
     }
 

@@ -23,6 +23,7 @@ public class CharacterMotor : MonoBehaviour
     private AudioSource m_AudioSource;
 
     public Vector3 m_SpawnPoint;
+    private Vector3 cacheSpawnPoint;
     public bool m_CanMove = true;
     
     private void Start()
@@ -35,6 +36,20 @@ public class CharacterMotor : MonoBehaviour
         m_AudioSource = GetComponent<AudioSource>();
 
         m_SpawnPoint = transform.position;
+        cacheSpawnPoint = m_SpawnPoint;
+    }
+
+    //For quests
+    public bool SpawnPointChanged()
+    {
+        if (cacheSpawnPoint != m_SpawnPoint)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void Update()
