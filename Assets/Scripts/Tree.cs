@@ -10,6 +10,7 @@ public class Tree : Interactable
 
     private void Update()
     {
+        UpdateVisualDamage();
         if (m_Health <= 0)
         {
             m_DeathTimer += Time.deltaTime;
