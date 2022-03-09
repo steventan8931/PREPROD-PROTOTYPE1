@@ -45,6 +45,11 @@ public class BuildPlacement : MonoBehaviour
                     m_CurrentPlaceableObject.transform.GetChild(i).gameObject.layer = 2;
                 }
                 m_CurrentPlaceableObject.GetComponent<BoxCollider>().isTrigger = true;
+                //If it is a chest
+                if (m_CurrentPlaceableObject.transform.GetChild(0).GetComponent<Chest>())
+                {
+                    m_CurrentPlaceableObject.transform.GetChild(0).GetComponent<Chest>().m_ChestCanvas = m_ChestCanvas;
+                }
             }
 
         }
@@ -104,12 +109,6 @@ public class BuildPlacement : MonoBehaviour
                         if (m_CurrentPlaceableObject.GetComponent<BuildableObject>().m_Collidable)
                         {
                             PlaceableCollider.isTrigger = false;
-                        }
-
-                        //If it is a chest
-                        if (m_CurrentPlaceableObject.transform.GetChild(0).GetComponent<Chest>())
-                        {
-                            m_CurrentPlaceableObject.transform.GetChild(0).GetComponent<Chest>().m_ChestCanvas = m_ChestCanvas;
                         }
 
                         m_CurrentPlaceableObject = null;

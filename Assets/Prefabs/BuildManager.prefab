@@ -68,5 +68,7 @@ MonoBehaviour:
     type: 3}
   m_ChestPrefab: {fileID: 4962025127860186516, guid: d84f6d95483ef0442b89e3aaa7285f2d,
     type: 3}
+  m_NPCHousePrefab: {fileID: 6341237523443826419, guid: 9b28c83e57caad84dbe8e1bb25a5ecfd,
+    type: 3}
   m_Inventory: {fileID: 0}
   m_Crafting: {fileID: 0}

@@ -12,6 +12,7 @@ public class Chest : MonoBehaviour
     public int m_FireplaceCount = 0;
     public int m_ChestCount = 0;
     public int m_TentCount = 0;
+    public int m_NPCHouseCount = 0;
 
     public Inventory m_Inventory;
 
@@ -27,6 +28,7 @@ public class Chest : MonoBehaviour
     public GameObject m_FireplaceUI;
     public GameObject m_TentUI;
     public GameObject m_ChestUI;
+    public GameObject m_NPCHouseUI;
 
     public void Assign()
     {
@@ -72,6 +74,9 @@ public class Chest : MonoBehaviour
             case Items.Tent:
                 m_TentUI = _Object;
                 break;
+            case Items.NPCHouse:
+                m_NPCHouseUI = _Object;
+                break;
         }
     }
     public void ManagedUpdate()
@@ -84,6 +89,7 @@ public class Chest : MonoBehaviour
         ItemInInventory(m_BedrollCount, m_BedrollUI);
         ItemInInventory(m_TentCount, m_TentUI);
         ItemInInventory(m_ChestCount, m_ChestUI);
+        ItemInInventory(m_NPCHouseCount, m_NPCHouseUI);
     }
 
     private void ItemInInventory(int _ItemCount, GameObject _UIObject)

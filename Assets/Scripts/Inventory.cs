@@ -14,6 +14,7 @@ public enum Items
     Fireplace,
     Tent,
     Chest,
+    NPCHouse,
 }
 
 public class Inventory : MonoBehaviour
@@ -26,6 +27,7 @@ public class Inventory : MonoBehaviour
     public int m_FireplaceCount = 0;
     public int m_ChestCount = 0;
     public int m_TentCount = 0;
+    public int m_NPCHouseCount = 0;
 
     public Text m_PressGText;
     public GameObject m_Inventory;
@@ -43,6 +45,8 @@ public class Inventory : MonoBehaviour
     public GameObject m_FireplaceUI;
     public GameObject m_TentUI;
     public GameObject m_ChestUI;
+    public GameObject m_NPCHouseUI;
+
     private QuickBar m_QuickBar;
 
     public Quest m_playerQuest;
@@ -62,7 +66,7 @@ public class Inventory : MonoBehaviour
         //m_playerQuest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
 
         //For when we need to lock inventory
-        m_Unlocked = false;
+        //m_Unlocked = false;
 
     }
 
@@ -98,6 +102,7 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_BedrollCount, m_BedrollUI);
         ItemInInventory(m_TentCount, m_TentUI);
         ItemInInventory(m_ChestCount, m_ChestUI);
+        ItemInInventory(m_NPCHouseCount, m_NPCHouseUI);
 
         if (m_InventoryOpen)
         {
