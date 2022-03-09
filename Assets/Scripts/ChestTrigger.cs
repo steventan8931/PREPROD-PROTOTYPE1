@@ -48,6 +48,11 @@ public class ChestTrigger : MonoBehaviour
                 m_Chest.Assign();
                 AudioManager.Instance.PlayAudio("chestopen");
                 m_ChestOpen = !m_ChestOpen;
+                if (!m_ChestOpen)
+                {
+                    m_Chest.m_ChestCanvas.SetActive(false);
+                }
+
             }
         }
 
@@ -68,7 +73,6 @@ public class ChestTrigger : MonoBehaviour
             {
                 m_Player.m_CanMove = true;
             }
-            m_Chest.m_ChestCanvas.SetActive(false);
             m_Animation.SetBool("open", false);
         }
     }
