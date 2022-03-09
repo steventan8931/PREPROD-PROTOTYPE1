@@ -75,7 +75,7 @@ public class EnemyAI : MonoBehaviour
         if (closestFire != null)
         {
             distance = Vector3.Distance(transform.position, closestFire.transform.position);
-            Debug.Log("enemy to fire distance: " + distance);
+            //Debug.Log("enemy to fire distance: " + distance);
         
         }
 

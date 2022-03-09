@@ -36,6 +36,7 @@ public class EnemyBulletScr : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            Debug.Log("hit something");
             //do damage
             collision.gameObject.GetComponent<CharacterMotor>().takeDmg(damage);
             //destroy itself
