@@ -38,7 +38,7 @@ public class ChestSlot : MonoBehaviour
                 {
                     if (m_Bar.m_Slots[j].GetComponent<QuickBarSlot>().m_BarItemType == m_ItemType)
                     {
-                        cacheCanAddTobar = false;
+                        //cacheCanAddTobar = false;
                         break;
                     }
                 }

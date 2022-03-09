@@ -164,6 +164,9 @@ public class Chest : MonoBehaviour
             case Items.Tent:
                 m_TentCount -= _Count;
                 break;
+            case Items.NPCHouse:
+                m_NPCHouseCount -= _Count;
+                break;
         }
     }
 }
