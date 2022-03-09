@@ -13,6 +13,7 @@ public class ItemSlot : MonoBehaviour
     private QuickBar m_Bar;
     public bool m_RemoveFromBar = false;
     private bool cacheCanAddTobar = true;
+    public bool m_Moved = false;
 
     private void Awake()
     {

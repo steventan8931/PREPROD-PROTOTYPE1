@@ -53,4 +53,16 @@ public class QuickBar : MonoBehaviour
         m_Slots[m_ActiveSlot].GetComponent<Image>().sprite = m_Selected;
 
     }
+
+    public bool InQuickBar(Items _type)
+    {
+        for (int i = 0; i < m_Slots.Length; i++)
+        {
+            if (m_Slots[i].GetComponent<QuickBarSlot>().m_BarItemType == _type)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -121,9 +121,27 @@ public class Inventory : MonoBehaviour
     {
         if (_ItemCount >= 1)
         {
-            _UIObject.GetComponent<ItemSlot>().AddToBar();
-            _UIObject.SetActive(true);
+            if (!m_InventoryOpen)
+            {
+                if (!_UIObject.GetComponent<ItemSlot>().m_Moved)
+                {
+                    _UIObject.GetComponent<ItemSlot>().AddToBar();
+                }
+            }
+            else
+            {
+                if (m_QuickBar.InQuickBar(_UIObject.GetComponent<ItemSlot>().m_ItemType))
+                {
+                    _UIObject.SetActive(false);
+                }
+                else
+                {
+                    _UIObject.SetActive(true);
+                }
+
+            }
             _UIObject.GetComponent<ItemSlot>().EnableSlot(_ItemCount);
+
         }
         else
         {

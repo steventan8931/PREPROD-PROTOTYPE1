@@ -42,8 +42,10 @@ public class QuickBarSlot : MonoBehaviour
     {
         m_SlotUsed = false;
         m_BarItemType = Items.Empty;
+        m_LinkedItemSlot.GetComponent<ItemSlot>().m_Moved = true;
         if (transform.childCount > 0)
         {
+            Debug.Log("pressed");
             Destroy(transform.GetChild(0).gameObject);
         }
     }
