@@ -9,11 +9,11 @@ public class ChestTrigger : MonoBehaviour
     public bool m_IsColliding = false;
     public bool m_ChestOpen = false;
 
-    private Chest m_Chest;
+    public Chest m_Chest;
     private AudioManager m_Audio;
 
     private CanvasManager canvas;
-
+    
     private void Start()
     {
         //m_Animation = GetComponent<Animator>();
@@ -25,6 +25,7 @@ public class ChestTrigger : MonoBehaviour
         if (other.GetComponent<CharacterMotor>())
         {
             m_Player = other.GetComponent<CharacterMotor>();
+            m_Player.GetComponent<Inventory>().m_QuickBar.cacheChest = this;
             m_Chest.m_Inventory = m_Player.GetComponent<Inventory>();
             m_IsColliding = true;
         }

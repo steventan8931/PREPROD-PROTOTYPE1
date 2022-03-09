@@ -10,6 +10,7 @@ public class QuickBarSlot : MonoBehaviour
     public GameObject m_LinkedItemSlot;
     private Inventory m_Inventory;
 
+    public ChestTrigger m_ChestTrigger;
     private void Start()
     {
         m_Inventory = FindObjectOfType<Inventory>();
@@ -44,6 +45,21 @@ public class QuickBarSlot : MonoBehaviour
 
     public void RemoveSlot()
     {
+        if (m_ChestTrigger != null)
+        {
+            Debug.Log("yes");
+
+            if (m_ChestTrigger.m_ChestOpen)
+            {
+                if (m_LinkedItemSlot)
+                {
+                    Debug.Log("yes");
+                    m_ChestTrigger.m_Chest.AddItemToChest(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType, m_Inventory.GetItemCount(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType));
+                    m_Inventory.RemoveItemFromInventory(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType, m_Inventory.GetItemCount(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType));
+                }
+            }
+        }
+
         m_SlotUsed = false;
         m_BarItemType = Items.Empty;
         if (m_LinkedItemSlot)

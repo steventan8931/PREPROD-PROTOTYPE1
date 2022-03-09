@@ -47,7 +47,7 @@ public class Inventory : MonoBehaviour
     public GameObject m_ChestUI;
     public GameObject m_NPCHouseUI;
 
-    private QuickBar m_QuickBar;
+    public QuickBar m_QuickBar;
 
     public Quest m_playerQuest;
 
@@ -125,7 +125,7 @@ public class Inventory : MonoBehaviour
             {
                 if (!_UIObject.GetComponent<ItemSlot>().m_Moved)
                 {
-                    Debug.Log("moved");
+                    //Debug.Log("moved");
                     _UIObject.GetComponent<ItemSlot>().AddToBar();
                 }
             }
