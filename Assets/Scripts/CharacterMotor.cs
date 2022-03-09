@@ -5,11 +5,12 @@ using UnityEngine;
 public class CharacterMotor : MonoBehaviour
 {
     public float m_MoveSpeed = 5.0f;
+    private float cachespeed = 0;
     public bool m_Attacked = false;
     public float m_AttackCooldown = 0.5f;
     private float m_AttackMaxCooldown = 0.0f;
     public float hitpoints = 150f;
-    private bool cacheDead = false;
+    public bool cacheDead = false;
 
     public Transform m_AttackPoint;
     public Rigidbody m_Rigid;
@@ -17,7 +18,13 @@ public class CharacterMotor : MonoBehaviour
     public Animator m_Animation;
     private Vector3 m_Movement;
     private Hand m_Hand;
-    
+
+    private AudioManager m_Audio;
+    private AudioSource m_AudioSource;
+
+    public Vector3 m_SpawnPoint;
+    private Vector3 cacheSpawnPoint;
+    public bool m_CanMove = true;
     
     private void Start()
     {
@@ -26,6 +33,23 @@ public class CharacterMotor : MonoBehaviour
         m_Sprite = transform.GetChild(0).gameObject;
         m_Animation = m_Sprite.GetComponent<Animator>();
         m_Hand = GetComponent<Hand>();
+        m_AudioSource = GetComponent<AudioSource>();
+
+        m_SpawnPoint = transform.position;
+        cacheSpawnPoint = m_SpawnPoint;
+    }
+
+    //For quests
+    public bool SpawnPointChanged()
+    {
+        if (cacheSpawnPoint != m_SpawnPoint)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void Update()
@@ -36,10 +60,12 @@ public class CharacterMotor : MonoBehaviour
         //dont move if dead
         if (hitpoints <= 0)
         {
+            m_Rigid.velocity = Vector3.zero;
             //Revive
             if (Input.GetKeyDown(KeyCode.R))
             {
                 m_Animation.SetBool("IsDead", false);
+                transform.position = m_SpawnPoint;
                 hitpoints = 150;
             }
             return;
@@ -49,6 +75,18 @@ public class CharacterMotor : MonoBehaviour
             UpdateStates();
             Attack();
         }
+
+        if (!m_CanMove)
+        {
+            m_Movement.x = 0;
+            m_Movement.z = 0;
+            UpdateStates();
+            return;
+        }
+        else
+        {
+        }
+
         m_Rigid.velocity = m_Movement * m_MoveSpeed * Time.fixedDeltaTime;
         //m_Rigid.AddForceAtPosition(m_Movement * m_MoveSpeed * Time.deltaTime, transform.position, ForceMode.Impulse);
         //if (m_Rigid.velocity.magnitude > m_MoveSpeed)
@@ -88,9 +126,15 @@ public class CharacterMotor : MonoBehaviour
         {
             m_Rigid.velocity = Vector3.zero;
             m_Animation.SetBool("IsWalking", false);
+            m_AudioSource.Stop();
         }
         else
         {
+            if (!m_AudioSource.isPlaying)
+            {
+                m_AudioSource.Play();
+            }
+
             m_Animation.SetBool("IsWalking", true);
         }
     }
@@ -106,6 +150,7 @@ public class CharacterMotor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !m_Attacked)
         {
+            AudioManager.Instance.PlayAudio("onhit");
             Debug.Log("Attacking");
             m_Animation.ResetTrigger("Attacking");
             m_Animation.SetTrigger("Attacking");
@@ -113,12 +158,14 @@ public class CharacterMotor : MonoBehaviour
 
             foreach (Collider hit in objects)
             {
+
                 if (hit.GetComponent<Tree>() != null)
                 {
                     Debug.Log("hit tree");
                     //m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
                     hit.GetComponent<Interactable>().TakeDamage(m_Hand.GetTreeDamage());
                     Instantiate(hit.GetComponent<Interactable>().m_DamagePrefab, m_AttackPoint.position, Quaternion.identity);
+                    AudioManager.Instance.PlayAudio("treehit");
                 }
 
                 if (hit.GetComponent<Rock>() != null)
@@ -126,11 +173,13 @@ public class CharacterMotor : MonoBehaviour
                     //m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
                     hit.GetComponent<Interactable>().TakeDamage(m_Hand.GetRockDamage());
                     Instantiate(hit.GetComponent<Interactable>().m_DamagePrefab, m_AttackPoint.position, Quaternion.identity);
+                    AudioManager.Instance.PlayAudio("rockhit");
                 }
 
                 if (hit.GetComponent<EnemyAI>() != null)
                 {
                     hit.GetComponent<EnemyAI>().takeDmg(m_Hand.GetEnemyDamage());
+                    AudioManager.Instance.PlayAudio("enemyhit");
                 }
                 m_Attacked = true;
             }
@@ -171,5 +220,6 @@ public class CharacterMotor : MonoBehaviour
             cacheDead = false;
         }
     }
+
 }
 

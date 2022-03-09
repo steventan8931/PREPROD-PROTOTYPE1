@@ -9,6 +9,7 @@ TagManager:
   - QuestGiver
   - FirePlace
   - Wall
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Behind
+    uniqueID: 2665105829
+    locked: 0
+  - name: CollidableObjects
+    uniqueID: 1743736681
+    locked: 0
+  - name: Front
+    uniqueID: 3487857707
     locked: 0

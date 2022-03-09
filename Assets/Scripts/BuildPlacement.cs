@@ -12,10 +12,15 @@ public class BuildPlacement : MonoBehaviour
     private Hand m_Hand;
     private Items cacheItemType;
 
+    //For the chest
+    public GameObject m_ChestCanvas;
+
+
     private void Start()
     {
         m_BuildController = FindObjectOfType<BuildItemController>();
         m_Hand = FindObjectOfType<Hand>();
+        m_ChestCanvas.SetActive(false);
     }
 
     private void Update()
@@ -35,7 +40,16 @@ public class BuildPlacement : MonoBehaviour
             {
                 m_CurrentPlaceableObject = Instantiate(m_BuildablePrefab);
                 m_CurrentPlaceableObject.layer = 2;
+                for (int i = 0; i < m_CurrentPlaceableObject.transform.childCount; i++)
+                {
+                    m_CurrentPlaceableObject.transform.GetChild(i).gameObject.layer = 2;
+                }
                 m_CurrentPlaceableObject.GetComponent<BoxCollider>().isTrigger = true;
+                //If it is a chest
+                if (m_CurrentPlaceableObject.transform.GetChild(0).GetComponent<Chest>())
+                {
+                    m_CurrentPlaceableObject.transform.GetChild(0).GetComponent<Chest>().m_ChestCanvas = m_ChestCanvas;
+                }
             }
 
         }
@@ -87,11 +101,16 @@ public class BuildPlacement : MonoBehaviour
                     {
                         m_CurrentPlaceableObject.GetComponent<SpriteRenderer>().color = Color.white;
                         m_BuildController.UseItem(m_Hand.m_ItemType);
-                        m_CurrentPlaceableObject.layer = 1;
+                        m_CurrentPlaceableObject.layer = 0;
+                        for (int i = 0; i < m_CurrentPlaceableObject.transform.childCount; i++)
+                        {
+                            m_CurrentPlaceableObject.transform.GetChild(i).gameObject.layer = 0;
+                        }
                         if (m_CurrentPlaceableObject.GetComponent<BuildableObject>().m_Collidable)
                         {
                             PlaceableCollider.isTrigger = false;
                         }
+
                         m_CurrentPlaceableObject = null;
                     }
                 }

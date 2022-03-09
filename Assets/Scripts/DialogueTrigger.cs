@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class DialogueTrigger : MonoBehaviour
     private bool m_Colliding = false;
     private CharacterMotor m_Player;
     public bool m_IsTalking = false;
+    public Sprite m_Sprite;
 
     private void OnTriggerEnter(Collider _other)
     {
@@ -48,7 +50,7 @@ public class DialogueTrigger : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Y))
+            if (Input.GetKeyDown(KeyCode.G))
             {
                 DialogueManager.Instance.DisplayNextSentence();
             }
@@ -63,11 +65,16 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void TriggerFirstTimeDialogue()
     {
-        DialogueManager.Instance.StartDialogue(m_Dialogue[0],this);
+        DialogueManager.Instance.StartDialogue(m_Dialogue[0], this);
     }
 
     public void TriggerRepeatDialogue()
     {
-        DialogueManager.Instance.StartDialogue(m_Dialogue[1],this);
+        DialogueManager.Instance.StartDialogue(m_Dialogue[1], this);
+    }
+
+    public void TriggerDialogueIndex(int _Index)
+    {
+        DialogueManager.Instance.StartDialogue(m_Dialogue[_Index], this);
     }
 }

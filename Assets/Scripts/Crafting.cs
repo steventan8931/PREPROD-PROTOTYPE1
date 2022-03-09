@@ -10,9 +10,12 @@ public class Crafting : MonoBehaviour
     public bool m_CraftingOpen = false;
     public bool m_Unlocked = true;
 
+
+    private CanvasManager canvas;
+
     private void Start()
     {
-        // m_Unlocked = false;        
+         m_Unlocked = false;        
     }
 
     public void UnlockCrafting()
@@ -26,8 +29,20 @@ public class Crafting : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
-                m_CraftingCanvas.SetActive(!m_CraftingCanvas.activeInHierarchy);
-                m_CraftingOpen = m_CraftingCanvas.activeInHierarchy;
+                m_CraftingOpen = !m_CraftingOpen;
+
+                if (m_CraftingOpen)
+                {
+                    if (CanvasManager.Instance.m_CanOpen)
+                    {
+                        m_CraftingCanvas.SetActive(true);
+                    }
+                }
+                else
+                {
+                    m_CraftingCanvas.SetActive(false);
+                }
+
             }
         }
 

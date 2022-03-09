@@ -55,14 +55,14 @@ public class ObjectRespwaner : MonoBehaviour
 
     private void Update()
     {
-        RespawnObject(m_Trees, cacheTreeCount, m_TreePrefab, ref m_RespawnTreeTimer, m_RespawnTreeTime);
+        RespawnObject(m_Trees, cacheTreeCount, m_TreePrefab, ref m_RespawnTreeTimer, m_RespawnTreeTime, 5.2f);
 
-        RespawnObject(m_Rocks, cacheRockCount, m_RockPrefab, ref m_RespawnRockTimer, m_RespawnRockTime);
+        RespawnObject(m_Rocks, cacheRockCount, m_RockPrefab, ref m_RespawnRockTimer, m_RespawnRockTime, 1.86f);
 
 
     }
 
-    private void RespawnObject(List<GameObject> _List, int _ObjectCount, GameObject _Prefab, ref float _Timer, float _Time)
+    private void RespawnObject(List<GameObject> _List, int _ObjectCount, GameObject _Prefab, ref float _Timer, float _Time,float _Height)
     {
         if (_List.Count < _ObjectCount)
         {
@@ -73,7 +73,7 @@ public class ObjectRespwaner : MonoBehaviour
                 Debug.Log("no");
                 for (int i = 0; i < _ObjectCount - _List.Count; i++)
                 {
-                    cacheColliderPoint = new Vector3(Random.Range(13, 98), 5.2f, Random.Range(12.5f, 47));
+                    cacheColliderPoint = new Vector3(Random.Range(13, 98), _Height, Random.Range(12.5f, 47));
                     transform.TransformPoint(cacheColliderPoint);
 
                     Debug.Log("Spawning" + _Prefab.name);

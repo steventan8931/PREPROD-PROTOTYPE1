@@ -13,6 +13,7 @@ public class ItemSlot : MonoBehaviour
     private QuickBar m_Bar;
     public bool m_RemoveFromBar = false;
     private bool cacheCanAddTobar = true;
+    public bool m_Moved = false;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class ItemSlot : MonoBehaviour
 
     public void AddToBar()
     {
+        m_Moved = false;
         cacheCanAddTobar = true;
         for (int i = 0; i < m_Bar.m_Slots.Length; i++)
         {
@@ -45,7 +47,6 @@ public class ItemSlot : MonoBehaviour
                     break;
                 }
             }
-
         }
     }
 

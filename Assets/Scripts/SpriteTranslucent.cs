@@ -5,49 +5,45 @@ using UnityEngine;
 public class SpriteTranslucent : MonoBehaviour
 {
     public SpriteRenderer cacheSprite;
+    public Transform m_Player;
+    private void Start()
+    {
+        m_Player = FindObjectOfType<CharacterMotor>().gameObject.transform;
+    }
 
     private void Update()
     {
         RaycastHit hitInfo;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, 100.0f))
         {
-            //if (hitInfo.collider.transform.childCount > 0)
-            //{
-            //    if (hitInfo.collider.transform.GetChild(0).GetComponent<SpriteRenderer>())
-            //    {
-            //        cacheSprite = hitInfo.collider.transform.GetChild(0).GetComponent<SpriteRenderer>();
-            //        Debug.Log("sprite hit");
-            //        hitInfo.collider.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Vector4(1.0f, 1.0f, 1.0f, 0.5f);
-            //    }
-            //}
-            //else
-            //{
-            //    cacheSprite.color = Color.white;
-            //}
-
-            if (hitInfo.collider.transform.GetComponent<SpriteRenderer>())
+            //Only if player is behind the object
+            if (hitInfo.collider.transform.position.z < m_Player.position.z)
             {
-                cacheSprite = hitInfo.collider.transform.GetComponent<SpriteRenderer>();
-                if (hitInfo.collider.transform.GetComponent<BuildableObject>())
+                if (hitInfo.collider.transform.GetComponent<SpriteRenderer>())
                 {
-                    if (hitInfo.collider.transform.GetComponent<BuildableObject>().m_Collidable)
+                    cacheSprite = hitInfo.collider.transform.GetComponent<SpriteRenderer>();
+                    if (hitInfo.collider.transform.GetComponent<BuildableObject>())
+                    {
+                        if (hitInfo.collider.transform.GetComponent<BuildableObject>().m_Collidable)
+                        {
+                            hitInfo.collider.transform.GetComponent<SpriteRenderer>().color = new Vector4(1.0f, 1.0f, 1.0f, 0.5f);
+                        }
+                    }
+                    else
                     {
                         hitInfo.collider.transform.GetComponent<SpriteRenderer>().color = new Vector4(1.0f, 1.0f, 1.0f, 0.5f);
                     }
+
                 }
                 else
                 {
-                    hitInfo.collider.transform.GetComponent<SpriteRenderer>().color = new Vector4(1.0f, 1.0f, 1.0f, 0.5f);
+                    if (cacheSprite != null)
+                    {
+                        cacheSprite.color = Color.white;
+                    }
                 }
+            }
 
-            }
-            else
-            {
-                if (cacheSprite != null)
-                {
-                    cacheSprite.color = Color.white;
-                }
-            }
         }
     }
 

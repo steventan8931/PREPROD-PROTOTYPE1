@@ -9,10 +9,11 @@ public class DialogueManager : MonoBehaviour
     public GameObject m_DialogueCanvas;
     public Text m_NameText;
     public Text m_DialogueText;
+    public Image m_Image;
     public Queue<string> m_Sentences;
+    public GameObject m_QuickBar;
 
     private CharacterMotor m_Player;
-    private float cacheSpeed = 0;
     private DialogueTrigger cacheNPC;
 
     private void Awake()
@@ -28,16 +29,19 @@ public class DialogueManager : MonoBehaviour
         m_Sentences = new Queue<string>();
 
         m_Player = FindObjectOfType<CharacterMotor>();
-        cacheSpeed = m_Player.m_MoveSpeed;
+        m_QuickBar = FindObjectOfType<QuickBar>().gameObject;
+;
     }
 
     public void StartDialogue(Dialogue _Dialogue, DialogueTrigger m_NPC)
     {
-        m_Player.m_MoveSpeed = 0;
+        m_QuickBar.SetActive(false);
+        m_Player.m_CanMove = false;
         cacheNPC = m_NPC;
         cacheNPC.m_IsTalking = true;
         m_DialogueCanvas.SetActive(true);
         m_NameText.text = _Dialogue.m_Name;
+        m_Image.sprite = m_NPC.m_Sprite;
 
         m_Sentences.Clear();
 
@@ -63,8 +67,9 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        m_QuickBar.SetActive(true);
         cacheNPC.m_IsTalking = false;
-        m_Player.m_MoveSpeed = cacheSpeed;
+        m_Player.m_CanMove = true;
         m_DialogueCanvas.SetActive(false);
     }
 

@@ -41,16 +41,21 @@ public class EnemyAI : MonoBehaviour
     public float attackRange;
     public bool isPlayerInSight, isPlayerInAttackRange;
 
+    //for spawner
+    public EnemySpawner spawner;
 
     //for quest
     public Quest quest;
 
+    //for animator
+    public Animator enemyAnimator;
     private void Awake()
     {
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         playerMotor = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMotor>();
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
+        spawner = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<EnemySpawner>();
         quest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
         if(EnemyType == 2)
         {
@@ -70,7 +75,7 @@ public class EnemyAI : MonoBehaviour
         if (closestFire != null)
         {
             distance = Vector3.Distance(transform.position, closestFire.transform.position);
-            Debug.Log("enemy to fire distance: " + distance);
+            //Debug.Log("enemy to fire distance: " + distance);
         
         }
 
@@ -100,19 +105,24 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            if (!isPlayerInSight && !isPlayerInAttackRange)
+            // if (!isPlayerInSight && !isPlayerInAttackRange)
+            if (!isPlayerInSight )
             {
                 Patroling();
+                //enemyAnimator.SetBool("IsAttacking", false);
             }
             if (isPlayerInSight && !isPlayerInAttackRange)
             {
                 currIdleTime = 0;
                 Chasing();
+                //enemyAnimator.SetBool("IsAttacking", false);
             }
             if (isPlayerInAttackRange && isPlayerInSight)
             {
                 Attacking();
             }
+
+            
         }
         //save in sight bool
         lastFrameInSight = isPlayerInSight;
@@ -127,7 +137,8 @@ public class EnemyAI : MonoBehaviour
         if(isPatrolPointSet)
         {
             agent.SetDestination(patrolPoint);
-
+            enemyAnimator.SetBool("IsWalking", true);
+            enemyAnimator.SetBool("IsIdling", false);
         }
 
         Vector3 distanceToPatrolPoint = transform.position - patrolPoint;
@@ -151,7 +162,8 @@ public class EnemyAI : MonoBehaviour
 
         patrolPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if(Physics.Raycast(patrolPoint,-transform.up,2f,groundMask))
+        NavMeshPath patrolPath = new NavMeshPath();
+        if(Physics.Raycast(patrolPoint,-transform.up,2f,groundMask) && (agent.CalculatePath(patrolPoint, patrolPath) && patrolPath.status == NavMeshPathStatus.PathComplete))
         {
             isPatrolPointSet = true;
         }
@@ -160,13 +172,15 @@ public class EnemyAI : MonoBehaviour
     private void Chasing()
     {
         agent.SetDestination(PlayerTransform.position);
+        enemyAnimator.SetBool("IsWalking", true);
+        enemyAnimator.SetBool("IsIdling", false);
     }
 
     private void Attacking()
     {
         agent.SetDestination(transform.position);
 
-        transform.LookAt(PlayerTransform);
+        //transform.LookAt(PlayerTransform);
 
         if(!isAttacked)
         {
@@ -176,6 +190,7 @@ public class EnemyAI : MonoBehaviour
             {
                 //do melee attack 
                 Debug.Log("attacking (melee)");
+                enemyAnimator.SetBool("IsAttacking", true);
                 playerMotor.takeDmg(dmgVal);
                 // add trigger to attack animation
                 
@@ -185,12 +200,16 @@ public class EnemyAI : MonoBehaviour
             {
                 //do ranged attack
                 Rigidbody rb = Instantiate(EnemyProjectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-                rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-                rb.AddForce(transform.forward * 8f, ForceMode.Impulse);
+                Vector3 fireDir = PlayerTransform.position - transform.position;
+               // rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+              //  rb.AddForce(transform.forward * 8f, ForceMode.Impulse);
+                rb.AddForce(fireDir * 32f, ForceMode.Impulse);
+               // rb.AddForce(fireDir * 8f, ForceMode.Impulse);
                 //add trigger to attack animation
-
+                enemyAnimator.SetBool("IsAttacking", true);
             }
             isAttacked = true;
+            Invoke(nameof(stopAttackingAnim), 0.2f);
             Invoke(nameof(ResetAttack), attackCD);
         }
     }
@@ -207,6 +226,8 @@ public class EnemyAI : MonoBehaviour
         }else if(isIdling == true && currIdleTime >0)
         {
             currIdleTime -= Time.deltaTime;
+            enemyAnimator.SetBool("IsIdling", true);
+            enemyAnimator.SetBool("IsWalking", false);
             if(currIdleTime <=0)
             {
                 currIdleTime = 0;
@@ -222,12 +243,16 @@ public class EnemyAI : MonoBehaviour
         if(currConfuseTime > 0)
         {
            currConfuseTime -= Time.deltaTime;
-           
+           enemyAnimator.SetBool("IsIdling", true);
+           enemyAnimator.SetBool("IsWalking", false);
+
         }
         if (currConfuseTime <= 0)
         {
             currConfuseTime = 0;
             isConfused = false;
+            enemyAnimator.SetBool("IsIdling", false);
+           
         }
 
     }
@@ -260,7 +285,10 @@ public class EnemyAI : MonoBehaviour
         return closest;
     }
 
-
+    private void stopAttackingAnim()
+    {
+        enemyAnimator.SetBool("IsAttacking", false);
+    }
 
 
     private void OnDrawGizmosSelected()
@@ -289,6 +317,7 @@ public class EnemyAI : MonoBehaviour
         {
             quest.goal.RangedEnemyKilled();
         }
+        spawner.enemyCount--;
         Destroy(gameObject);
     }
 }

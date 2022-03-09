@@ -47,6 +47,7 @@ MonoBehaviour:
   m_BuildablePrefab: {fileID: 7936500782153714963, guid: 6325c741ff3939a40bfb7b4051fa9a0d,
     type: 3}
   m_CurrentPlaceableObject: {fileID: 0}
+  m_ChestCanvas: {fileID: 0}
 --- !u!114 &5638711221294094419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,15 +60,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2830024114d6a43be910d3fb2333cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RockPrefab: {fileID: 1817834035679230108, guid: 6552ee0dcc9fa7f429cf251659d37147,
-    type: 3}
-  m_WoodPrefab: {fileID: 261372715247305990, guid: 15f4628b0436e9745b5f444a1b7c160e,
-    type: 3}
   m_BedrollPrefab: {fileID: 7798474508208348259, guid: 6ee41f5dbe7648c498024a501c0f1995,
     type: 3}
   m_FireplacePrefab: {fileID: 6450412780441531350, guid: 56e6fd965d3a9f544a013ccf8a626dbd,
     type: 3}
   m_TentPrefab: {fileID: 2758353041827096599, guid: af53d92c504ca824fa91e1c957190d78,
+    type: 3}
+  m_ChestPrefab: {fileID: 4962025127860186516, guid: d84f6d95483ef0442b89e3aaa7285f2d,
+    type: 3}
+  m_NPCHousePrefab: {fileID: 6341237523443826419, guid: 9b28c83e57caad84dbe8e1bb25a5ecfd,
     type: 3}
   m_Inventory: {fileID: 0}
   m_Crafting: {fileID: 0}

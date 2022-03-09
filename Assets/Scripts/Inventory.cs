@@ -8,12 +8,13 @@ public enum Items
     Empty,
     Wood,
     Rock,
-    Sword,
     Bedroll,
     Pickaxe,
     Axe,
     Fireplace,
     Tent,
+    Chest,
+    NPCHouse,
 }
 
 public class Inventory : MonoBehaviour
@@ -23,9 +24,10 @@ public class Inventory : MonoBehaviour
     public int m_AxeCount = 0;
     public int m_PickaxeCount = 0;
     public int m_BedrollCount = 0;
-    public int m_FireplaceCount;
-    public int m_Sword;
-    public int m_TentCount;
+    public int m_FireplaceCount = 0;
+    public int m_ChestCount = 0;
+    public int m_TentCount = 0;
+    public int m_NPCHouseCount = 0;
 
     public Text m_PressGText;
     public GameObject m_Inventory;
@@ -42,11 +44,17 @@ public class Inventory : MonoBehaviour
     public GameObject m_BedrollUI;
     public GameObject m_FireplaceUI;
     public GameObject m_TentUI;
-    private QuickBar m_QuickBar;
+    public GameObject m_ChestUI;
+    public GameObject m_NPCHouseUI;
+
+    public QuickBar m_QuickBar;
 
     public Quest m_playerQuest;
 
     public bool m_Unlocked = true;
+
+    private CanvasManager canvas;
+
     private void Start()
     {
         m_QuickBar = FindObjectOfType<QuickBar>();
@@ -93,10 +101,15 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_FireplaceCount, m_FireplaceUI);
         ItemInInventory(m_BedrollCount, m_BedrollUI);
         ItemInInventory(m_TentCount, m_TentUI);
+        ItemInInventory(m_ChestCount, m_ChestUI);
+        ItemInInventory(m_NPCHouseCount, m_NPCHouseUI);
 
         if (m_InventoryOpen)
         {
-            m_Inventory.SetActive(true);
+            if (CanvasManager.Instance.m_CanOpen)
+            {
+                m_Inventory.SetActive(true);
+            }
         }
         else
         {
@@ -108,8 +121,28 @@ public class Inventory : MonoBehaviour
     {
         if (_ItemCount >= 1)
         {
-            _UIObject.SetActive(true);
+            if (!m_InventoryOpen)
+            {
+                if (!_UIObject.GetComponent<ItemSlot>().m_Moved)
+                {
+                    //Debug.Log("moved");
+                    _UIObject.GetComponent<ItemSlot>().AddToBar();
+                }
+            }
+            else
+            {
+                if (m_QuickBar.InQuickBar(_UIObject.GetComponent<ItemSlot>().m_ItemType))
+                {
+                    _UIObject.SetActive(false);
+                }
+                else
+                {
+                    _UIObject.SetActive(true);
+                }
+
+            }
             _UIObject.GetComponent<ItemSlot>().EnableSlot(_ItemCount);
+
         }
         else
         {
@@ -130,8 +163,8 @@ public class Inventory : MonoBehaviour
                 m_RockCount++;
                 m_playerQuest.goal.RockGathered();
                 break;
-            case Items.Sword:
-                m_Sword++;
+            case Items.Chest:
+                m_ChestCount++;
                 break;
             case Items.Pickaxe:
                 m_PickaxeCount++;
@@ -151,6 +184,37 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void AddItemToInventory(Items _ItemName, int _Count)
+    {
+        switch (_ItemName)
+        {
+            case Items.Wood:
+                m_WoodCount+= _Count;
+                break;
+            case Items.Rock:
+                m_RockCount += _Count;
+                break;
+            case Items.Chest:
+                m_ChestCount += _Count; 
+                break;
+            case Items.Pickaxe:
+                m_PickaxeCount += _Count;
+                break;
+            case Items.Axe:
+                m_AxeCount += _Count;
+                break;
+            case Items.Bedroll:
+                m_BedrollCount += _Count;
+                break;
+            case Items.Fireplace:
+                m_FireplaceCount += _Count;
+                break;
+            case Items.Tent:
+                m_TentCount += _Count;
+                break;
+        }
+    }
+
     public void RemoveItemFromInventory(Items _ItemName)
     {
         switch (_ItemName)
@@ -161,8 +225,8 @@ public class Inventory : MonoBehaviour
             case Items.Rock:
                 m_RockCount--;
                 break;
-            case Items.Sword:
-                m_Sword--;
+            case Items.Chest:
+                m_ChestCount--;
                 break;
             case Items.Pickaxe:
                 m_PickaxeCount--;
@@ -182,4 +246,83 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void RemoveItemFromInventory(Items _ItemName, int _Count)
+    {
+        switch (_ItemName)
+        {
+            case Items.Wood:
+                m_WoodCount -= _Count;
+                break;
+            case Items.Rock:
+                m_RockCount -= _Count; 
+                break;
+            case Items.Chest:
+                m_ChestCount -= _Count; 
+                break;
+            case Items.Pickaxe:
+                m_PickaxeCount -= _Count;
+                break;
+            case Items.Axe:
+                m_AxeCount -= _Count;
+                break;
+            case Items.Bedroll:
+                m_BedrollCount -= _Count;
+                break;
+            case Items.Fireplace:
+                m_FireplaceCount -= _Count;
+                break;
+            case Items.Tent:
+                m_TentCount -= _Count;
+                break;
+        }
+    }
+
+    public GameObject GetItemUI(Items _ItemName)
+    {
+        switch (_ItemName)
+        {
+            case Items.Wood:
+                return m_WoodUI;
+            case Items.Rock:
+                return m_RockUI;
+            case Items.Chest:
+                return m_ChestUI;
+
+            case Items.Pickaxe:
+                return m_PickaxeUI;
+            case Items.Axe:
+                return m_AxeUI;
+            case Items.Bedroll:
+                return m_BedrollUI;
+            case Items.Fireplace:
+                return m_FireplaceUI;
+            case Items.Tent:
+                return m_TentUI;
+        }
+        return null;
+    }
+
+    public int GetItemCount(Items _ItemName)
+    {
+        switch (_ItemName)
+        {
+            case Items.Wood:
+                return m_WoodCount;
+            case Items.Rock:
+                return m_RockCount;
+            case Items.Chest:
+                return m_ChestCount;
+            case Items.Pickaxe:
+                return m_PickaxeCount;
+            case Items.Axe:
+                return m_AxeCount;
+            case Items.Bedroll:
+                return m_BedrollCount;
+            case Items.Fireplace:
+                return m_FireplaceCount;
+            case Items.Tent:
+                return m_TentCount;
+        }
+        return 0;
+    }
 }

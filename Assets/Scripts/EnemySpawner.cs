@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
     public bool isSpawning = false;
     public bool fullyspawned = false;
     public int enemyCount = 0;
+    public int enemyLimitDay = 5;
+    public int enemyLimitNight = 8;
     public float SpawningCd = 2.0f;
     public float currSpawnCd = 0f;
     void Start()
@@ -20,13 +22,17 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        spawnEnemies();
     }
 
     void spawnEnemies()
     {
-        print("spawning enemies");
-        if (fullyspawned)
+        //print("spawning enemies");
+        if (fullyspawned && enemyCount < enemyLimitDay)
+        {
+            fullyspawned = false;
+        }
+        if(fullyspawned)
         {
             return;
         }
@@ -39,7 +45,7 @@ public class EnemySpawner : MonoBehaviour
             foreach (Transform location in EnemyLoc)
             {
                 float randnum = Random.Range(0, 2);
-                if (randnum >= 1 && enemyCount < EnemyLoc.Length)
+                if (randnum >= 1 && enemyCount < enemyLimitDay)
                 {
                     float enemyRand = Random.Range(0, 2);
                     if(enemyRand >= 1)
@@ -54,7 +60,7 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
             currSpawnCd = SpawningCd;
-            if (enemyCount == EnemyLoc.Length)
+            if (enemyCount == enemyLimitDay)
             {
                 fullyspawned = true;
                 isSpawning = false;

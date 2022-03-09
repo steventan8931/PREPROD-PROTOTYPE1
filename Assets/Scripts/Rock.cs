@@ -11,6 +11,7 @@ public class Rock : Interactable
 
     private void Update()
     {
+        UpdateVisualDamage();
         if (m_Health <= 0)
         {
             m_DeathTimer += Time.deltaTime;
@@ -24,11 +25,14 @@ public class Rock : Interactable
                     Instantiate(m_DropPrefab, transform.position, Quaternion.identity);
                 }
 
-
+                AudioManager.Instance.PlayAudio("rockbreak");
                 ObjectRespwaner.Instance.m_Rocks.Remove(gameObject);
                 Destroy(gameObject);
             }
 
         }
     }
+
+
+
 }

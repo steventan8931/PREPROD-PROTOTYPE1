@@ -7,6 +7,8 @@ public class BuildItemController : MonoBehaviour
     public GameObject m_BedrollPrefab;
     public GameObject m_FireplacePrefab;
     public GameObject m_TentPrefab;
+    public GameObject m_ChestPrefab;
+    public GameObject m_NPCHousePrefab;
 
     public Inventory m_Inventory;
     public Crafting m_Crafting;
@@ -50,6 +52,10 @@ public class BuildItemController : MonoBehaviour
                 return m_FireplacePrefab;
             case Items.Tent:
                 return m_TentPrefab;
+            case Items.Chest:
+                return m_ChestPrefab;
+            case Items.NPCHouse:
+                return m_NPCHousePrefab;
         }
 
         return null;
