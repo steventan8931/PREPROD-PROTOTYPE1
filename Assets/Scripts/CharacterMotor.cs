@@ -9,7 +9,7 @@ public class CharacterMotor : MonoBehaviour
     public float m_AttackCooldown = 0.5f;
     private float m_AttackMaxCooldown = 0.0f;
     public float hitpoints = 150f;
-    private bool cacheDead = false;
+    public bool cacheDead = false;
 
     public Transform m_AttackPoint;
     public Rigidbody m_Rigid;
@@ -20,6 +20,9 @@ public class CharacterMotor : MonoBehaviour
 
     private AudioManager m_Audio;
     private AudioSource m_AudioSource;
+
+    public Vector3 m_SpawnPoint;
+
     private void Start()
     {
         m_Rigid = GetComponent<Rigidbody>();
@@ -28,6 +31,8 @@ public class CharacterMotor : MonoBehaviour
         m_Animation = m_Sprite.GetComponent<Animator>();
         m_Hand = GetComponent<Hand>();
         m_AudioSource = GetComponent<AudioSource>();
+
+        m_SpawnPoint = transform.position;
     }
 
     private void Update()
@@ -38,10 +43,12 @@ public class CharacterMotor : MonoBehaviour
         //dont move if dead
         if (hitpoints <= 0)
         {
+            m_Rigid.velocity = Vector3.zero;
             //Revive
             if (Input.GetKeyDown(KeyCode.R))
             {
                 m_Animation.SetBool("IsDead", false);
+                transform.position = m_SpawnPoint;
                 hitpoints = 150;
             }
             return;
@@ -114,6 +121,7 @@ public class CharacterMotor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !m_Attacked)
         {
+            takeDmg(50);
             AudioManager.Instance.PlayAudio("onhit");
             Debug.Log("Attacking");
             m_Animation.ResetTrigger("Attacking");
