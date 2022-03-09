@@ -125,6 +125,7 @@ public class Inventory : MonoBehaviour
             {
                 if (!_UIObject.GetComponent<ItemSlot>().m_Moved)
                 {
+                    Debug.Log("moved");
                     _UIObject.GetComponent<ItemSlot>().AddToBar();
                 }
             }
@@ -299,5 +300,29 @@ public class Inventory : MonoBehaviour
                 return m_TentUI;
         }
         return null;
+    }
+
+    public int GetItemCount(Items _ItemName)
+    {
+        switch (_ItemName)
+        {
+            case Items.Wood:
+                return m_WoodCount;
+            case Items.Rock:
+                return m_RockCount;
+            case Items.Chest:
+                return m_ChestCount;
+            case Items.Pickaxe:
+                return m_PickaxeCount;
+            case Items.Axe:
+                return m_AxeCount;
+            case Items.Bedroll:
+                return m_BedrollCount;
+            case Items.Fireplace:
+                return m_FireplaceCount;
+            case Items.Tent:
+                return m_TentCount;
+        }
+        return 0;
     }
 }

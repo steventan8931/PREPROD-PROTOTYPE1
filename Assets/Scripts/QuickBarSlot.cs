@@ -34,18 +34,24 @@ public class QuickBarSlot : MonoBehaviour
     {
         m_BarItemType = _ItemType;
         m_LinkedItemSlot = _LinkedItem;
-        Instantiate(_Image,transform);
+        Instantiate(_Image, transform);
         m_SlotUsed = true;
+        if (m_Inventory.GetItemCount(_ItemType) > 0 && m_LinkedItemSlot.GetComponent<ItemSlot>().m_Moved)
+        {
+            RemoveSlot();
+        }
     }
 
     public void RemoveSlot()
     {
         m_SlotUsed = false;
         m_BarItemType = Items.Empty;
-        m_LinkedItemSlot.GetComponent<ItemSlot>().m_Moved = true;
+        if (m_LinkedItemSlot)
+        {
+            m_LinkedItemSlot.GetComponent<ItemSlot>().m_Moved = true;
+        }
         if (transform.childCount > 0)
         {
-            Debug.Log("pressed");
             Destroy(transform.GetChild(0).gameObject);
         }
     }

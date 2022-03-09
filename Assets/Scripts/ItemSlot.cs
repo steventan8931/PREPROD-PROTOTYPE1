@@ -24,6 +24,7 @@ public class ItemSlot : MonoBehaviour
 
     public void AddToBar()
     {
+        m_Moved = false;
         cacheCanAddTobar = true;
         for (int i = 0; i < m_Bar.m_Slots.Length; i++)
         {
