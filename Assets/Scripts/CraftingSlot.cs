@@ -16,6 +16,7 @@ public class CraftingSlot : MonoBehaviour
     public Items m_CraftingOutcome;
     public bool m_EnoughMaterials = false;
     private Inventory m_Inventory;
+    private AudioManager m_Audio;
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class CraftingSlot : MonoBehaviour
     {
         m_Inventory.AddItemToInventory(m_CraftingOutcome);
         RemoveItemsFromInventory();
+        AudioManager.Instance.PlayAudio("crafting");
     }
 
     private void RemoveItemsFromInventory()

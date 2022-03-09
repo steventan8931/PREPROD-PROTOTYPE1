@@ -48,7 +48,7 @@ public class DialogueTrigger : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Y))
+            if (Input.GetKeyDown(KeyCode.G))
             {
                 DialogueManager.Instance.DisplayNextSentence();
             }

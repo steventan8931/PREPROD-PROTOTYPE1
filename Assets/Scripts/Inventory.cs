@@ -8,12 +8,12 @@ public enum Items
     Empty,
     Wood,
     Rock,
-    Sword,
     Bedroll,
     Pickaxe,
     Axe,
     Fireplace,
     Tent,
+    Chest,
 }
 
 public class Inventory : MonoBehaviour
@@ -23,9 +23,9 @@ public class Inventory : MonoBehaviour
     public int m_AxeCount = 0;
     public int m_PickaxeCount = 0;
     public int m_BedrollCount = 0;
-    public int m_FireplaceCount;
-    public int m_Sword;
-    public int m_TentCount;
+    public int m_FireplaceCount = 0;
+    public int m_ChestCount = 0;
+    public int m_TentCount = 0;
 
     public Text m_PressGText;
     public GameObject m_Inventory;
@@ -42,6 +42,7 @@ public class Inventory : MonoBehaviour
     public GameObject m_BedrollUI;
     public GameObject m_FireplaceUI;
     public GameObject m_TentUI;
+    public GameObject m_ChestUI;
     private QuickBar m_QuickBar;
 
     public Quest m_playerQuest;
@@ -93,6 +94,7 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_FireplaceCount, m_FireplaceUI);
         ItemInInventory(m_BedrollCount, m_BedrollUI);
         ItemInInventory(m_TentCount, m_TentUI);
+        ItemInInventory(m_ChestCount, m_ChestUI);
 
         if (m_InventoryOpen)
         {
@@ -108,6 +110,7 @@ public class Inventory : MonoBehaviour
     {
         if (_ItemCount >= 1)
         {
+            _UIObject.GetComponent<ItemSlot>().AddToBar();
             _UIObject.SetActive(true);
             _UIObject.GetComponent<ItemSlot>().EnableSlot(_ItemCount);
         }
@@ -130,8 +133,8 @@ public class Inventory : MonoBehaviour
                 m_RockCount++;
                 m_playerQuest.goal.RockGathered();
                 break;
-            case Items.Sword:
-                m_Sword++;
+            case Items.Chest:
+                m_ChestCount++;
                 break;
             case Items.Pickaxe:
                 m_PickaxeCount++;
@@ -161,8 +164,8 @@ public class Inventory : MonoBehaviour
             case Items.Rock:
                 m_RockCount--;
                 break;
-            case Items.Sword:
-                m_Sword--;
+            case Items.Chest:
+                m_ChestCount--;
                 break;
             case Items.Pickaxe:
                 m_PickaxeCount--;

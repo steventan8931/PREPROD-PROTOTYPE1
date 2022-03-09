@@ -8,10 +8,10 @@ public class ChestTrigger : MonoBehaviour
     private CharacterMotor m_Player;
     public bool m_IsColliding = false;
     public bool m_ChestOpen = false;
-
+    private AudioManager m_Audio;
     private void Start()
     {
-        m_Animation = GetComponent<Animator>();
+        //m_Animation = GetComponent<Animator>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -37,6 +37,7 @@ public class ChestTrigger : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                AudioManager.Instance.PlayAudio("chestopen");
                 m_ChestOpen = !m_ChestOpen;
             }
         }
