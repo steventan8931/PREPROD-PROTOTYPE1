@@ -12,10 +12,15 @@ public class BuildPlacement : MonoBehaviour
     private Hand m_Hand;
     private Items cacheItemType;
 
+    //For the chest
+    public GameObject m_ChestCanvas;
+
+
     private void Start()
     {
         m_BuildController = FindObjectOfType<BuildItemController>();
         m_Hand = FindObjectOfType<Hand>();
+        m_ChestCanvas.SetActive(false);
     }
 
     private void Update()
@@ -100,6 +105,13 @@ public class BuildPlacement : MonoBehaviour
                         {
                             PlaceableCollider.isTrigger = false;
                         }
+
+                        //If it is a chest
+                        if (m_CurrentPlaceableObject.transform.GetChild(0).GetComponent<Chest>())
+                        {
+                            m_CurrentPlaceableObject.transform.GetChild(0).GetComponent<Chest>().m_ChestCanvas = m_ChestCanvas;
+                        }
+
                         m_CurrentPlaceableObject = null;
                     }
                 }

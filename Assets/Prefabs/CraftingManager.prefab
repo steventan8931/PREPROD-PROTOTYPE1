@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CraftingCanvas: {fileID: 0}
   m_CraftingOpen: 0
+  m_Unlocked: 1
 --- !u!114 &2678258364804322631
 MonoBehaviour:
   m_ObjectHideFlags: 0

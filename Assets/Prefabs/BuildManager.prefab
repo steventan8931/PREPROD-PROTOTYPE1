@@ -47,6 +47,7 @@ MonoBehaviour:
   m_BuildablePrefab: {fileID: 7936500782153714963, guid: 6325c741ff3939a40bfb7b4051fa9a0d,
     type: 3}
   m_CurrentPlaceableObject: {fileID: 0}
+  m_ChestCanvas: {fileID: 0}
 --- !u!114 &5638711221294094419
 MonoBehaviour:
   m_ObjectHideFlags: 0

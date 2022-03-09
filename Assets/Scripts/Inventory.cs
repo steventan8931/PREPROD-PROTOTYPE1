@@ -48,6 +48,9 @@ public class Inventory : MonoBehaviour
     public Quest m_playerQuest;
 
     public bool m_Unlocked = true;
+
+    private CanvasManager canvas;
+
     private void Start()
     {
         m_QuickBar = FindObjectOfType<QuickBar>();
@@ -59,7 +62,7 @@ public class Inventory : MonoBehaviour
         //m_playerQuest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
 
         //For when we need to lock inventory
-        //m_Unlocked = false;
+        m_Unlocked = false;
 
     }
 
@@ -98,7 +101,10 @@ public class Inventory : MonoBehaviour
 
         if (m_InventoryOpen)
         {
-            m_Inventory.SetActive(true);
+            if (CanvasManager.Instance.m_CanOpen)
+            {
+                m_Inventory.SetActive(true);
+            }
         }
         else
         {
@@ -154,6 +160,37 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void AddItemToInventory(Items _ItemName, int _Count)
+    {
+        switch (_ItemName)
+        {
+            case Items.Wood:
+                m_WoodCount+= _Count;
+                break;
+            case Items.Rock:
+                m_RockCount += _Count;
+                break;
+            case Items.Chest:
+                m_ChestCount += _Count; 
+                break;
+            case Items.Pickaxe:
+                m_PickaxeCount += _Count;
+                break;
+            case Items.Axe:
+                m_AxeCount += _Count;
+                break;
+            case Items.Bedroll:
+                m_BedrollCount += _Count;
+                break;
+            case Items.Fireplace:
+                m_FireplaceCount += _Count;
+                break;
+            case Items.Tent:
+                m_TentCount += _Count;
+                break;
+        }
+    }
+
     public void RemoveItemFromInventory(Items _ItemName)
     {
         switch (_ItemName)
@@ -185,4 +222,59 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void RemoveItemFromInventory(Items _ItemName, int _Count)
+    {
+        switch (_ItemName)
+        {
+            case Items.Wood:
+                m_WoodCount -= _Count;
+                break;
+            case Items.Rock:
+                m_RockCount -= _Count; 
+                break;
+            case Items.Chest:
+                m_ChestCount -= _Count; 
+                break;
+            case Items.Pickaxe:
+                m_PickaxeCount -= _Count;
+                break;
+            case Items.Axe:
+                m_AxeCount -= _Count;
+                break;
+            case Items.Bedroll:
+                m_BedrollCount -= _Count;
+                break;
+            case Items.Fireplace:
+                m_FireplaceCount -= _Count;
+                break;
+            case Items.Tent:
+                m_TentCount -= _Count;
+                break;
+        }
+    }
+
+    public GameObject GetItemUI(Items _ItemName)
+    {
+        switch (_ItemName)
+        {
+            case Items.Wood:
+                return m_WoodUI;
+            case Items.Rock:
+                return m_RockUI;
+            case Items.Chest:
+                return m_ChestUI;
+
+            case Items.Pickaxe:
+                return m_PickaxeUI;
+            case Items.Axe:
+                return m_AxeUI;
+            case Items.Bedroll:
+                return m_BedrollUI;
+            case Items.Fireplace:
+                return m_FireplaceUI;
+            case Items.Tent:
+                return m_TentUI;
+        }
+        return null;
+    }
 }

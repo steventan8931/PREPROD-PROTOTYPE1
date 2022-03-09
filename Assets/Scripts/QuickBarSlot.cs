@@ -8,15 +8,24 @@ public class QuickBarSlot : MonoBehaviour
     public bool m_SlotUsed = false;
     public Items m_BarItemType;
     public GameObject m_LinkedItemSlot;
+    private Inventory m_Inventory;
+
+    private void Start()
+    {
+        m_Inventory = FindObjectOfType<Inventory>();
+    }
 
     private void Update()
     {
         if (m_LinkedItemSlot)
         {
-            if (m_LinkedItemSlot.GetComponent<ItemSlot>().m_RemoveFromBar)
+            if (m_LinkedItemSlot.GetComponent<ItemSlot>())
             {
-                m_LinkedItemSlot = null;
-                RemoveSlot();
+                if (m_LinkedItemSlot.GetComponent<ItemSlot>().m_RemoveFromBar)
+                {
+                    m_LinkedItemSlot = null;
+                    RemoveSlot();
+                }
             }
         }
     }

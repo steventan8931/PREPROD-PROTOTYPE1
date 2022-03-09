@@ -9,6 +9,7 @@ public class QuestGiver : MonoBehaviour
     public Quest[] quests;
     int questIndex = 0;
     public Inventory playerInventory;
+    private Crafting m_CraftingManager; 
 
     public GameObject questWindow;
     public TextMeshProUGUI titleText;
@@ -17,11 +18,39 @@ public class QuestGiver : MonoBehaviour
     public TextMeshProUGUI rockText;
     public TextMeshProUGUI currAmount;
     public TextMeshProUGUI requiredAmount;
+
+    DialogueTrigger cacheNPC;
+
     private void Awake()
     {
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        m_CraftingManager = FindObjectOfType<Crafting>();
         CurrQuest = quests[0];
+
+        //Set up quest inventories
+        foreach (Quest quest in quests)
+        {
+            quest.goal.m_Inventory = playerInventory;
+            quest.goal.m_Crafting = m_CraftingManager;
+        }
     }
+
+    private void LinkNPC()
+    {
+        if (CurrQuest.goal.goalType >= GoalType.PlaceBedroll)
+        {
+            cacheNPC = CurrQuest.goal.cacheNPC;
+        }
+    }
+
+    private void AddNPCtoQuest()
+    {
+        if (!CurrQuest.goal.cacheNPC && cacheNPC)
+        {
+            CurrQuest.goal.cacheNPC = cacheNPC;
+        }
+    }
+
     private void Update()
     {
         updateAmount();
@@ -29,14 +58,17 @@ public class QuestGiver : MonoBehaviour
         if(CurrQuest.goal.IsReached() == true)
         {
             CurrQuest.isCompleted = true;
-            playerInventory.m_WoodCount += CurrQuest.woodReward;
-            playerInventory.m_RockCount += CurrQuest.rockReward;
+            CurrQuest.goal.GiveReward();
+            LinkNPC();
+            //playerInventory.m_WoodCount += CurrQuest.woodReward;
+            //playerInventory.m_RockCount += CurrQuest.rockReward;
             Debug.Log("quest completed!");
         }
         if(CurrQuest.isCompleted && questIndex < quests.Length)
         {
             questIndex++;
             CurrQuest = quests[questIndex];
+            AddNPCtoQuest();
             refreshQuest();
         }
         if(Input.GetKeyDown(KeyCode.Q) )

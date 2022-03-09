@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterMotor : MonoBehaviour
 {
     public float m_MoveSpeed = 5.0f;
+    private float cachespeed = 0;
     public bool m_Attacked = false;
     public float m_AttackCooldown = 0.5f;
     private float m_AttackMaxCooldown = 0.0f;
@@ -22,7 +23,9 @@ public class CharacterMotor : MonoBehaviour
     private AudioSource m_AudioSource;
 
     public Vector3 m_SpawnPoint;
-
+    private Vector3 cacheSpawnPoint;
+    public bool m_CanMove = true;
+    
     private void Start()
     {
         m_Rigid = GetComponent<Rigidbody>();
@@ -33,6 +36,20 @@ public class CharacterMotor : MonoBehaviour
         m_AudioSource = GetComponent<AudioSource>();
 
         m_SpawnPoint = transform.position;
+        cacheSpawnPoint = m_SpawnPoint;
+    }
+
+    //For quests
+    public bool SpawnPointChanged()
+    {
+        if (cacheSpawnPoint != m_SpawnPoint)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void Update()
@@ -58,6 +75,18 @@ public class CharacterMotor : MonoBehaviour
             UpdateStates();
             Attack();
         }
+
+        if (!m_CanMove)
+        {
+            m_Movement.x = 0;
+            m_Movement.z = 0;
+            UpdateStates();
+            return;
+        }
+        else
+        {
+        }
+
         m_Rigid.velocity = m_Movement * m_MoveSpeed * Time.fixedDeltaTime;
         //m_Rigid.AddForceAtPosition(m_Movement * m_MoveSpeed * Time.deltaTime, transform.position, ForceMode.Impulse);
         //if (m_Rigid.velocity.magnitude > m_MoveSpeed)
@@ -191,5 +220,6 @@ public class CharacterMotor : MonoBehaviour
             cacheDead = false;
         }
     }
+
 }
 
