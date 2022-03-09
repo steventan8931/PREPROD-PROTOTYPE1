@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
 
     void spawnEnemies()
     {
-        print("spawning enemies");
+        //print("spawning enemies");
         if (fullyspawned && enemyCount < enemyLimitDay)
         {
             fullyspawned = false;

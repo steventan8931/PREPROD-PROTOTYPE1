@@ -75,7 +75,7 @@ public class EnemyAI : MonoBehaviour
         if (closestFire != null)
         {
             distance = Vector3.Distance(transform.position, closestFire.transform.position);
-            Debug.Log("enemy to fire distance: " + distance);
+            //Debug.Log("enemy to fire distance: " + distance);
         
         }
 
@@ -200,8 +200,8 @@ public class EnemyAI : MonoBehaviour
                 //do ranged attack
                 Rigidbody rb = Instantiate(EnemyProjectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
                 Vector3 fireDir = PlayerTransform.position - transform.position;
-                //  rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-                //  rb.AddForce(transform.forward * 8f, ForceMode.Impulse);
+               // rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+              //  rb.AddForce(transform.forward * 8f, ForceMode.Impulse);
                 rb.AddForce(fireDir * 32f, ForceMode.Impulse);
                 rb.AddForce(fireDir * 8f, ForceMode.Impulse);
                 //add trigger to attack animation
