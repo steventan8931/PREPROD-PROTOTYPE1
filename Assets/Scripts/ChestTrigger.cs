@@ -51,10 +51,15 @@ public class ChestTrigger : MonoBehaviour
         if (m_ChestOpen)
         {
             m_Chest.ManagedUpdate();
+            m_Player.m_CanMove = false;
             m_Animation.SetBool("open", true);
         }
         else
         {
+            if (m_Player)
+            {
+                m_Player.m_CanMove = true;
+            }
             m_Animation.SetBool("open", false);
         }
     }
