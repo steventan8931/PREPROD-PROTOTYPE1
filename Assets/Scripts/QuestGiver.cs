@@ -22,7 +22,7 @@ public class QuestGiver : MonoBehaviour
     public Text questTitle;
     public Text questDescription;
 
-    DialogueTrigger cacheNPC;
+    public DialogueTrigger cacheNPC;
     public DialogueTrigger playerDialogue;
     public DayNightScr m_DayNight;
 
@@ -40,6 +40,7 @@ public class QuestGiver : MonoBehaviour
             quest.goal.m_Crafting = m_CraftingManager;
             quest.goal.playerDialogue = playerDialogue;
             quest.goal.dayNight = m_DayNight;
+            quest.goal.cacheNPC = cacheNPC;
         }
 
         //Temp new quest panel
@@ -50,21 +51,6 @@ public class QuestGiver : MonoBehaviour
     {
         playerDialogue.TriggerDialogueIndex(0);
     }
-    private void LinkNPC()
-    {
-        if (CurrQuest.goal.goalType >= GoalType.PlaceBedroll)
-        {
-            cacheNPC = CurrQuest.goal.cacheNPC;
-        }
-    }
-
-    private void AddNPCtoQuest()
-    {
-        if (!CurrQuest.goal.cacheNPC && cacheNPC)
-        {
-            CurrQuest.goal.cacheNPC = cacheNPC;
-        }
-    }
 
     private void Update()
     {
@@ -74,7 +60,7 @@ public class QuestGiver : MonoBehaviour
         {
             CurrQuest.isCompleted = true;
             CurrQuest.goal.GiveReward();
-            LinkNPC();
+            //LinkNPC();
             //playerInventory.m_WoodCount += CurrQuest.woodReward;
             //playerInventory.m_RockCount += CurrQuest.rockReward;
             Debug.Log("quest completed!");
@@ -83,7 +69,7 @@ public class QuestGiver : MonoBehaviour
         {
             questIndex++;            
             CurrQuest = quests[questIndex];
-            AddNPCtoQuest();
+            //AddNPCtoQuest();
             refreshQuest();
         }
         if(Input.GetKeyDown(KeyCode.Q) )

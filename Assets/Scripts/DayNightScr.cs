@@ -20,6 +20,8 @@ public class DayNightScr : MonoBehaviour
     void Update()
     {
         DayNightCycle();
+
+
     }
 
     void DayNightCycle()
