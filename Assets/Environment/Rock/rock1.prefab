@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 5046026259421922529}
   - component: {fileID: 5373330552440907746}
   - component: {fileID: 6131614275414104131}
+  - component: {fileID: 7591396620046699183}
   m_Layer: 0
   m_Name: rock1
   m_TagString: Untagged
@@ -209,6 +210,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.07, y: 6.39, z: 0.20000039}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &7591396620046699183
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817834035679230108}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.035, y: 3.1950002, z: 0.1000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &3766702381218156017
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +237,7 @@ GameObject:
   - component: {fileID: 4231579865135200763}
   - component: {fileID: 2938791695201476692}
   - component: {fileID: 229142241421572568}
+  - component: {fileID: 289484217425542897}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -267,6 +285,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFront: 0
+--- !u!114 &289484217425542897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766702381218156017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &7836067478042666815
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +312,7 @@ GameObject:
   - component: {fileID: 5553160349840559921}
   - component: {fileID: 434853268388283524}
   - component: {fileID: 6041232964005513945}
+  - component: {fileID: 2438408619988775919}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -325,3 +360,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFront: 1
+--- !u!114 &2438408619988775919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7836067478042666815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff

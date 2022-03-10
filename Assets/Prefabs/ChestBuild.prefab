@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4962025126552732576}
   - component: {fileID: 4962025126552732583}
   - component: {fileID: 4962025126552732582}
+  - component: {fileID: 2055975098695816667}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -58,6 +59,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFront: 0
+--- !u!114 &2055975098695816667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962025126552732579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &4962025127860186516
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +88,7 @@ GameObject:
   - component: {fileID: 4962025127860186507}
   - component: {fileID: 4962025127860186504}
   - component: {fileID: -7698828999039396974}
+  - component: {fileID: 8258343481755782035}
   m_Layer: 0
   m_Name: ChestBuild
   m_TagString: Untagged
@@ -191,6 +209,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HeightCenter: 0.589
   m_Collidable: 1
+--- !u!208 &8258343481755782035
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962025127860186516}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 8.804615, y: 11.054165, z: 3.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.6302459, y: -1.445865, z: -0.00000003118823}
+  m_TimeToStationary: 0.5
 --- !u!1 &4962025128215324274
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +238,7 @@ GameObject:
   - component: {fileID: 4962025128215324273}
   - component: {fileID: 4962025128215324272}
   - component: {fileID: 412288754}
+  - component: {fileID: 821499024661239012}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -266,6 +301,7 @@ MonoBehaviour:
   m_Animation: {fileID: 4962025127860186507}
   m_IsColliding: 0
   m_ChestOpen: 0
+  m_Chest: {fileID: 0}
 --- !u!114 &412288754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +322,8 @@ MonoBehaviour:
   m_FireplaceCount: 0
   m_ChestCount: 0
   m_TentCount: 0
+  m_NPCHouseCount: 0
+  m_Inventory: {fileID: 0}
   m_Slots: []
   m_ChestCanvas: {fileID: 0}
   m_WoodUI: {fileID: 0}
@@ -296,3 +334,20 @@ MonoBehaviour:
   m_FireplaceUI: {fileID: 0}
   m_TentUI: {fileID: 0}
   m_ChestUI: {fileID: 0}
+  m_NPCHouseUI: {fileID: 0}
+--- !u!114 &821499024661239012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962025128215324274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8193511723514377414}
   - component: {fileID: 6027347678752836576}
   - component: {fileID: 1392048625}
+  - component: {fileID: 5092358593184013961}
   m_Layer: 0
   m_Name: TentBuild
   m_TagString: Untagged
@@ -133,6 +134,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!208 &5092358593184013961
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2758353041827096599}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 6.27355, y: 7.49898, z: 4.610362}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.4748909, y: 1.000017, z: 3.610428}
+  m_TimeToStationary: 0.5
 --- !u!1 &2844332101828749756
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +162,7 @@ GameObject:
   - component: {fileID: 4546616328765767392}
   - component: {fileID: 2744550335828224437}
   - component: {fileID: 1711256072}
+  - component: {fileID: 4565984751145986695}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -207,6 +225,22 @@ MonoBehaviour:
   m_Animation: {fileID: 1392048625}
   m_IsColliding: 0
   m_TentOpen: 0
+--- !u!114 &4565984751145986695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844332101828749756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &4810564339817160065
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +252,7 @@ GameObject:
   - component: {fileID: 125299743691674416}
   - component: {fileID: 3445973240221996169}
   - component: {fileID: 6953905648783690347}
+  - component: {fileID: 65074694746540309}
   m_Layer: 0
   m_Name: Behind
   m_TagString: Untagged
@@ -265,3 +300,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFront: 0
+--- !u!114 &65074694746540309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4810564339817160065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
