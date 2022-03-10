@@ -29,8 +29,8 @@ public class SpawnpointSetter : MonoBehaviour
     {
         if (m_IsColliding)
         {
-            m_Player.GetComponent<Inventory>().Prompt("Press G to Set Spawn Point");
-            if (Input.GetKeyDown(KeyCode.G))
+            m_Player.GetComponent<Inventory>().Prompt("Press F to Set Spawn Point");
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 float cacheY = m_Player.transform.position.y;
                 m_Player.m_SpawnPoint = new Vector3(transform.position.x, cacheY, transform.position.z);

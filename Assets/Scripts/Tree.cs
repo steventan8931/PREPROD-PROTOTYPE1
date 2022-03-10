@@ -23,6 +23,7 @@ public class Tree : Interactable
                     Instantiate(m_DropPrefab, transform.position, Quaternion.Euler(Vector3.zero));
                 }
 
+                AudioManager.Instance.PlayAudio("tree");
                 ObjectRespwaner.Instance.m_Trees.Remove(gameObject);
                 Destroy(gameObject);
             }

@@ -21,10 +21,19 @@ public class QuestGiver : MonoBehaviour
 
     public Text questTitle;
     public Text questDescription;
+    public Image m_Stamp;
 
-    DialogueTrigger cacheNPC;
+    public DialogueTrigger cacheNPC;
     public DialogueTrigger playerDialogue;
     public DayNightScr m_DayNight;
+    public GameObject m_Table1;
+    public GameObject m_Table2;
+    public GameObject m_Cabin;
+
+    public float m_NextQuestDelay = 1.0f;
+    public float m_DelayTimer = 0.0f;
+
+    private AudioManager audio;
 
     private void Awake()
     {
@@ -40,6 +49,10 @@ public class QuestGiver : MonoBehaviour
             quest.goal.m_Crafting = m_CraftingManager;
             quest.goal.playerDialogue = playerDialogue;
             quest.goal.dayNight = m_DayNight;
+            quest.goal.cacheNPC = cacheNPC;
+            quest.goal.m_Table1 = m_Table1;
+            quest.goal.m_Table2 = m_Table2;
+            quest.goal.m_Cabin = m_Cabin;
         }
 
         //Temp new quest panel
@@ -50,21 +63,6 @@ public class QuestGiver : MonoBehaviour
     {
         playerDialogue.TriggerDialogueIndex(0);
     }
-    private void LinkNPC()
-    {
-        if (CurrQuest.goal.goalType >= GoalType.PlaceBedroll)
-        {
-            cacheNPC = CurrQuest.goal.cacheNPC;
-        }
-    }
-
-    private void AddNPCtoQuest()
-    {
-        if (!CurrQuest.goal.cacheNPC && cacheNPC)
-        {
-            CurrQuest.goal.cacheNPC = cacheNPC;
-        }
-    }
 
     private void Update()
     {
@@ -74,17 +72,33 @@ public class QuestGiver : MonoBehaviour
         {
             CurrQuest.isCompleted = true;
             CurrQuest.goal.GiveReward();
-            LinkNPC();
+            //LinkNPC();
             //playerInventory.m_WoodCount += CurrQuest.woodReward;
             //playerInventory.m_RockCount += CurrQuest.rockReward;
             Debug.Log("quest completed!");
         }
         if(CurrQuest.isCompleted && questIndex < quests.Length - 1)
         {
-            questIndex++;            
-            CurrQuest = quests[questIndex];
-            AddNPCtoQuest();
-            refreshQuest();
+            if (!questWindow.activeInHierarchy)
+            {
+                openQuestWindow();
+            }
+            m_Stamp.enabled = true;
+            if (m_DelayTimer <= 0)
+            {
+                AudioManager.Instance.PlayAudio("stamp");
+            }
+            m_DelayTimer += Time.deltaTime;
+            if (m_DelayTimer > m_NextQuestDelay)
+            {
+                questIndex++;
+                CurrQuest = quests[questIndex];
+                //AddNPCtoQuest();
+                refreshQuest();
+                m_DelayTimer = 0;
+                m_Stamp.enabled = false;
+            }
+
         }
         if(Input.GetKeyDown(KeyCode.Q) )
         {

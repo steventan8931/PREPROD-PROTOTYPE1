@@ -14,13 +14,14 @@ public class BuildPlacement : MonoBehaviour
 
     //For the chest
     public GameObject m_ChestCanvas;
-
+    private CharacterMotor m_Player;
 
     private void Start()
     {
         m_BuildController = FindObjectOfType<BuildItemController>();
         m_Hand = FindObjectOfType<Hand>();
         m_ChestCanvas.SetActive(false);
+        m_Player = FindObjectOfType<CharacterMotor>();
     }
 
     private void Update()
@@ -30,6 +31,12 @@ public class BuildPlacement : MonoBehaviour
         
         if (!m_BuildController.CanBuild())
         {
+            return;
+        }
+
+        if (!m_Player.m_CanMove)
+        {
+            m_CurrentPlaceableObject = null;
             return;
         }
         if (m_CurrentPlaceableObject == null)
@@ -43,6 +50,7 @@ public class BuildPlacement : MonoBehaviour
                 for (int i = 0; i < m_CurrentPlaceableObject.transform.childCount; i++)
                 {
                     m_CurrentPlaceableObject.transform.GetChild(i).gameObject.layer = 2;
+                    m_CurrentPlaceableObject.transform.GetChild(i).gameObject.SetActive(false);
                 }
                 m_CurrentPlaceableObject.GetComponent<BoxCollider>().isTrigger = true;
                 //If it is a chest
@@ -104,6 +112,7 @@ public class BuildPlacement : MonoBehaviour
                         m_CurrentPlaceableObject.layer = 0;
                         for (int i = 0; i < m_CurrentPlaceableObject.transform.childCount; i++)
                         {
+                            m_CurrentPlaceableObject.transform.GetChild(i).gameObject.SetActive(true);
                             m_CurrentPlaceableObject.transform.GetChild(i).gameObject.layer = 0;
                         }
                         if (m_CurrentPlaceableObject.GetComponent<BuildableObject>().m_Collidable)

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class TentTrigger : MonoBehaviour
 {
     public Animator m_Animation;
@@ -33,11 +33,14 @@ public class TentTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (m_IsColliding)
+        if (m_IsColliding && m_Player.m_FinishedQuests)
         {
+            m_Player.GetComponent<Inventory>().Prompt("Press F to Enter The Tent");
             Debug.Log("in tent");
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.F))
             {
+                m_Player.m_Animation.ResetTrigger("Attacking");
+                m_Player.m_Animation.SetTrigger("Attacking");
                 m_TentOpen = !m_TentOpen;
             }
         }
@@ -45,6 +48,7 @@ public class TentTrigger : MonoBehaviour
         if (m_TentOpen)
         {
             m_Animation.SetBool("open", true);
+            SceneManager.LoadScene(2);
         }
         else
         {
