@@ -153,3 +153,5 @@ MonoBehaviour:
   chestopen: {fileID: 8300000, guid: 3f345b00c7d374a48aa5276c07c10662, type: 3}
   pen: {fileID: 8300000, guid: a02cedc4b3abe4f49ad5c2823f721b08, type: 3}
   stamp: {fileID: 8300000, guid: 5b213ceab5727c746ab0e065226c6ab7, type: 3}
+  pop: {fileID: 8300000, guid: d522deda06a2b0d41ab6e4204f1263ea, type: 3}
+  tree: {fileID: 8300000, guid: 479236c786e32264f8f1e545e69773b1, type: 3}
