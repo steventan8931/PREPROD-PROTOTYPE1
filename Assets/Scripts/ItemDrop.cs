@@ -47,8 +47,8 @@ public class ItemDrop : MonoBehaviour
     {
         if (m_IsColliding)
         {
-            cacheInventory.Prompt("Press G to Gather");
-            if (Input.GetKeyDown(KeyCode.G))
+            cacheInventory.Prompt("Press F to Gather");
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 ChooseItem(cacheInventory);
                 cacheInventory.m_PressGText.enabled = false;

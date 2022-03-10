@@ -36,6 +36,7 @@ public class ChestTrigger : MonoBehaviour
         if (other.GetComponent<CharacterMotor>())
         {
             m_IsColliding = false;
+            m_Player.GetComponent<Inventory>().m_PressGText.enabled = false;
         }
     }
 
@@ -43,7 +44,8 @@ public class ChestTrigger : MonoBehaviour
     {
         if (m_IsColliding)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            m_Player.GetComponent<Inventory>().Prompt("Press F to Open");
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 m_Chest.Assign();
                 AudioManager.Instance.PlayAudio("chestopen");
@@ -51,6 +53,7 @@ public class ChestTrigger : MonoBehaviour
                 if (!m_ChestOpen)
                 {
                     m_Chest.m_ChestCanvas.SetActive(false);
+                    m_Player.GetComponent<Inventory>().m_PressGText.enabled = false;
                 }
 
             }
@@ -62,6 +65,7 @@ public class ChestTrigger : MonoBehaviour
             if (CanvasManager.Instance.m_CanOpen)
             {
                 m_Chest.m_ChestCanvas.SetActive(true);
+                m_Player.GetComponent<Inventory>().m_PressGText.enabled = false;
             }
             m_Chest.ManagedUpdate();
             m_Player.m_CanMove = false;
