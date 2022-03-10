@@ -10672,6 +10672,125 @@ Transform:
   m_Father: {fileID: 41287441}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!1001 &1136041266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4926464814314368010, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_Name
+      value: DayNightCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368022, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bc9aa7a17ccdcf4cb49405662132bf2, type: 3}
 --- !u!1 &1140853007 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4464020819523136086, guid: 100c4b71942042146a2076d26f35b14f,
@@ -21201,9 +21320,29 @@ PrefabInstance:
       objectReference: {fileID: 1531785385}
     - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
         type: 3}
+      propertyPath: quests.Array.data[0].isCompleted
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
       propertyPath: quests.Array.data[7].goal.m_Tent
       value: 
       objectReference: {fileID: 1140853007}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: quests.Array.data[0].isFinalQuest
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: quests.Array.data[11].description
+      value: Place the tent and find out whats inside the tent
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: quests.Array.data[11].isFinalQuest
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8425e88cb286f40419af5e274237168b, type: 3}
 --- !u!1001 &2873650045326814295

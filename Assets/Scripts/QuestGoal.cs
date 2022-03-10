@@ -15,7 +15,7 @@ public class QuestGoal
     public GameObject m_Tent;
     public DialogueTrigger cacheNPC;
     public DialogueTrigger playerDialogue;
-
+    public DayNightScr dayNight;
     public bool IsReached()
     {
         switch (goalType)
@@ -32,9 +32,8 @@ public class QuestGoal
                 return (m_Inventory.GetComponent<CharacterMotor>().SpawnPointChanged());
             case GoalType.CraftCampfire:
                 return (m_Inventory.m_FireplaceCount > 0);
-            case GoalType.SurviveTheNight: 
-                //If time = day
-                return true;
+            case GoalType.SurviveTheNight: //If it is a day time
+                return (!dayNight.isNight);
             case GoalType.TalktoNPC:
                 if (cacheNPC)
                 {
@@ -45,7 +44,7 @@ public class QuestGoal
                     return false;
                 }
             case GoalType.BuildTent:
-                return (m_Inventory.m_TentCount >= 0);
+                return (m_Inventory.m_TentCount > 0);
             case GoalType.TalkToNPC2: 
                 if (cacheNPC)
                 {
@@ -116,6 +115,7 @@ public class QuestGoal
                 playerDialogue.TriggerDialogueIndex(4);
                 break;
             case GoalType.CraftCampfire: //Create campfire to not lose health at night 
+                dayNight.switchToNight();
                 break;
             case GoalType.SurviveTheNight: //If is day, spawn the npc
                 m_NPC.SetActive(true);

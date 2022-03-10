@@ -18020,7 +18020,7 @@ MonoBehaviour:
     ItemCost: 5
   - ItemType: 2
     ItemCost: 4
-  m_CraftingOutcome: 8
+  m_CraftingOutcome: 7
   m_EnoughMaterials: 0
 --- !u!1 &4501654862175753461
 GameObject:
