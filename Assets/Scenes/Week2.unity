@@ -2948,6 +2948,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &232038682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8410394394415009413, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136041266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &232110289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11031,12 +11037,12 @@ PrefabInstance:
         type: 3}
       propertyPath: sunImg
       value: 
-      objectReference: {fileID: 1136041268}
+      objectReference: {fileID: 232038682}
     - target: {fileID: 4926464814314368023, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
         type: 3}
       propertyPath: moonImg
       value: 
-      objectReference: {fileID: 1136041267}
+      objectReference: {fileID: 1658303663}
     - target: {fileID: 5565098068553068419, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
         type: 3}
       propertyPath: m_IsActive
@@ -11047,20 +11053,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2588295364229849939, guid: 7bc9aa7a17ccdcf4cb49405662132bf2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7bc9aa7a17ccdcf4cb49405662132bf2, type: 3}
---- !u!1 &1136041267 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5565098068553068419, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1136041266}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1136041268 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7490055092360619049, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1136041266}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1140853007 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4464020819523136086, guid: 100c4b71942042146a2076d26f35b14f,
@@ -16257,6 +16252,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1658303663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7174058117754634153, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136041266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1661841141
 PrefabInstance:
   m_ObjectHideFlags: 0
