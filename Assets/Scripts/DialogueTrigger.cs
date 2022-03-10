@@ -7,7 +7,10 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue[] m_Dialogue;
     public DialogueManager m_DialogueManager;
-    public bool m_FirstTimeDialogue = true;
+    public bool m_QuestOneDialogue = true;
+    public bool m_QuestOneCompleted = false;
+    public bool m_QuestTwoDialogue = true;
+    public bool m_QuestTwoCompleted = false;
     private bool m_Colliding = false;
     private CharacterMotor m_Player;
     public bool m_IsTalking = false;
@@ -39,14 +42,21 @@ public class DialogueTrigger : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (m_FirstTimeDialogue)
+                //If quest 1 hasnt been completed
+                if (m_QuestOneDialogue || !m_QuestOneCompleted)
                 {
-                    TriggerFirstTimeDialogue();
-                    m_FirstTimeDialogue = false;
+                    TriggerDialogueIndex(0);
+                    m_QuestOneDialogue = false;
+                }
+                else if (m_QuestTwoDialogue || !m_QuestTwoCompleted) // If quest 2 hasnt been completed
+                {
+                    TriggerDialogueIndex(1);
+                    m_QuestTwoDialogue = false;
                 }
                 else
                 {
-                    TriggerRepeatDialogue();
+                    //If both are completed
+                    TriggerDialogueIndex(2);
                 }
             }
 

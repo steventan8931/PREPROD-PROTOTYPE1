@@ -43,7 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -142,7 +142,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   test: 4
   volume: 0.713
-  Instance: {fileID: 0}
   m_Source: {fileID: 216368644178921548}
   rockhit: {fileID: 8300000, guid: 8fcd86f252633764b9ec7428ee33188d, type: 3}
   treehit: {fileID: 8300000, guid: fd6c8d3382cf2e74287de2f53c4ca63a, type: 3}
