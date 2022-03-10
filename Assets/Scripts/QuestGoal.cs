@@ -16,6 +16,8 @@ public class QuestGoal
     public DialogueTrigger cacheNPC;
     public DialogueTrigger playerDialogue;
     public DayNightScr dayNight;
+
+    private bool m_WasDay = false;
     public bool IsReached()
     {
         switch (goalType)
@@ -115,6 +117,7 @@ public class QuestGoal
                 playerDialogue.TriggerDialogueIndex(4);
                 break;
             case GoalType.CraftCampfire: //Create campfire to not lose health at night 
+                Debug.Log("finished");
                 dayNight.switchToNight();
                 break;
             case GoalType.SurviveTheNight: //If is day, spawn the npc

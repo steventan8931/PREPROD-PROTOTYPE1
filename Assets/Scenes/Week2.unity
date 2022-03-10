@@ -4732,6 +4732,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC new
       objectReference: {fileID: 0}
+    - target: {fileID: 7876691001806685564, guid: 81310827b28ffe547a4793662886c877,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7876691001806685566, guid: 81310827b28ffe547a4793662886c877,
         type: 3}
       propertyPath: m_RootOrder
@@ -12293,6 +12298,24 @@ PrefabInstance:
       objectReference: {fileID: 538411849}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2731467821debc438418f660c2d536e, type: 3}
+--- !u!1 &1227368144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7876691001806685564, guid: 81310827b28ffe547a4793662886c877,
+    type: 3}
+  m_PrefabInstance: {fileID: 328824235}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1227368150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7876691001806685565, guid: 81310827b28ffe547a4793662886c877,
+    type: 3}
+  m_PrefabInstance: {fileID: 328824235}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227368144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe8309024831dd4f8fd76072d4d020c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1229446116 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1291306119446392456, guid: 527dbdf46c877514c9d4bf7aad6771ef,
@@ -18432,6 +18455,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1874383123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4926464814314368023, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136041266}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b4b594f786e44498f41348458854c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1877483723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2023762710785069271, guid: 6552ee0dcc9fa7f429cf251659d37147,
@@ -22258,6 +22293,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
         type: 3}
+      propertyPath: cacheNPC
+      value: 
+      objectReference: {fileID: 1227368150}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
       propertyPath: rockText
       value: 
       objectReference: {fileID: 573425978}
@@ -22276,6 +22316,11 @@ PrefabInstance:
       propertyPath: currAmount
       value: 
       objectReference: {fileID: 1959984911}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_DayNight
+      value: 
+      objectReference: {fileID: 1874383123}
     - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
         type: 3}
       propertyPath: questWindow
@@ -22305,7 +22350,12 @@ PrefabInstance:
         type: 3}
       propertyPath: quests.Array.data[6].goal.m_NPC
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1227368144}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: quests.Array.data[7].goal.m_NPC
+      value: 
+      objectReference: {fileID: 1227368144}
     - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
         type: 3}
       propertyPath: quests.Array.data[0].isCompleted
