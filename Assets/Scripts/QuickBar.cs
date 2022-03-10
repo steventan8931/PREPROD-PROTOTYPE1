@@ -10,6 +10,8 @@ public class QuickBar : MonoBehaviour
     public Sprite m_Selected;
     public Sprite m_NotSelected;
 
+    public ChestTrigger cacheChest;
+
     private void Start()
     {
         ShowSelectedSlot();
@@ -27,8 +29,12 @@ public class QuickBar : MonoBehaviour
             m_ActiveSlot--;
             ShowSelectedSlot();
         }
-    }
 
+        for (int i = 0; i < m_Slots.Length; i++)
+        {
+            m_Slots[i].GetComponent<QuickBarSlot>().m_ChestTrigger = cacheChest;
+        }
+    }
     private void CheckValid()
     {
         if (m_ActiveSlot >= m_Slots.Length)
@@ -48,9 +54,22 @@ public class QuickBar : MonoBehaviour
 
         for (int i = 0; i < m_Slots.Length; i++)
         {
+            m_Slots[i].GetComponent<QuickBarSlot>().m_ChestTrigger = cacheChest;
             m_Slots[i].GetComponent<Image>().sprite = m_NotSelected;
         }
         m_Slots[m_ActiveSlot].GetComponent<Image>().sprite = m_Selected;
 
+    }
+
+    public bool InQuickBar(Items _type)
+    {
+        for (int i = 0; i < m_Slots.Length; i++)
+        {
+            if (m_Slots[i].GetComponent<QuickBarSlot>().m_BarItemType == _type)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

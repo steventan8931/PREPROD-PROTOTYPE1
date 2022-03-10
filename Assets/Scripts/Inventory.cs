@@ -47,7 +47,7 @@ public class Inventory : MonoBehaviour
     public GameObject m_ChestUI;
     public GameObject m_NPCHouseUI;
 
-    private QuickBar m_QuickBar;
+    public QuickBar m_QuickBar;
 
     public Quest m_playerQuest;
 
@@ -121,9 +121,28 @@ public class Inventory : MonoBehaviour
     {
         if (_ItemCount >= 1)
         {
-            _UIObject.GetComponent<ItemSlot>().AddToBar();
-            _UIObject.SetActive(true);
+            if (!m_InventoryOpen)
+            {
+                if (!_UIObject.GetComponent<ItemSlot>().m_Moved)
+                {
+                    //Debug.Log("moved");
+                    _UIObject.GetComponent<ItemSlot>().AddToBar();
+                }
+            }
+            else
+            {
+                if (m_QuickBar.InQuickBar(_UIObject.GetComponent<ItemSlot>().m_ItemType))
+                {
+                    _UIObject.SetActive(false);
+                }
+                else
+                {
+                    _UIObject.SetActive(true);
+                }
+
+            }
             _UIObject.GetComponent<ItemSlot>().EnableSlot(_ItemCount);
+
         }
         else
         {
@@ -281,5 +300,29 @@ public class Inventory : MonoBehaviour
                 return m_TentUI;
         }
         return null;
+    }
+
+    public int GetItemCount(Items _ItemName)
+    {
+        switch (_ItemName)
+        {
+            case Items.Wood:
+                return m_WoodCount;
+            case Items.Rock:
+                return m_RockCount;
+            case Items.Chest:
+                return m_ChestCount;
+            case Items.Pickaxe:
+                return m_PickaxeCount;
+            case Items.Axe:
+                return m_AxeCount;
+            case Items.Bedroll:
+                return m_BedrollCount;
+            case Items.Fireplace:
+                return m_FireplaceCount;
+            case Items.Tent:
+                return m_TentCount;
+        }
+        return 0;
     }
 }

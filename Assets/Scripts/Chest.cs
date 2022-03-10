@@ -164,6 +164,40 @@ public class Chest : MonoBehaviour
             case Items.Tent:
                 m_TentCount -= _Count;
                 break;
+            case Items.NPCHouse:
+                m_NPCHouseCount -= _Count;
+                break;
+        }
+    }
+
+    public void AddItemToChest(Items _ItemName, int _Count)
+    {
+        switch (_ItemName)
+        {
+            case Items.Wood:
+                m_WoodCount += _Count;
+                break;
+            case Items.Rock:
+                m_RockCount += _Count;
+                break;
+            case Items.Chest:
+                m_ChestCount += _Count;
+                break;
+            case Items.Pickaxe:
+                m_PickaxeCount += _Count;
+                break;
+            case Items.Axe:
+                m_AxeCount += _Count;
+                break;
+            case Items.Bedroll:
+                m_BedrollCount += _Count;
+                break;
+            case Items.Fireplace:
+                m_FireplaceCount += _Count;
+                break;
+            case Items.Tent:
+                m_TentCount += _Count;
+                break;
         }
     }
 }
