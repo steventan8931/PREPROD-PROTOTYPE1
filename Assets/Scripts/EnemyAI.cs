@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     public bool lastFrameInSight = false;
     [Range(1,2)]
     public int EnemyType;
+
     public float HitPoints;
     public float speed;
     public float ghostChaseSpd;
@@ -17,6 +18,10 @@ public class EnemyAI : MonoBehaviour
 
     public CharacterMotor playerMotor;
 
+    //to right
+    public bool isRight = false;
+    public Vector3 previousPos;
+    public float curSpeed;
     //var for patrol
     public Vector3 patrolPoint;
     public bool isPatrolPointSet;
@@ -72,6 +77,25 @@ public class EnemyAI : MonoBehaviour
 
         GameObject closestFire = FindClosestObj("FirePlace");
         float distance = Mathf.Infinity;
+
+        Vector3 curMove = transform.position - previousPos;
+        curSpeed = curMove.magnitude / Time.deltaTime;
+
+        if(curMove.x > 0 && isRight == false)
+        {
+            Vector3 tempScaleVec = new Vector3(-1, 1, 1);
+            transform.localScale = tempScaleVec;
+            isRight = true;
+        }
+
+        if(curMove.x <0 && isRight == true)
+        {
+            Vector3 tempScaleVec = new Vector3(1, 1, 1);
+            transform.localScale = tempScaleVec;
+            isRight = false;
+        }
+
+        
         if (closestFire != null)
         {
             distance = Vector3.Distance(transform.position, closestFire.transform.position);
@@ -126,6 +150,8 @@ public class EnemyAI : MonoBehaviour
         }
         //save in sight bool
         lastFrameInSight = isPlayerInSight;
+
+        previousPos = transform.position;
     }
     private void Patroling()
     {

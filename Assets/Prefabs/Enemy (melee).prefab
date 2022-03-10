@@ -145,6 +145,9 @@ MonoBehaviour:
   ghostChaseSpd: 0
   dmgVal: 30
   playerMotor: {fileID: 0}
+  isRight: 0
+  previousPos: {x: 0, y: 0, z: 0}
+  curSpeed: 0
   patrolPoint: {x: 0, y: 0, z: 0}
   isPatrolPointSet: 0
   patrolPointRange: 5
@@ -1263,19 +1266,6 @@ SpriteRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 2420815491407726130}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4004602289075388892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866643128691473219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c06c5f12df2d31459ee367b47535028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy: {fileID: 1866643128691473219}
 --- !u!114 &249265942207413910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,3 +1298,16 @@ MonoBehaviour:
   - {fileID: 8787238010694718400}
   - {fileID: 8472670412194997384}
   - {fileID: 1408534058354036655}
+--- !u!114 &4004602289075388892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866643128691473219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c06c5f12df2d31459ee367b47535028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1866643128691473219}
