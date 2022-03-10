@@ -1,0 +1,277 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &192210477008571344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 192210477008571346}
+  - component: {fileID: 192210477008571347}
+  m_Layer: 0
+  m_Name: QuestGiverNew
+  m_TagString: QuestGiver
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &192210477008571346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192210477008571344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &192210477008571347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192210477008571344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5ba4a424456c34b925c1a6649316bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrQuest:
+    isActive: 0
+    title: 
+    description: 
+    woodReward: 0
+    rockReward: 0
+    isCompleted: 0
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  quests:
+  - isActive: 0
+    title: Wood Collector
+    description: Gather 2 woods
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 0
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  - isActive: 0
+    title: Rock Collector
+    description: Gather 2 rocks
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 1
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  - isActive: 0
+    title: Craft a Weapon
+    description: Craft a pickaxe or axe
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 4
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  - isActive: 0
+    title: Craft a bedroll
+    description: Collect resources to craft a bedroll
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 5
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  - isActive: 0
+    title: Place the bedroll
+    description: Place the crafted bedroll and set spawn point
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 6
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  - isActive: 0
+    title: Craft a campfire
+    description: Craft a campfire to stay warm
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 8
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  - isActive: 0
+    title: Survive The Night
+    description: Be careful of the enemies
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 11
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  - isActive: 0
+    title: Find and talk to the NPC
+    description: Walk around and find the NPC
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 7
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  - isActive: 0
+    title: Build a tent
+    description: Collect resources to craft a tent
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 9
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  - isActive: 0
+    title: Talk to NPC
+    description: Lets see what else he wants
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 12
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  - isActive: 0
+    title: Place the NPC House
+    description: Choose where to place the house
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 13
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  - isActive: 0
+    title: Enter the tent
+    description: Find out whats inside the tent
+    woodReward: 2
+    rockReward: 2
+    isCompleted: 0
+    goal:
+      goalType: 10
+      requiredAmount: 2
+      currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+    isFinalQuest: 0
+  playerInventory: {fileID: 0}
+  questWindow: {fileID: 0}
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  woodText: {fileID: 0}
+  rockText: {fileID: 0}
+  currAmount: {fileID: 0}
+  requiredAmount: {fileID: 0}
+  playerDialogue: {fileID: 0}

@@ -22,6 +22,10 @@ public class QuickBarSlot : MonoBehaviour
         {
             if (m_LinkedItemSlot.GetComponent<ItemSlot>())
             {
+                if (transform.childCount > 1)
+                {
+                    transform.GetChild(1).GetComponent<Text>().text = m_Inventory.GetItemCount(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType).ToString();
+                }
                 if (m_LinkedItemSlot.GetComponent<ItemSlot>().m_RemoveFromBar)
                 {
                     m_LinkedItemSlot = null;
@@ -36,6 +40,10 @@ public class QuickBarSlot : MonoBehaviour
         m_BarItemType = _ItemType;
         m_LinkedItemSlot = _LinkedItem;
         Instantiate(_Image, transform);
+        //GameObject obj = new GameObject();
+        //obj.AddComponent<Text>();
+        //Instantiate(obj, transform);
+        Instantiate(_LinkedItem.transform.GetChild(1), transform);
         m_SlotUsed = true;
         if (m_Inventory.GetItemCount(_ItemType) > 0 && m_LinkedItemSlot.GetComponent<ItemSlot>().m_Moved)
         {
@@ -56,10 +64,30 @@ public class QuickBarSlot : MonoBehaviour
                     Debug.Log("yes");
                     m_ChestTrigger.m_Chest.AddItemToChest(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType, m_Inventory.GetItemCount(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType));
                     m_Inventory.RemoveItemFromInventory(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType, m_Inventory.GetItemCount(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType));
+                    m_SlotUsed = false;
+                    m_BarItemType = Items.Empty;
+                    if (m_LinkedItemSlot)
+                    {
+                        m_LinkedItemSlot.GetComponent<ItemSlot>().m_Moved = true;
+                    }
+                    if (transform.childCount > 0)
+                    {
+                        Destroy(transform.GetChild(0).gameObject);
+                        Destroy(transform.GetChild(1).gameObject);
+
+                    }
                 }
+            }
+            else if (!m_Inventory.m_InventoryOpen)
+            {
+                return;
             }
         }
 
+        if (!m_Inventory.m_InventoryOpen)
+        {
+            return;
+        }
         m_SlotUsed = false;
         m_BarItemType = Items.Empty;
         if (m_LinkedItemSlot)
@@ -69,6 +97,8 @@ public class QuickBarSlot : MonoBehaviour
         if (transform.childCount > 0)
         {
             Destroy(transform.GetChild(0).gameObject);
+            Destroy(transform.GetChild(1).gameObject);
+
         }
     }
 }

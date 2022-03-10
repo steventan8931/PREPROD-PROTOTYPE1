@@ -181,6 +181,9 @@ public class Inventory : MonoBehaviour
             case Items.Tent:
                 m_TentCount++;
                 break;
+            case Items.NPCHouse:
+                m_NPCHouseCount++;
+                break;
         }
     }
 
@@ -211,6 +214,9 @@ public class Inventory : MonoBehaviour
                 break;
             case Items.Tent:
                 m_TentCount += _Count;
+                break;
+            case Items.NPCHouse:
+                m_NPCHouseCount += _Count;
                 break;
         }
     }
@@ -243,6 +249,9 @@ public class Inventory : MonoBehaviour
             case Items.Tent:
                 m_TentCount--;
                 break;
+            case Items.NPCHouse:
+                m_NPCHouseCount--;
+                break;
         }
     }
 
@@ -274,6 +283,9 @@ public class Inventory : MonoBehaviour
             case Items.Tent:
                 m_TentCount -= _Count;
                 break;
+            case Items.NPCHouse:
+                m_NPCHouseCount -= _Count;
+                break;
         }
     }
 
@@ -298,6 +310,8 @@ public class Inventory : MonoBehaviour
                 return m_FireplaceUI;
             case Items.Tent:
                 return m_TentUI;
+            case Items.NPCHouse:
+                return m_NPCHouseUI;
         }
         return null;
     }
@@ -322,6 +336,8 @@ public class Inventory : MonoBehaviour
                 return m_FireplaceCount;
             case Items.Tent:
                 return m_TentCount;
+             case Items.NPCHouse:
+                return m_NPCHouseCount;
         }
         return 0;
     }

@@ -2008,6 +2008,7 @@ MonoBehaviour:
   m_Count: {fileID: 0}
   m_ItemType: 9
   m_RemoveFromBar: 0
+  m_Moved: 0
 --- !u!114 &2211116029588884745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2979,6 +2980,7 @@ MonoBehaviour:
   m_Count: {fileID: 0}
   m_ItemType: 6
   m_RemoveFromBar: 0
+  m_Moved: 0
 --- !u!114 &4818176860064162666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5003,6 +5005,7 @@ MonoBehaviour:
   m_Count: {fileID: 0}
   m_ItemType: 7
   m_RemoveFromBar: 0
+  m_Moved: 0
 --- !u!114 &568479732405807780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7308,6 +7311,7 @@ MonoBehaviour:
   m_SlotUsed: 0
   m_BarItemType: 0
   m_LinkedItemSlot: {fileID: 0}
+  m_ChestTrigger: {fileID: 0}
 --- !u!114 &4114234432326470677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7941,6 +7945,7 @@ MonoBehaviour:
   m_Count: {fileID: 0}
   m_ItemType: 2
   m_RemoveFromBar: 0
+  m_Moved: 0
 --- !u!114 &4114234432403347840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8830,6 +8835,7 @@ MonoBehaviour:
   m_SlotUsed: 0
   m_BarItemType: 0
   m_LinkedItemSlot: {fileID: 0}
+  m_ChestTrigger: {fileID: 0}
 --- !u!114 &4114234432563829048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10189,6 +10195,7 @@ MonoBehaviour:
   m_SlotUsed: 0
   m_BarItemType: 0
   m_LinkedItemSlot: {fileID: 0}
+  m_ChestTrigger: {fileID: 0}
 --- !u!114 &4114234432924028869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11540,6 +11547,7 @@ MonoBehaviour:
   m_SlotUsed: 0
   m_BarItemType: 0
   m_LinkedItemSlot: {fileID: 0}
+  m_ChestTrigger: {fileID: 0}
 --- !u!114 &4114234433230427231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13003,6 +13011,7 @@ MonoBehaviour:
   m_SlotUsed: 0
   m_BarItemType: 0
   m_LinkedItemSlot: {fileID: 0}
+  m_ChestTrigger: {fileID: 0}
 --- !u!114 &4114234433539673298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14725,6 +14734,7 @@ MonoBehaviour:
   m_Count: {fileID: 0}
   m_ItemType: 1
   m_RemoveFromBar: 0
+  m_Moved: 0
 --- !u!114 &4114234433951472806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15183,6 +15193,7 @@ MonoBehaviour:
   m_ActiveSlot: 0
   m_Selected: {fileID: 21300000, guid: f93b46f7339257e42ab3f3e3ab40e959, type: 3}
   m_NotSelected: {fileID: 21300000, guid: 867725dcf6d211f4d971bc59d71352ca, type: 3}
+  cacheChest: {fileID: 0}
 --- !u!1 &4114234434028488795
 GameObject:
   m_ObjectHideFlags: 0
@@ -18009,7 +18020,7 @@ MonoBehaviour:
     ItemCost: 5
   - ItemType: 2
     ItemCost: 4
-  m_CraftingOutcome: 8
+  m_CraftingOutcome: 7
   m_EnoughMaterials: 0
 --- !u!1 &4501654862175753461
 GameObject:
@@ -18786,6 +18797,7 @@ MonoBehaviour:
   m_Count: {fileID: 0}
   m_ItemType: 5
   m_RemoveFromBar: 0
+  m_Moved: 0
 --- !u!114 &3306456556549530030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20803,6 +20815,7 @@ MonoBehaviour:
   m_Count: {fileID: 0}
   m_ItemType: 3
   m_RemoveFromBar: 0
+  m_Moved: 0
 --- !u!114 &6710425996013390919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21358,6 +21371,7 @@ MonoBehaviour:
   m_Count: {fileID: 0}
   m_ItemType: 8
   m_RemoveFromBar: 0
+  m_Moved: 0
 --- !u!114 &2083387263323664467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23984,6 +23998,7 @@ MonoBehaviour:
   m_Count: {fileID: 0}
   m_ItemType: 4
   m_RemoveFromBar: 0
+  m_Moved: 0
 --- !u!114 &6786178674003310270
 MonoBehaviour:
   m_ObjectHideFlags: 0
