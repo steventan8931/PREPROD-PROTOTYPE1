@@ -166,6 +166,7 @@ public class QuestGoal
                 m_Table2.SetActive(true);
                 cacheNPC.m_QuestTwoDialogue = false;
                 cacheNPC.m_QuestTwoCompleted = true;
+                m_Inventory.GetComponent<CharacterMotor>().m_FinishedQuests = true;
                 //m_Inventory.m_NPCHouseCount++;
                 break;
             case GoalType.PlaceNPCHouse:

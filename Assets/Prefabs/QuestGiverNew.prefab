@@ -194,7 +194,7 @@ MonoBehaviour:
     isFinalQuest: 0
   - isActive: 0
     title: Survive The Night
-    description: Be careful of the enemies
+    description: Be careful of the enemies (Stay near your campfire to be safe)
     woodReward: 2
     rockReward: 2
     isCompleted: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
       dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
-    title: Find and talk to the NPC
+    title: Fox Sighting
     description: Walk around and find the NPC
     woodReward: 2
     rockReward: 2
@@ -278,8 +278,8 @@ MonoBehaviour:
       dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
-    title: Enter the tent
-    description: Place the tent and find out whats inside the tent
+    title: Enter your tent
+    description: I should relax in my tent while I wait for more people to come
     woodReward: 2
     rockReward: 2
     isCompleted: 0

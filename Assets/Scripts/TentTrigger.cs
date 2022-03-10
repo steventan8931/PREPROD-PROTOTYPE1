@@ -36,7 +36,7 @@ public class TentTrigger : MonoBehaviour
         if (m_IsColliding)
         {
             Debug.Log("in tent");
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && m_Player.m_FinishedQuests)
             {
                 m_TentOpen = !m_TentOpen;
             }
