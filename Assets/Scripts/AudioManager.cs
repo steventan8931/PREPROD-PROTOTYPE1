@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public enum AudioTest
     {
-        rockhit, treehit, onhit, enemyhit, playerhit, rockbreak, crafting, chestopen
+        rockhit, treehit, onhit, enemyhit, playerhit, rockbreak, crafting, chestopen, pen
     };
 
     public AudioTest test;
@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     private AudioTest cacheTest;
     public AudioSource m_Source;
-    public AudioClip rockhit,treehit,onhit,enemyhit,playerhit,rockbreak,crafting,chestopen;
+    public AudioClip rockhit,treehit,onhit,enemyhit,playerhit,rockbreak,crafting,chestopen, pen;
 
     private void Start()
     {
@@ -72,6 +72,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case "chestopen":
                 m_Source.PlayOneShot(chestopen);
+                break;
+            case "pen":
+                m_Source.PlayOneShot(pen);
                 break;
         }
     }
