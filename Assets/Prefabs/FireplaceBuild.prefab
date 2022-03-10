@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2086234505}
   - component: {fileID: 2086234507}
   - component: {fileID: 2086234506}
+  - component: {fileID: 4234189073857002104}
   m_Layer: 0
   m_Name: RegenRange
   m_TagString: Untagged
@@ -59,6 +60,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HealthRegen: 5
   m_IsColliding: 0
+--- !u!114 &4234189073857002104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086234504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &4699991939726203754
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,6 +87,7 @@ GameObject:
   - component: {fileID: 8088392029675949962}
   - component: {fileID: 7535908979453965369}
   - component: {fileID: 4132137486431491672}
+  - component: {fileID: 2246548736618836621}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -117,6 +135,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFront: 0
+--- !u!114 &2246548736618836621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699991939726203754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &6450412780441531350
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +165,7 @@ GameObject:
   - component: {fileID: 7495287929400540122}
   - component: {fileID: 3199433161036861473}
   - component: {fileID: 2754379239555470174}
+  - component: {fileID: 1352544386778556244}
   m_Layer: 0
   m_Name: FireplaceBuild
   m_TagString: Untagged
@@ -349,6 +384,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!208 &1352544386778556244
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6450412780441531350}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 7.548445, y: 6.96147, z: 1.110666}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.05710602, y: -3.27856, z: 0.5149872}
+  m_TimeToStationary: 0.5
 --- !u!1 &7331226598072007055
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +514,7 @@ GameObject:
   - component: {fileID: 7618271825607458849}
   - component: {fileID: 7148357864083812593}
   - component: {fileID: 3839173847492509895}
+  - component: {fileID: 7377518517234531966}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -510,3 +562,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFront: 1
+--- !u!114 &7377518517234531966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230292593728012194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
