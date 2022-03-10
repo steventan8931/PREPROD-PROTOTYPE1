@@ -64,10 +64,30 @@ public class QuickBarSlot : MonoBehaviour
                     Debug.Log("yes");
                     m_ChestTrigger.m_Chest.AddItemToChest(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType, m_Inventory.GetItemCount(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType));
                     m_Inventory.RemoveItemFromInventory(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType, m_Inventory.GetItemCount(m_LinkedItemSlot.GetComponent<ItemSlot>().m_ItemType));
+                    m_SlotUsed = false;
+                    m_BarItemType = Items.Empty;
+                    if (m_LinkedItemSlot)
+                    {
+                        m_LinkedItemSlot.GetComponent<ItemSlot>().m_Moved = true;
+                    }
+                    if (transform.childCount > 0)
+                    {
+                        Destroy(transform.GetChild(0).gameObject);
+                        Destroy(transform.GetChild(1).gameObject);
+
+                    }
                 }
+            }
+            else if (!m_Inventory.m_InventoryOpen)
+            {
+                return;
             }
         }
 
+        if (!m_Inventory.m_InventoryOpen)
+        {
+            return;
+        }
         m_SlotUsed = false;
         m_BarItemType = Items.Empty;
         if (m_LinkedItemSlot)
