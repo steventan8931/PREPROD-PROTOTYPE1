@@ -58,6 +58,9 @@ MonoBehaviour:
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
@@ -77,6 +80,9 @@ MonoBehaviour:
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
@@ -95,6 +101,9 @@ MonoBehaviour:
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
@@ -113,6 +122,9 @@ MonoBehaviour:
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
@@ -131,6 +143,9 @@ MonoBehaviour:
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
@@ -149,6 +164,9 @@ MonoBehaviour:
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
@@ -167,6 +185,9 @@ MonoBehaviour:
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
@@ -185,6 +206,9 @@ MonoBehaviour:
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
@@ -203,31 +227,38 @@ MonoBehaviour:
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
-    title: Build a tent
-    description: Collect resources to craft a tent
+    title: Craft and Place the Cabin
+    description: The Fox has given you a blueprint (Open the crafting menu to see
+      it)
     woodReward: 2
     rockReward: 2
     isCompleted: 0
     goal:
-      goalType: 9
+      goalType: 14
       requiredAmount: 2
       currentAmount: 0
       m_Inventory: {fileID: 0}
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Talk to NPC
-    description: Lets see what else he wants
+    description: Lets see what he thinks of his new house
     woodReward: 2
     rockReward: 2
     isCompleted: 0
@@ -239,31 +270,16 @@ MonoBehaviour:
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
-      cacheNPC: {fileID: 0}
-      playerDialogue: {fileID: 0}
-      dayNight: {fileID: 0}
-    isFinalQuest: 0
-  - isActive: 0
-    title: Place the NPC House
-    description: Choose where to place the house
-    woodReward: 2
-    rockReward: 2
-    isCompleted: 0
-    goal:
-      goalType: 13
-      requiredAmount: 2
-      currentAmount: 0
-      m_Inventory: {fileID: 0}
-      m_Crafting: {fileID: 0}
-      m_NPC: {fileID: 0}
-      m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Enter the tent
-    description: Find out whats inside the tent
+    description: Place the tent and find out whats inside the tent
     woodReward: 2
     rockReward: 2
     isCompleted: 0
@@ -275,10 +291,13 @@ MonoBehaviour:
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
       m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
       dayNight: {fileID: 0}
-    isFinalQuest: 0
+    isFinalQuest: 1
   playerInventory: {fileID: 0}
   questWindow: {fileID: 0}
   titleText: {fileID: 0}
@@ -289,5 +308,9 @@ MonoBehaviour:
   requiredAmount: {fileID: 0}
   questTitle: {fileID: 0}
   questDescription: {fileID: 0}
+  cacheNPC: {fileID: 0}
   playerDialogue: {fileID: 0}
   m_DayNight: {fileID: 0}
+  m_Table1: {fileID: 0}
+  m_Table2: {fileID: 0}
+  m_Cabin: {fileID: 0}

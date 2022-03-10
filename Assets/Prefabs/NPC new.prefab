@@ -117,7 +117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7876691001806685566
 Transform:
   m_ObjectHideFlags: 0
@@ -151,15 +151,15 @@ MonoBehaviour:
   - m_Name: Fox
     m_Sentences:
     - "You want me to be a part of your town?\t"
-    - Go build a tent for me (Check Crafting)
+    - 'I dont have a house, can you help me make one? '
+    - Heres the blueprint
   - m_Name: Fox
     m_Sentences:
-    - Nice Tent!
-    - I'll come live with you.Choose where you want you to stay (Check Invetory for
-      Crafting)
+    - Wow! It looks amazing
+    - Heres some more blueprints as a thanks
   - m_Name: Fox
     m_Sentences:
-    - This is a pretty cool place
+    - I love the house
   m_DialogueManager: {fileID: 0}
   m_QuestOneDialogue: 1
   m_QuestOneCompleted: 0
@@ -1240,19 +1240,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &7272346993208213227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6604135375773730879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c06c5f12df2d31459ee367b47535028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy: {fileID: 2586917175105474850, guid: 3cf40f9257dd8124f897a27d5f673f45, type: 3}
 --- !u!114 &452144256008804972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1273,3 +1260,16 @@ MonoBehaviour:
   - {fileID: 9202482404004802008}
   - {fileID: 4371678892470855893}
   - {fileID: 1598084253432553029}
+--- !u!114 &7272346993208213227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604135375773730879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c06c5f12df2d31459ee367b47535028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 2586917175105474850, guid: 3cf40f9257dd8124f897a27d5f673f45, type: 3}

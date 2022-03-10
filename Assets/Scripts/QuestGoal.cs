@@ -13,11 +13,16 @@ public class QuestGoal
 
     public GameObject m_NPC;
     public GameObject m_Tent;
+    public GameObject m_Cabin;
+    public GameObject m_Table1;
+    public GameObject m_Table2;
+
     public DialogueTrigger cacheNPC;
     public DialogueTrigger playerDialogue;
     public DayNightScr dayNight;
 
-    private bool m_WasDay = false;
+    private bool cabincrafted = false;
+    private bool cabinplaced = false;
     public bool IsReached()
     {
         switch (goalType)
@@ -47,6 +52,23 @@ public class QuestGoal
                 }
             case GoalType.BuildTent:
                 return (m_Inventory.m_TentCount > 0);
+            case GoalType.CraftCabin:
+                if(m_Inventory.m_NPCHouseCount > 0)
+                {
+                    cabincrafted = true;
+                }
+                if (cabincrafted)
+                {
+                    if (m_Inventory.m_NPCHouseCount <= 0)
+                    {
+                        cabinplaced = true;
+                    }
+                }
+                if (cabincrafted && cabinplaced)
+                {
+                    return true;
+                }
+                return (false);
             case GoalType.TalkToNPC2: 
                 if (cacheNPC)
                 {
@@ -60,6 +82,7 @@ public class QuestGoal
                 return (m_Inventory.m_NPCHouseCount <= 0);
             case GoalType.GoInsideTent:
                 break;
+
         }
 
         return (currentAmount >= requiredAmount);
@@ -125,15 +148,25 @@ public class QuestGoal
                 cacheNPC = m_NPC.GetComponent<DialogueTrigger>();
                 break;
             case GoalType.TalktoNPC: //Changes quest to build tent
-                m_Tent.SetActive(true);
+                //m_Tent.SetActive(true);
+                m_Cabin.SetActive(true);
                 break;
             case GoalType.BuildTent:
                 cacheNPC.m_QuestOneDialogue = false;
                 cacheNPC.m_QuestOneCompleted = true;
                 break;
+            case GoalType.CraftCabin:
+                cacheNPC.m_QuestOneDialogue = false;
+                cacheNPC.m_QuestOneCompleted = true;
+                m_Cabin.SetActive(false);
+                break;
             case GoalType.TalkToNPC2: //Ill come live with you, choose where you want me to stay
-                //Gives player the house
-                m_Inventory.m_NPCHouseCount++;
+                //unlock more recipes
+                m_Table1.SetActive(true);
+                m_Table2.SetActive(true);
+                cacheNPC.m_QuestTwoDialogue = false;
+                cacheNPC.m_QuestTwoCompleted = true;
+                //m_Inventory.m_NPCHouseCount++;
                 break;
             case GoalType.PlaceNPCHouse:
                 cacheNPC.m_QuestTwoDialogue = false;
@@ -167,4 +200,5 @@ public enum GoalType
     SurviveTheNight,
     TalkToNPC2,
     PlaceNPCHouse,
+    CraftCabin,
 }

@@ -25,6 +25,9 @@ public class QuestGiver : MonoBehaviour
     public DialogueTrigger cacheNPC;
     public DialogueTrigger playerDialogue;
     public DayNightScr m_DayNight;
+    public GameObject m_Table1;
+    public GameObject m_Table2;
+    public GameObject m_Cabin;
 
     private void Awake()
     {
@@ -41,6 +44,9 @@ public class QuestGiver : MonoBehaviour
             quest.goal.playerDialogue = playerDialogue;
             quest.goal.dayNight = m_DayNight;
             quest.goal.cacheNPC = cacheNPC;
+            quest.goal.m_Table1 = m_Table1;
+            quest.goal.m_Table2 = m_Table2;
+            quest.goal.m_Cabin = m_Cabin;
         }
 
         //Temp new quest panel
