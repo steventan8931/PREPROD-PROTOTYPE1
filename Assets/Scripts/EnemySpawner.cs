@@ -14,9 +14,11 @@ public class EnemySpawner : MonoBehaviour
     public int enemyLimitNight = 8;
     public float SpawningCd = 2.0f;
     public float currSpawnCd = 0f;
+
+    public DayNightScr dayNightSystem;
     void Start()
     {
-        
+        dayNightSystem = GameObject.FindGameObjectWithTag("DayNightManager").GetComponent<DayNightScr>();
     }
 
     // Update is called once per frame
@@ -28,7 +30,8 @@ public class EnemySpawner : MonoBehaviour
     void spawnEnemies()
     {
         //print("spawning enemies");
-        if (fullyspawned && enemyCount < enemyLimitDay)
+        
+        if ((fullyspawned && enemyCount < enemyLimitDay && dayNightSystem.isNight == false)|| (fullyspawned && enemyCount < enemyLimitNight && dayNightSystem.isNight == true))
         {
             fullyspawned = false;
         }
@@ -45,7 +48,7 @@ public class EnemySpawner : MonoBehaviour
             foreach (Transform location in EnemyLoc)
             {
                 float randnum = Random.Range(0, 2);
-                if (randnum >= 1 && enemyCount < enemyLimitDay)
+                if ((randnum >= 1 && enemyCount < enemyLimitDay && dayNightSystem.isNight == false) || (randnum >= 1 && enemyCount < enemyLimitNight && dayNightSystem.isNight == true))
                 {
                     float enemyRand = Random.Range(0, 2);
                     if(enemyRand >= 1)
@@ -60,7 +63,7 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
             currSpawnCd = SpawningCd;
-            if (enemyCount == enemyLimitDay)
+            if ((enemyCount == enemyLimitDay && dayNightSystem.isNight == false) || (enemyCount == enemyLimitNight && dayNightSystem.isNight == true))
             {
                 fullyspawned = true;
                 isSpawning = false;
