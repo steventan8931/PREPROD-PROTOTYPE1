@@ -60,11 +60,12 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   quests:
   - isActive: 0
     title: Wood Collector
-    description: Gather 2 woods
+    description: Gather 2 woods (Press Space to Attack)
     woodReward: 2
     rockReward: 2
     isCompleted: 0
@@ -78,6 +79,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Rock Collector
@@ -95,6 +97,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Craft a Weapon
@@ -112,6 +115,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Craft a bedroll
@@ -129,6 +133,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Place the bedroll
@@ -146,6 +151,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Craft a campfire
@@ -163,6 +169,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Survive The Night
@@ -180,6 +187,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Find and talk to the NPC
@@ -197,6 +205,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Build a tent
@@ -214,6 +223,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Talk to NPC
@@ -231,6 +241,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Place the NPC House
@@ -248,6 +259,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   - isActive: 0
     title: Enter the tent
@@ -265,6 +277,7 @@ MonoBehaviour:
       m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
       playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   playerInventory: {fileID: 0}
   questWindow: {fileID: 0}
@@ -274,4 +287,7 @@ MonoBehaviour:
   rockText: {fileID: 0}
   currAmount: {fileID: 0}
   requiredAmount: {fileID: 0}
+  questTitle: {fileID: 0}
+  questDescription: {fileID: 0}
   playerDialogue: {fileID: 0}
+  m_DayNight: {fileID: 0}

@@ -37,12 +37,12 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         //Debug in inspector
-        if (test != cacheTest || m_Source.volume != volume)
-        {
-            PlayAudio(test.ToString());
-            m_Source.volume = volume;
-            cacheTest = test;
-        }
+        //if (test != cacheTest || m_Source.volume != volume)
+        //{
+        //    PlayAudio(test.ToString());
+        //    m_Source.volume = volume;
+        //    cacheTest = test;
+        //}
     }
 
     public void PlayAudio(string _name)

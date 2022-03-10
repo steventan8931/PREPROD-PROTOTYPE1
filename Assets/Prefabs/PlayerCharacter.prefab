@@ -360,6 +360,7 @@ MonoBehaviour:
   m_TentUI: {fileID: 0}
   m_ChestUI: {fileID: 0}
   m_NPCHouseUI: {fileID: 0}
+  m_QuickBar: {fileID: 0}
   m_playerQuest:
     isActive: 0
     title: 
@@ -374,7 +375,10 @@ MonoBehaviour:
       m_Inventory: {fileID: 0}
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   m_Unlocked: 1
 --- !u!114 &6654409728011707766

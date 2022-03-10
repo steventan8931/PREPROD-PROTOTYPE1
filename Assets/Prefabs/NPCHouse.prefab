@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6341237522835045774}
   - component: {fileID: 6341237522835045772}
   - component: {fileID: 6341237522835045775}
+  - component: {fileID: 5749156194923336889}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -58,6 +59,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFront: 0
+--- !u!114 &5749156194923336889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341237522835045769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &6341237523443826419
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,6 +87,7 @@ GameObject:
   - component: {fileID: 6341237523443826417}
   - component: {fileID: 6341237523443826416}
   - component: {fileID: 6053002722255972592}
+  - component: {fileID: 4208591626955448245}
   m_Layer: 0
   m_Name: NPCHouse
   m_TagString: Untagged
@@ -171,6 +189,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HeightCenter: 3
   m_Collidable: 1
+--- !u!208 &4208591626955448245
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341237523443826419}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 8.626785, y: 8.762175, z: 1.2218075}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.683236, y: -1.477834, z: 1.278188}
+  m_TimeToStationary: 0.5
 --- !u!1 &6341237523901361772
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +216,7 @@ GameObject:
   - component: {fileID: 6341237523901361773}
   - component: {fileID: 6341237523901361763}
   - component: {fileID: 6341237523901361762}
+  - component: {fileID: 8150402411249558252}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -229,3 +264,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFront: 1
+--- !u!114 &8150402411249558252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341237523901361772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff

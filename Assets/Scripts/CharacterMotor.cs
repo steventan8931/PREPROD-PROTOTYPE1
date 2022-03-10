@@ -164,7 +164,7 @@ public class CharacterMotor : MonoBehaviour
                     Debug.Log("hit tree");
                     //m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
                     hit.GetComponent<Interactable>().TakeDamage(m_Hand.GetTreeDamage());
-                    Instantiate(hit.GetComponent<Interactable>().m_DamagePrefab, m_AttackPoint.position, Quaternion.identity);
+                    //Instantiate(hit.GetComponent<Interactable>().m_DamagePrefab, m_AttackPoint.position, Quaternion.identity);
                     AudioManager.Instance.PlayAudio("treehit");
                 }
 
@@ -172,7 +172,7 @@ public class CharacterMotor : MonoBehaviour
                 {
                     //m_AttackPoint.GetComponent<Renderer>().material.color = Color.red; //Temp
                     hit.GetComponent<Interactable>().TakeDamage(m_Hand.GetRockDamage());
-                    Instantiate(hit.GetComponent<Interactable>().m_DamagePrefab, m_AttackPoint.position, Quaternion.identity);
+                    //Instantiate(hit.GetComponent<Interactable>().m_DamagePrefab, m_AttackPoint.position, Quaternion.identity);
                     AudioManager.Instance.PlayAudio("rockhit");
                 }
 

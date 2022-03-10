@@ -9,6 +9,8 @@ public class DayNightScr : MonoBehaviour
     public float DayTimeVal = 180f;
     public float NightTimeVal = 120f;
     public Image dayNightImg;
+    public GameObject sunImg;
+    public GameObject moonImg;
     void Start()
     {
         
@@ -30,6 +32,8 @@ public class DayNightScr : MonoBehaviour
             // change to night time
             isNight = true;
             timeDN = NightTimeVal;
+            sunImg.SetActive(false);
+            moonImg.SetActive(true);
         }
 
         if(timeDN <= 0 && isNight == true)
@@ -37,6 +41,8 @@ public class DayNightScr : MonoBehaviour
             //change to day time
             isNight = false;
             timeDN = DayTimeVal;
+            sunImg.SetActive(true);
+            moonImg.SetActive(false);
         }
         if(timeDN > 0 && isNight == false)
         {
@@ -62,5 +68,7 @@ public class DayNightScr : MonoBehaviour
     {
         isNight = true;
         timeDN = NightTimeVal;
+        sunImg.SetActive(false);
+        moonImg.SetActive(true);
     }
 }
