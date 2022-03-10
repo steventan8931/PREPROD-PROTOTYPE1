@@ -56,6 +56,9 @@ public class EnemyAI : MonoBehaviour
 
     //for animator
     public Animator enemyAnimator;
+
+    //damage vfx
+    public GameObject m_DamageVFX;
     private void Awake()
     {
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -335,6 +338,10 @@ public class EnemyAI : MonoBehaviour
         if(HitPoints <= 0)
         {
             deathFunc();
+        }
+        else
+        {
+            Instantiate(m_DamageVFX, transform);
         }
     }
 
