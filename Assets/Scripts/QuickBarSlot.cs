@@ -33,6 +33,17 @@ public class QuickBarSlot : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            if (transform.childCount > 1)
+            {
+                m_SlotUsed = false;
+                m_BarItemType = Items.Empty;
+                Destroy(transform.GetChild(0).gameObject);
+                Destroy(transform.GetChild(1).gameObject);
+
+            }
+        }
     }
 
     public void UseSlot(Items _ItemType, Image _Image, GameObject _LinkedItem)
