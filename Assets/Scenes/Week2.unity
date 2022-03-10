@@ -11843,8 +11843,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4926464814314368023, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: sunImg
+      value: 
+      objectReference: {fileID: 1136041268}
+    - target: {fileID: 4926464814314368023, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: moonImg
+      value: 
+      objectReference: {fileID: 1136041267}
+    - target: {fileID: 5565098068553068419, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229103744313843306, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bc9aa7a17ccdcf4cb49405662132bf2, type: 3}
+--- !u!1 &1136041267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5565098068553068419, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136041266}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1136041268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7490055092360619049, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136041266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1140853007 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4464020819523136086, guid: 100c4b71942042146a2076d26f35b14f,
@@ -11962,6 +11994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433284987183971979, guid: d5fe723518ee8864694af676b62d079d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1433284987183971979, guid: d5fe723518ee8864694af676b62d079d,
         type: 3}
