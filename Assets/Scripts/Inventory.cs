@@ -15,6 +15,8 @@ public enum Items
     Tent,
     Chest,
     NPCHouse,
+    Table1,
+    Table2,
 }
 
 public class Inventory : MonoBehaviour
@@ -28,6 +30,8 @@ public class Inventory : MonoBehaviour
     public int m_ChestCount = 0;
     public int m_TentCount = 0;
     public int m_NPCHouseCount = 0;
+    public int m_Table1Count = 0;
+    public int m_Table2Count = 0;
 
     public Text m_PressGText;
     public GameObject m_Inventory;
@@ -46,6 +50,8 @@ public class Inventory : MonoBehaviour
     public GameObject m_TentUI;
     public GameObject m_ChestUI;
     public GameObject m_NPCHouseUI;
+    public GameObject m_Table1UI;
+    public GameObject m_Table2UI;
 
     public QuickBar m_QuickBar;
 
@@ -103,6 +109,8 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_TentCount, m_TentUI);
         ItemInInventory(m_ChestCount, m_ChestUI);
         ItemInInventory(m_NPCHouseCount, m_NPCHouseUI);
+        ItemInInventory(m_Table1Count, m_Table1UI);
+        ItemInInventory(m_Table2Count, m_Table2UI);
 
         if (m_InventoryOpen)
         {
@@ -184,6 +192,12 @@ public class Inventory : MonoBehaviour
             case Items.NPCHouse:
                 m_NPCHouseCount++;
                 break;
+            case Items.Table1:
+                m_Table1Count++;
+                break;
+            case Items.Table2:
+                m_Table2Count++;
+                break;
         }
     }
 
@@ -217,6 +231,12 @@ public class Inventory : MonoBehaviour
                 break;
             case Items.NPCHouse:
                 m_NPCHouseCount += _Count;
+                break;
+            case Items.Table1:
+                m_Table1Count+= _Count;
+                break;
+            case Items.Table2:
+                m_Table2Count += _Count;
                 break;
         }
     }
@@ -252,6 +272,12 @@ public class Inventory : MonoBehaviour
             case Items.NPCHouse:
                 m_NPCHouseCount--;
                 break;
+            case Items.Table1:
+                m_Table1Count--;
+                break;
+            case Items.Table2:
+                m_Table2Count--;
+                break;
         }
     }
 
@@ -286,6 +312,12 @@ public class Inventory : MonoBehaviour
             case Items.NPCHouse:
                 m_NPCHouseCount -= _Count;
                 break;
+            case Items.Table1:
+                m_Table1Count -= _Count;
+                break;
+            case Items.Table2:
+                m_Table2Count -= _Count;
+                break;
         }
     }
 
@@ -312,6 +344,10 @@ public class Inventory : MonoBehaviour
                 return m_TentUI;
             case Items.NPCHouse:
                 return m_NPCHouseUI;
+            case Items.Table1:
+                return m_Table1UI;
+            case Items.Table2:
+                return m_Table2UI;
         }
         return null;
     }
@@ -338,6 +374,10 @@ public class Inventory : MonoBehaviour
                 return m_TentCount;
              case Items.NPCHouse:
                 return m_NPCHouseCount;
+            case Items.Table1:
+                return m_Table1Count;
+            case Items.Table2:
+                return m_Table2Count;
         }
         return 0;
     }
