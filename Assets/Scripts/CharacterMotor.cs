@@ -25,7 +25,8 @@ public class CharacterMotor : MonoBehaviour
     public Vector3 m_SpawnPoint;
     private Vector3 cacheSpawnPoint;
     public bool m_CanMove = true;
-    
+    public bool m_FinishedQuests = false;
+
     private void Start()
     {
         m_Rigid = GetComponent<Rigidbody>();
