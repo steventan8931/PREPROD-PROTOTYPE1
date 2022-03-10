@@ -80,6 +80,12 @@ public class Inventory : MonoBehaviour
     {
         m_Unlocked = true;
     }
+    
+    public void Prompt(string _prompt)
+    {
+        m_PressGText.text = _prompt;
+        m_PressGText.enabled = true;
+    }
 
     private void Update()
     {

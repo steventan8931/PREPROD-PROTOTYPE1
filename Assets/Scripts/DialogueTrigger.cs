@@ -33,6 +33,7 @@ public class DialogueTrigger : MonoBehaviour
         if (_other.GetComponent<CharacterMotor>())
         {
             m_Colliding = false;
+            m_Player.GetComponent<Inventory>().m_PressGText.enabled = false;
         }
     }
 
@@ -40,7 +41,16 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (m_Colliding)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (!m_IsTalking)
+            {
+                m_Player.GetComponent<Inventory>().Prompt("Press G to Talk to the NPC");
+            }
+            else
+            {
+                m_Player.GetComponent<Inventory>().m_PressGText.enabled = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.G))
             {
                 //If quest 1 hasnt been completed
                 if (m_QuestOneDialogue || !m_QuestOneCompleted)
@@ -60,7 +70,7 @@ public class DialogueTrigger : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.G))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 DialogueManager.Instance.DisplayNextSentence();
             }
