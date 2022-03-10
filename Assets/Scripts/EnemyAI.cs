@@ -353,7 +353,8 @@ public class EnemyAI : MonoBehaviour
         if(EnemyType == 2)
         {
             quest.goal.RangedEnemyKilled();
-            killEnemy();
+            enemyAnimator.SetBool("IsDead", true);
+            Invoke(nameof(killEnemy), 0.2f);
         }
         
         
