@@ -10,6 +10,7 @@ TagManager:
   - FirePlace
   - Wall
   - EnemySpawner
+  - DayNightManager
   layers:
   - Default
   - TransparentFX
