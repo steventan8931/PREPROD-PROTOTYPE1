@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 7876691001806685566}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &7876691001715212643
 SpriteRenderer:
@@ -128,9 +128,9 @@ Transform:
   m_LocalPosition: {x: 38.35129, y: 3.48, z: 36.47785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2604716934811800822}
   - {fileID: 2328698185597330685}
   - {fileID: 7876691001715212642}
-  - {fileID: 2604716934811800822}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -155,8 +155,12 @@ MonoBehaviour:
     m_Sentences:
     - 'stop talking to me '
   m_DialogueManager: {fileID: 0}
-  m_FirstTimeDialogue: 1
+  m_QuestOneDialogue: 1
+  m_QuestOneCompleted: 0
+  m_QuestTwoDialogue: 1
+  m_QuestTwoCompleted: 0
   m_IsTalking: 0
+  m_Sprite: {fileID: 0}
 --- !u!65 &7876691001806685567
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -309,7 +313,7 @@ PrefabInstance:
     - target: {fileID: -6318969209513128026, guid: ca425b1cb36231b4aafe62c73d52946e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6318969209513128026, guid: ca425b1cb36231b4aafe62c73d52946e,
         type: 3}
@@ -761,7 +765,7 @@ PrefabInstance:
     - target: {fileID: 6657966307615935979, guid: 3cf40f9257dd8124f897a27d5f673f45,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6657966307615935979, guid: 3cf40f9257dd8124f897a27d5f673f45,
         type: 3}

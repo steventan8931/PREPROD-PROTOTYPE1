@@ -70,5 +70,9 @@ MonoBehaviour:
     type: 3}
   m_NPCHousePrefab: {fileID: 6341237523443826419, guid: 9b28c83e57caad84dbe8e1bb25a5ecfd,
     type: 3}
+  m_Table1Prefab: {fileID: 4008008383038359949, guid: 17f99e57d0e6b164aa65bb115b139070,
+    type: 3}
+  m_Table2Prefab: {fileID: 1849759463764822387, guid: 90dbd7b3f5d39474bac87530426f06a7,
+    type: 3}
   m_Inventory: {fileID: 0}
   m_Crafting: {fileID: 0}
