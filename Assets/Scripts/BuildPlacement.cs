@@ -14,13 +14,14 @@ public class BuildPlacement : MonoBehaviour
 
     //For the chest
     public GameObject m_ChestCanvas;
-
+    private CharacterMotor m_Player;
 
     private void Start()
     {
         m_BuildController = FindObjectOfType<BuildItemController>();
         m_Hand = FindObjectOfType<Hand>();
         m_ChestCanvas.SetActive(false);
+        m_Player = FindObjectOfType<CharacterMotor>();
     }
 
     private void Update()
@@ -30,6 +31,12 @@ public class BuildPlacement : MonoBehaviour
         
         if (!m_BuildController.CanBuild())
         {
+            return;
+        }
+
+        if (!m_Player.m_CanMove)
+        {
+            m_CurrentPlaceableObject = null;
             return;
         }
         if (m_CurrentPlaceableObject == null)
