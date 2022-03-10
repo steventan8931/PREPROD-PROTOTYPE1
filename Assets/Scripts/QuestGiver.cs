@@ -72,9 +72,9 @@ public class QuestGiver : MonoBehaviour
             //playerInventory.m_RockCount += CurrQuest.rockReward;
             Debug.Log("quest completed!");
         }
-        if(CurrQuest.isCompleted && questIndex < quests.Length)
+        if(CurrQuest.isCompleted && questIndex < quests.Length - 1)
         {
-            questIndex++;
+            questIndex++;            
             CurrQuest = quests[questIndex];
             AddNPCtoQuest();
             refreshQuest();
