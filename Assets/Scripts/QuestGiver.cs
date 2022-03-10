@@ -19,6 +19,9 @@ public class QuestGiver : MonoBehaviour
     public TextMeshProUGUI currAmount;
     public TextMeshProUGUI requiredAmount;
 
+    public Text questTitle;
+    public Text questDescription;
+
     DialogueTrigger cacheNPC;
     public DialogueTrigger playerDialogue;
     public DayNightScr m_DayNight;
@@ -38,6 +41,10 @@ public class QuestGiver : MonoBehaviour
             quest.goal.playerDialogue = playerDialogue;
             quest.goal.dayNight = m_DayNight;
         }
+
+        //Temp new quest panel
+        questTitle = questWindow.transform.GetChild(1).GetComponent<Text>();
+        questDescription = questWindow.transform.GetChild(2).GetComponent<Text>();
     }
     private void Start()
     {
@@ -109,6 +116,10 @@ public class QuestGiver : MonoBehaviour
         descriptionText.text = CurrQuest.description;
         woodText.text = CurrQuest.woodReward.ToString();
         rockText.text = CurrQuest.rockReward.ToString();
+
+        questTitle.text = CurrQuest.title;
+        questDescription.text = CurrQuest.description;
+
     }
 
     void updateAmount()

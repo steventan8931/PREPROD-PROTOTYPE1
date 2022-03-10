@@ -176,7 +176,10 @@ MonoBehaviour:
       m_Inventory: {fileID: 0}
       m_Crafting: {fileID: 0}
       m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
       cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   enemyAnimator: {fileID: 7981754428118287293}
 --- !u!114 &6571994469190714606
@@ -1146,6 +1149,120 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 2420815491407726130}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &5727491454542771739 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7990606183608463401, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7366702902602375760 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5162180289185375330, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2571995124052307833 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 155929634816551243, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1302656249785394900 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3714203227268866278, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &486093245173978623 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2821089440260232141, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7915171951150465770 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5494426906066109656, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5584435594080927942 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7847399518254597876, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &9216515445084401953 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6809395539503150867, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7648094772056136857 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5456967955746347691, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5560195313666896097 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7832251167944406739, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &3883381116737401537 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1476332206963651827, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8787238010694718400 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6371182476925736434, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8472670412194997384 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6056371748914766522, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1408534058354036655 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3608624230891358621, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &3727804290816272097 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1307069313137058003, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &934972762205045950 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3270112623948661388, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1893704093092182152 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4314377025942503098, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5378793245178192266 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7727395380991829944, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1284155537688664391 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3479675530286358389, guid: c4001680f75dcca4cade7c07d280def1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2420815491407726130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4004602289075388892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,3 +1276,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1866643128691473219}
+--- !u!114 &249265942207413910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866643128691473219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0c1b4dc45f9e7438ed114dbd336359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Sprites:
+  - {fileID: 5727491454542771739}
+  - {fileID: 5378793245178192266}
+  - {fileID: 1893704093092182152}
+  - {fileID: 934972762205045950}
+  - {fileID: 3727804290816272097}
+  - {fileID: 1284155537688664391}
+  - {fileID: 7366702902602375760}
+  - {fileID: 2571995124052307833}
+  - {fileID: 1302656249785394900}
+  - {fileID: 486093245173978623}
+  - {fileID: 7915171951150465770}
+  - {fileID: 5584435594080927942}
+  - {fileID: 9216515445084401953}
+  - {fileID: 7648094772056136857}
+  - {fileID: 5560195313666896097}
+  - {fileID: 3883381116737401537}
+  - {fileID: 8787238010694718400}
+  - {fileID: 8472670412194997384}
+  - {fileID: 1408534058354036655}

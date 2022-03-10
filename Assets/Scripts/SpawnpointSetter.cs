@@ -21,6 +21,7 @@ public class SpawnpointSetter : MonoBehaviour
         if (other.GetComponent<CharacterMotor>())
         {
             m_IsColliding = false;
+            m_Player.GetComponent<Inventory>().m_PressGText.enabled = false;
         }
     }
 
@@ -28,11 +29,17 @@ public class SpawnpointSetter : MonoBehaviour
     {
         if (m_IsColliding)
         {
+            m_Player.GetComponent<Inventory>().Prompt("Press G to Set Spawn Point");
             if (Input.GetKeyDown(KeyCode.G))
             {
                 float cacheY = m_Player.transform.position.y;
                 m_Player.m_SpawnPoint = new Vector3(transform.position.x, cacheY, transform.position.z);
+                m_Player.GetComponent<Inventory>().m_PressGText.enabled = false;
             }
+        }
+        else
+        {
+
         }
 
     }

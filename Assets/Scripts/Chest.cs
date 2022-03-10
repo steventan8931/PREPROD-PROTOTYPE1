@@ -13,6 +13,8 @@ public class Chest : MonoBehaviour
     public int m_ChestCount = 0;
     public int m_TentCount = 0;
     public int m_NPCHouseCount = 0;
+    public int m_Table1Count = 0;
+    public int m_Table2Count = 0;
 
     public Inventory m_Inventory;
 
@@ -29,6 +31,8 @@ public class Chest : MonoBehaviour
     public GameObject m_TentUI;
     public GameObject m_ChestUI;
     public GameObject m_NPCHouseUI;
+    public GameObject m_Table1UI;
+    public GameObject m_Table2UI;
 
     public void Assign()
     {
@@ -77,6 +81,12 @@ public class Chest : MonoBehaviour
             case Items.NPCHouse:
                 m_NPCHouseUI = _Object;
                 break;
+            case Items.Table1:
+                m_Table1UI = _Object;
+                break;
+            case Items.Table2:
+                m_Table2UI = _Object;
+                break;
         }
     }
     public void ManagedUpdate()
@@ -90,6 +100,8 @@ public class Chest : MonoBehaviour
         ItemInInventory(m_TentCount, m_TentUI);
         ItemInInventory(m_ChestCount, m_ChestUI);
         ItemInInventory(m_NPCHouseCount, m_NPCHouseUI);
+        ItemInInventory(m_Table1Count, m_Table1UI);
+        ItemInInventory(m_Table2Count, m_Table2UI);
     }
 
     private void ItemInInventory(int _ItemCount, GameObject _UIObject)
@@ -132,6 +144,12 @@ public class Chest : MonoBehaviour
                 return m_FireplaceCount;
             case Items.Tent:
                 return m_TentCount;
+            case Items.NPCHouse:
+                return m_NPCHouseCount;
+            case Items.Table1:
+                return m_Table1Count;
+            case Items.Table2:
+                return m_Table2Count;
         }
         return 0;
     }
@@ -167,6 +185,12 @@ public class Chest : MonoBehaviour
             case Items.NPCHouse:
                 m_NPCHouseCount -= _Count;
                 break;
+            case Items.Table1:
+                m_Table1Count -= _Count;
+                break;
+            case Items.Table2:
+                m_Table2Count -= _Count;
+                break;
         }
     }
 
@@ -197,6 +221,15 @@ public class Chest : MonoBehaviour
                 break;
             case Items.Tent:
                 m_TentCount += _Count;
+                break;
+            case Items.NPCHouse:
+                m_NPCHouseCount += _Count;
+                break;
+            case Items.Table1:
+                m_Table1Count += _Count;
+                break;
+            case Items.Table2:
+                m_Table2Count += _Count;
                 break;
         }
     }
