@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
 
         m_Source = GetComponent<AudioSource>();
         cacheTest = test;
-        PlayAudio(test.ToString());
+        //PlayAudio(test.ToString());
     }
 
     [ExecuteInEditMode]

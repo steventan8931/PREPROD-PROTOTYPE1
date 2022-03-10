@@ -4786,6 +4786,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5690602598281916778, guid: 1c61280f465b2dd488cdd9c9e1ae7b8c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5690602598777646788, guid: 1c61280f465b2dd488cdd9c9e1ae7b8c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -12417,450 +12422,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1353659964
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2372449973408706652, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706652, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706652, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706652, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706652, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706652, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706652, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706652, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706652, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706652, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706652, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: rockText
-      value: 
-      objectReference: {fileID: 573425978}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: woodText
-      value: 
-      objectReference: {fileID: 1527509244}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: titleText
-      value: 
-      objectReference: {fileID: 1564551127}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: currAmount
-      value: 
-      objectReference: {fileID: 1959984911}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: questWindow
-      value: 
-      objectReference: {fileID: 764694305}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: playerDialogue
-      value: 
-      objectReference: {fileID: 2056838450}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: requiredAmount
-      value: 
-      objectReference: {fileID: 932911392}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: descriptionText
-      value: 
-      objectReference: {fileID: 486122501}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: CurrQuest.goal.m_NPC
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[2].title
-      value: Craft a Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[3].title
-      value: Craft a bedroll
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[4].title
-      value: Place the bedroll
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[5].title
-      value: Craft a campfire
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[6].title
-      value: Survive The Night
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[7].title
-      value: Find and talk to the NPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[8].title
-      value: Build a tent
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[9].title
-      value: Talk to NPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[10].title
-      value: Place the NPC House
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[11].title
-      value: Enter the tent
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: CurrQuest.goal.playerDialogue
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[2].rockReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[2].woodReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[3].rockReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[3].woodReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[4].goal.m_NPC
-      value: 
-      objectReference: {fileID: 1531785385}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[4].rockReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[4].woodReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[5].rockReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[5].woodReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[6].goal.m_NPC
-      value: 
-      objectReference: {fileID: 1531785385}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[6].rockReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[6].woodReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[7].rockReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[7].woodReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[8].rockReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[8].woodReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[9].rockReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[9].woodReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[10].rockReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[10].woodReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[11].rockReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[11].woodReward
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[2].description
-      value: Craft a pickaxe or axe
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[3].description
-      value: Collect resources to craft a bedroll
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[4].description
-      value: Place the crafted bedroll and set spawn point
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[5].description
-      value: Craft a campfire to stay warm
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[6].description
-      value: Be careful of the enemies
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[7].description
-      value: Walk around and find the NPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[7].goal.m_Tent
-      value: 
-      objectReference: {fileID: 1140853007}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[8].description
-      value: Collect resources to craft a tent
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[9].description
-      value: Lets see what else he wants
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[10].description
-      value: Choose where to place the house
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[11].description
-      value: Find out whats inside the tent
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[1].goal.goalType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[2].goal.goalType
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[3].goal.goalType
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[4].goal.goalType
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[5].goal.goalType
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[6].goal.goalType
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[7].goal.goalType
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[8].goal.goalType
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[9].goal.goalType
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[10].goal.goalType
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[11].goal.goalType
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[2].goal.requiredAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[3].goal.requiredAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[4].goal.requiredAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[5].goal.requiredAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[6].goal.requiredAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[7].goal.requiredAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[8].goal.requiredAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[9].goal.requiredAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[10].goal.requiredAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706653, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: quests.Array.data[11].goal.requiredAmount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372449973408706654, guid: 972daa46899e817418627e8c7b997a05,
-        type: 3}
-      propertyPath: m_Name
-      value: QuestGiverNew
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 972daa46899e817418627e8c7b997a05, type: 3}
 --- !u!1 &1360766481
 GameObject:
   m_ObjectHideFlags: 0
@@ -21521,6 +21082,130 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4476097909379144591, guid: 527dbdf46c877514c9d4bf7aad6771ef, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 527dbdf46c877514c9d4bf7aad6771ef, type: 3}
+--- !u!1001 &2469798640285273522
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 192210477008571344, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_Name
+      value: QuestGiverNew
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571346, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571346, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571346, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571346, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571346, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571346, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571346, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571346, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571346, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571346, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571346, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: rockText
+      value: 
+      objectReference: {fileID: 573425978}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: woodText
+      value: 
+      objectReference: {fileID: 1527509244}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: titleText
+      value: 
+      objectReference: {fileID: 1564551127}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: currAmount
+      value: 
+      objectReference: {fileID: 1959984911}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: questWindow
+      value: 
+      objectReference: {fileID: 764694305}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: playerDialogue
+      value: 
+      objectReference: {fileID: 2056838450}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: requiredAmount
+      value: 
+      objectReference: {fileID: 932911392}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 486122501}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: quests.Array.data[4].goal.m_NPC
+      value: 
+      objectReference: {fileID: 1531785385}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: quests.Array.data[6].goal.m_NPC
+      value: 
+      objectReference: {fileID: 1531785385}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: quests.Array.data[7].goal.m_Tent
+      value: 
+      objectReference: {fileID: 1140853007}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8425e88cb286f40419af5e274237168b, type: 3}
 --- !u!1001 &2873650045326814295
 PrefabInstance:
   m_ObjectHideFlags: 0

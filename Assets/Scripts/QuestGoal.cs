@@ -32,7 +32,7 @@ public class QuestGoal
                 return (m_Inventory.GetComponent<CharacterMotor>().SpawnPointChanged());
             case GoalType.CraftCampfire:
                 return (m_Inventory.m_FireplaceCount > 0);
-            case GoalType.SurviveTheNight: //If is day, spawn the npc
+            case GoalType.SurviveTheNight: 
                 //If time = day
                 return true;
             case GoalType.TalktoNPC:
