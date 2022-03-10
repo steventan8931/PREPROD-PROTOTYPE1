@@ -43,6 +43,7 @@ public class BuildPlacement : MonoBehaviour
                 for (int i = 0; i < m_CurrentPlaceableObject.transform.childCount; i++)
                 {
                     m_CurrentPlaceableObject.transform.GetChild(i).gameObject.layer = 2;
+                    m_CurrentPlaceableObject.transform.GetChild(i).gameObject.SetActive(false);
                 }
                 m_CurrentPlaceableObject.GetComponent<BoxCollider>().isTrigger = true;
                 //If it is a chest
@@ -104,6 +105,7 @@ public class BuildPlacement : MonoBehaviour
                         m_CurrentPlaceableObject.layer = 0;
                         for (int i = 0; i < m_CurrentPlaceableObject.transform.childCount; i++)
                         {
+                            m_CurrentPlaceableObject.transform.GetChild(i).gameObject.SetActive(true);
                             m_CurrentPlaceableObject.transform.GetChild(i).gameObject.layer = 0;
                         }
                         if (m_CurrentPlaceableObject.GetComponent<BuildableObject>().m_Collidable)

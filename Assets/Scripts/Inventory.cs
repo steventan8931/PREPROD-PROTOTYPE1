@@ -112,7 +112,7 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_PickaxeCount, m_PickaxeUI);
         ItemInInventory(m_FireplaceCount, m_FireplaceUI);
         ItemInInventory(m_BedrollCount, m_BedrollUI);
-        ItemInInventory(m_TentCount, m_TentUI);
+        //ItemInInventory(m_TentCount, m_TentUI);
         ItemInInventory(m_ChestCount, m_ChestUI);
         ItemInInventory(m_NPCHouseCount, m_NPCHouseUI);
         ItemInInventory(m_Table1Count, m_Table1UI);

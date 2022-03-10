@@ -30,19 +30,19 @@ public class Crafting : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.C))
             {
                 m_CraftingOpen = !m_CraftingOpen;
+            }
 
-                if (m_CraftingOpen)
-                {
-                    if (CanvasManager.Instance.m_CanOpen)
-                    {
-                        m_CraftingCanvas.SetActive(true);
-                    }
-                }
-                else
-                {
-                    m_CraftingCanvas.SetActive(false);
-                }
 
+            if (m_CraftingOpen)
+            {
+                if (CanvasManager.Instance.m_CanOpen)
+                {
+                    m_CraftingCanvas.SetActive(true);
+                }
+            }
+            else
+            {
+                m_CraftingCanvas.SetActive(false);
             }
         }
 
