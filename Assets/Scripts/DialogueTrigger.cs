@@ -70,9 +70,9 @@ public class DialogueTrigger : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            //if (Input.GetKeyDown(KeyCode.Space))
             {
-                DialogueManager.Instance.DisplayNextSentence();
+                //DialogueManager.Instance.DisplayNextSentence();
             }
 
         }

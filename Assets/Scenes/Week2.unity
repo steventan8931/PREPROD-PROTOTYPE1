@@ -5861,7 +5861,7 @@ PrefabInstance:
     - target: {fileID: 5690602598281916778, guid: 1c61280f465b2dd488cdd9c9e1ae7b8c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5690602598777646788, guid: 1c61280f465b2dd488cdd9c9e1ae7b8c,
         type: 3}
@@ -22403,6 +22403,16 @@ PrefabInstance:
       propertyPath: quests.Array.data[7].goal.m_NPC
       value: 
       objectReference: {fileID: 1227368144}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: quests.Array.data[1].description
+      value: Gather 2 rocks (Press I to Check Inventory)
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: quests.Array.data[2].description
+      value: Craft a pickaxe or axe (Press C to Open Crafting)
+      objectReference: {fileID: 0}
     - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
         type: 3}
       propertyPath: quests.Array.data[7].goal.m_Tent
