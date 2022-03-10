@@ -4709,7 +4709,7 @@ PrefabInstance:
     - target: {fileID: 7060816979093401632, guid: fd28f6781f4fa6945af01a8a1e152215,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7060816979093401638, guid: fd28f6781f4fa6945af01a8a1e152215,
         type: 3}
@@ -10679,6 +10679,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2036422255290519571, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4926464814314368010, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
         type: 3}
       propertyPath: m_Name
@@ -14119,7 +14124,7 @@ GameObject:
   - component: {fileID: 1490110488}
   m_Layer: 0
   m_Name: NavMesh
-  m_TagString: Untagged
+  m_TagString: NavMesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14137,13 +14142,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_CollectObjects: 1
+  m_Size: {x: 101.57204, y: 10, z: 79.58487}
+  m_Center: {x: 49.04451, y: 2, z: 51.59172}
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
