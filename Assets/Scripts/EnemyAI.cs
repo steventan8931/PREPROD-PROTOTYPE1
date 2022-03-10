@@ -22,6 +22,8 @@ public class EnemyAI : MonoBehaviour
     public bool isRight = false;
     public Vector3 previousPos;
     public float curSpeed;
+    //var for dead 
+    public bool isDead = false;
     //var for patrol
     public Vector3 patrolPoint;
     public bool isPatrolPointSet;
@@ -69,89 +71,92 @@ public class EnemyAI : MonoBehaviour
     }
     void Update()
     {
-        // update quest 
-        quest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
-        //check if player is in sight or in attackRange
-        isPlayerInSight = enemyFOV.canSeePlayer;
-        isPlayerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playermask);
-
-        GameObject closestFire = FindClosestObj("FirePlace");
-        float distance = Mathf.Infinity;
-
-        Vector3 curMove = transform.position - previousPos;
-        curSpeed = curMove.magnitude / Time.deltaTime;
-
-        if(curMove.x > 0 && isRight == false)
+        if (isDead != true)
         {
-            Vector3 tempScaleVec = new Vector3(-1, 1, 1);
-            transform.localScale = tempScaleVec;
-            isRight = true;
-        }
+            // update quest 
+            quest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
+            //check if player is in sight or in attackRange
+            isPlayerInSight = enemyFOV.canSeePlayer;
+            isPlayerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playermask);
 
-        if(curMove.x <0 && isRight == true)
-        {
-            Vector3 tempScaleVec = new Vector3(1, 1, 1);
-            transform.localScale = tempScaleVec;
-            isRight = false;
-        }
+            GameObject closestFire = FindClosestObj("FirePlace");
+            float distance = Mathf.Infinity;
 
-        
-        if (closestFire != null)
-        {
-            distance = Vector3.Distance(transform.position, closestFire.transform.position);
-            //Debug.Log("enemy to fire distance: " + distance);
-        
-        }
+            Vector3 curMove = transform.position - previousPos;
+            curSpeed = curMove.magnitude / Time.deltaTime;
 
-
-        if (lastFrameInSight == true && isPlayerInSight == false)
-        {
-            //lost visual of player
-            isConfused = true;
-            Debug.Log("confused!");
-            currConfuseTime = confuseTime;
-            Confusing();
-            
-
-        }
-        else if (isConfused == true)
-        {
-            //stay in confused state
-            Confusing();
-        }
-        else if(distance < avoidDist)
-        {
-            isPatrolPointSet = false;
-            Vector3 distToFire = transform.position - closestFire.transform.position;
-            Vector3 newLoc = transform.position + distToFire;
-            agent.SetDestination(newLoc);
-           
-        }
-        else
-        {
-            // if (!isPlayerInSight && !isPlayerInAttackRange)
-            if (!isPlayerInSight )
+            if (curMove.x > 0 && isRight == false)
             {
-                Patroling();
-                //enemyAnimator.SetBool("IsAttacking", false);
-            }
-            if (isPlayerInSight && !isPlayerInAttackRange)
-            {
-                currIdleTime = 0;
-                Chasing();
-                //enemyAnimator.SetBool("IsAttacking", false);
-            }
-            if (isPlayerInAttackRange && isPlayerInSight)
-            {
-                Attacking();
+                Vector3 tempScaleVec = new Vector3(-1, 1, 1);
+                transform.localScale = tempScaleVec;
+                isRight = true;
             }
 
-            
-        }
-        //save in sight bool
-        lastFrameInSight = isPlayerInSight;
+            if (curMove.x < 0 && isRight == true)
+            {
+                Vector3 tempScaleVec = new Vector3(1, 1, 1);
+                transform.localScale = tempScaleVec;
+                isRight = false;
+            }
 
-        previousPos = transform.position;
+
+            if (closestFire != null)
+            {
+                distance = Vector3.Distance(transform.position, closestFire.transform.position);
+                //Debug.Log("enemy to fire distance: " + distance);
+
+            }
+
+
+            if (lastFrameInSight == true && isPlayerInSight == false)
+            {
+                //lost visual of player
+                isConfused = true;
+                Debug.Log("confused!");
+                currConfuseTime = confuseTime;
+                Confusing();
+
+
+            }
+            else if (isConfused == true)
+            {
+                //stay in confused state
+                Confusing();
+            }
+            else if (distance < avoidDist)
+            {
+                isPatrolPointSet = false;
+                Vector3 distToFire = transform.position - closestFire.transform.position;
+                Vector3 newLoc = transform.position + distToFire;
+                agent.SetDestination(newLoc);
+
+            }
+            else
+            {
+                // if (!isPlayerInSight && !isPlayerInAttackRange)
+                if (!isPlayerInSight)
+                {
+                    Patroling();
+                    //enemyAnimator.SetBool("IsAttacking", false);
+                }
+                if (isPlayerInSight && !isPlayerInAttackRange)
+                {
+                    currIdleTime = 0;
+                    Chasing();
+                    //enemyAnimator.SetBool("IsAttacking", false);
+                }
+                if (isPlayerInAttackRange && isPlayerInSight)
+                {
+                    Attacking();
+                }
+
+
+            }
+            //save in sight bool
+            lastFrameInSight = isPlayerInSight;
+
+            previousPos = transform.position;
+        }
     }
     private void Patroling()
     {
@@ -335,15 +340,29 @@ public class EnemyAI : MonoBehaviour
 
     void deathFunc()
     {
-        if(EnemyType == 1)
+        isDead = true;
+        spawner.enemyCount--;
+        if (EnemyType == 1)
         {
             quest.goal.MeleeEnemyKilled();
+            enemyAnimator.SetBool("IsDead", true);
+            Invoke(nameof(killEnemy), 0.42f);
+
+            
         }
         if(EnemyType == 2)
         {
             quest.goal.RangedEnemyKilled();
+            enemyAnimator.SetBool("IsDead", true);
+            Invoke(nameof(killEnemy), 0.2f);
         }
-        spawner.enemyCount--;
+        
+        
+       // Destroy(gameObject);
+    }
+
+    void killEnemy()
+    {
         Destroy(gameObject);
     }
 }
