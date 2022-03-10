@@ -21,9 +21,11 @@ public class QuestGiver : MonoBehaviour
 
     DialogueTrigger cacheNPC;
     public DialogueTrigger playerDialogue;
+    public DayNightScr m_DayNight;
 
     private void Awake()
     {
+        m_DayNight = FindObjectOfType<DayNightScr>();
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         m_CraftingManager = FindObjectOfType<Crafting>();
         CurrQuest = quests[0];
@@ -34,6 +36,7 @@ public class QuestGiver : MonoBehaviour
             quest.goal.m_Inventory = playerInventory;
             quest.goal.m_Crafting = m_CraftingManager;
             quest.goal.playerDialogue = playerDialogue;
+            quest.goal.dayNight = m_DayNight;
         }
     }
     private void Start()

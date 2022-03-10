@@ -12,9 +12,10 @@ public class QuestGoal
     public Crafting m_Crafting;
 
     public GameObject m_NPC;
+    public GameObject m_Tent;
     public DialogueTrigger cacheNPC;
     public DialogueTrigger playerDialogue;
-
+    public DayNightScr dayNight;
     public bool IsReached()
     {
         switch (goalType)
@@ -29,19 +30,32 @@ public class QuestGoal
                 return (m_Inventory.m_BedrollCount > 0);
             case GoalType.PlaceBedroll:
                 return (m_Inventory.GetComponent<CharacterMotor>().SpawnPointChanged());
+            case GoalType.CraftCampfire:
+                return (m_Inventory.m_FireplaceCount > 0);
+            case GoalType.SurviveTheNight: //If it is a day time
+                return (!dayNight.isNight);
             case GoalType.TalktoNPC:
                 if (cacheNPC)
                 {
-                    return (!cacheNPC.m_FirstTimeDialogue);
+                    return (!cacheNPC.m_QuestOneDialogue);
                 }
                 else
                 {
                     return false;
                 }
-            case GoalType.CraftCampfire:
-                return (m_Inventory.m_FireplaceCount > 0);
             case GoalType.BuildTent:
                 return (m_Inventory.m_TentCount > 0);
+            case GoalType.TalkToNPC2: 
+                if (cacheNPC)
+                {
+                    return (!cacheNPC.m_QuestTwoDialogue);
+                }
+                else
+                {
+                    return false;
+                }
+            case GoalType.PlaceNPCHouse:
+                return (m_Inventory.m_NPCHouseCount <= 0);
             case GoalType.GoInsideTent:
                 break;
         }
@@ -94,19 +108,36 @@ public class QuestGoal
                 playerDialogue.TriggerDialogueIndex(3); //I should make a bedroll
                 break;
             case GoalType.CraftBedroll:
-                playerDialogue.TriggerDialogueIndex(4); //set spawn point
+                //set spawn point 
                 break;
             case GoalType.PlaceBedroll:
+                //Auto turns it to night 
+                playerDialogue.TriggerDialogueIndex(4);
+                break;
+            case GoalType.CraftCampfire: //Create campfire to not lose health at night 
+                dayNight.switchToNight();
+                break;
+            case GoalType.SurviveTheNight: //If is day, spawn the npc
                 m_NPC.SetActive(true);
                 cacheNPC = m_NPC.GetComponent<DialogueTrigger>();
                 break;
-            case GoalType.TalktoNPC:
-                break;
-            case GoalType.CraftCampfire:
+            case GoalType.TalktoNPC: //Changes quest to build tent
+                m_Tent.SetActive(true);
                 break;
             case GoalType.BuildTent:
+                cacheNPC.m_QuestOneDialogue = false;
+                cacheNPC.m_QuestOneCompleted = true;
+                break;
+            case GoalType.TalkToNPC2: //Ill come live with you, choose where you want me to stay
+                //Gives player the house
+                m_Inventory.m_NPCHouseCount++;
+                break;
+            case GoalType.PlaceNPCHouse:
+                cacheNPC.m_QuestTwoDialogue = false;
+                cacheNPC.m_QuestTwoCompleted = true;
                 break;
             case GoalType.GoInsideTent:
+                //Unlock ability to go inside tent
                 break;
         }
 
@@ -129,4 +160,8 @@ public enum GoalType
     CraftCampfire,
     BuildTent,
     GoInsideTent,
+    
+    SurviveTheNight,
+    TalkToNPC2,
+    PlaceNPCHouse,
 }
