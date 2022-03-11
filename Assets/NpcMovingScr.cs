@@ -22,7 +22,10 @@ public class NpcMovingScr : MonoBehaviour
     public float idleTime = 2.5f;
     float currIdleTime = 0f;
     public bool isIdling = false;
-
+    //to right
+    public bool isRight = false;
+    public Vector3 previousPos;
+    public float curSpeed;
     //var for animation
     public Animator animator;
 
@@ -35,6 +38,23 @@ public class NpcMovingScr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 curMove = transform.position - previousPos;
+        curSpeed = curMove.magnitude / Time.deltaTime;
+
+        if (curMove.x > 0 && isRight == false)
+        {
+            Vector3 tempScaleVec = new Vector3(-1, 1, 1);
+            transform.localScale = tempScaleVec;
+            isRight = true;
+        }
+
+        if (curMove.x < 0 && isRight == true)
+        {
+            Vector3 tempScaleVec = new Vector3(1, 1, 1);
+            transform.localScale = tempScaleVec;
+            isRight = false;
+        }
+
         if (talkTrigger.m_IsTalking == false)
         {
             Patroling();
@@ -44,6 +64,8 @@ public class NpcMovingScr : MonoBehaviour
             animator.SetBool("IsIdling", true);
             animator.SetBool("IsWalking", false);
         }
+
+        previousPos = transform.position;
     }
 
     private void Patroling()
