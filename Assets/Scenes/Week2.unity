@@ -22697,6 +22697,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
         type: 3}
+      propertyPath: quests.Array.data[3].description
+      value: Collect resources to craft a bedroll (Use scroll wheel to change to
+        weapon)
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
+      propertyPath: quests.Array.data[4].description
+      value: 'Place the crafted bedroll and set spawn point '
+      objectReference: {fileID: 0}
+    - target: {fileID: 192210477008571347, guid: 8425e88cb286f40419af5e274237168b,
+        type: 3}
       propertyPath: quests.Array.data[7].goal.m_Tent
       value: 
       objectReference: {fileID: 1140853007}
