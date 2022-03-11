@@ -28,6 +28,7 @@ public class CharacterMotor : MonoBehaviour
     public bool m_FinishedQuests = false;
 
     public GameObject m_DamageVFX;
+    public bool m_NearCampfire;
 
     private void Start()
     {
