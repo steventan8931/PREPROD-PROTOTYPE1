@@ -58,6 +58,7 @@ public class QuestGiver : MonoBehaviour
         //Temp new quest panel
         questTitle = questWindow.transform.GetChild(1).GetComponent<Text>();
         questDescription = questWindow.transform.GetChild(2).GetComponent<Text>();
+        m_Stamp.enabled = false;
     }
     private void Start()
     {
