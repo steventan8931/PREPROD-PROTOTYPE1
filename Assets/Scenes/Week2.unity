@@ -1466,6 +1466,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4114234434380033766, guid: 100c4b71942042146a2076d26f35b14f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4114234434380033769, guid: 100c4b71942042146a2076d26f35b14f,
         type: 3}
       propertyPath: m_Name
@@ -5984,6 +5989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690602598777646789, guid: 1c61280f465b2dd488cdd9c9e1ae7b8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5690602598777646792, guid: 1c61280f465b2dd488cdd9c9e1ae7b8c,
         type: 3}
@@ -11865,6 +11875,11 @@ PrefabInstance:
       propertyPath: moonImg
       value: 
       objectReference: {fileID: 1658303663}
+    - target: {fileID: 4926464814314368023, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
+        type: 3}
+      propertyPath: m_HealthDecay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5565098068553068419, guid: 7bc9aa7a17ccdcf4cb49405662132bf2,
         type: 3}
       propertyPath: m_IsActive

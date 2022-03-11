@@ -18,7 +18,7 @@ public class DayNightScr : MonoBehaviour
     void Start()
     {
         m_Player = FindObjectOfType<CharacterMotor>();
-        switchToNight();
+        //switchToNight();
     }
 
     // Update is called once per frame
