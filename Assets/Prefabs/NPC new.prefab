@@ -207,6 +207,9 @@ MonoBehaviour:
   speed: 4
   idleTime: 2.5
   isIdling: 0
+  isRight: 0
+  previousPos: {x: 0, y: 0, z: 0}
+  curSpeed: 0
   animator: {fileID: 9019703824266335346}
 --- !u!195 &3153295592115933341
 NavMeshAgent:
@@ -807,7 +810,7 @@ PrefabInstance:
     - target: {fileID: 6657966307615935979, guid: 3cf40f9257dd8124f897a27d5f673f45,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.84
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6657966307615935979, guid: 3cf40f9257dd8124f897a27d5f673f45,
         type: 3}
