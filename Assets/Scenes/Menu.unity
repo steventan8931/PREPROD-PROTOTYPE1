@@ -4301,7 +4301,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1d826b16b5b0c78439488f57b30d16a0, type: 3}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
@@ -11108,6 +11108,7 @@ GameObject:
   - component: {fileID: 1101179237}
   - component: {fileID: 1101179239}
   - component: {fileID: 1101179238}
+  - component: {fileID: 1101179240}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -11131,7 +11132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15, y: 94}
+  m_AnchoredPosition: {x: -15, y: 112}
   m_SizeDelta: {x: 378.5005, y: 54.6298}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1101179238
@@ -11154,7 +11155,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e624ede29a1d947448db74a9966aab96, type: 3}
+  m_Sprite: {fileID: 5322477370686623588, guid: 2549da4fcfb70b84999cb50f08af2afe,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -11172,6 +11174,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101179236}
   m_CullTransparentMesh: 1
+--- !u!95 &1101179240
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101179236}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c371aabb69f59744b161a9578768952, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1122610855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6908283165524245282, guid: 2d0280d7b93d54d45ac0503e9def7c9d,
@@ -18813,7 +18834,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1d826b16b5b0c78439488f57b30d16a0, type: 3}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
