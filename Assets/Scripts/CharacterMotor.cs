@@ -156,7 +156,7 @@ public class CharacterMotor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !m_Attacked)
         {
-            takeDmg(50);
+            //takeDmg(50);
             AudioManager.Instance.PlayAudio("onhit");
             Debug.Log("Attacking");
             m_Animation.ResetTrigger("Attacking");
