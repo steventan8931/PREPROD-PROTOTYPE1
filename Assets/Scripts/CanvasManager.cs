@@ -28,6 +28,10 @@ public class CanvasManager : MonoBehaviour
         m_Craft = FindObjectOfType<Crafting>();
     }
 
+    public void Close()
+    {
+
+    }
     private void Update()
     {
         CheckValid();

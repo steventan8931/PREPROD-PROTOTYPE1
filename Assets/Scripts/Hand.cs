@@ -11,11 +11,15 @@ public class Hand : MonoBehaviour
     public HandObjects m_HandObjects;
     private int cacheSlotIndex = 99;
 
-    private void Start()
+    private void Awake()
     {
         m_Inventory = GetComponent<Inventory>();
         m_QuickBar = FindObjectOfType<QuickBar>();
         m_HandObjects = FindObjectOfType<HandObjects>();
+    }
+    private void Start()
+    {
+
     }
 
     private void Update()

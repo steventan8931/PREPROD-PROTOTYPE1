@@ -15,7 +15,9 @@ public class Crafting : MonoBehaviour
 
     private void Start()
     {
-         m_Unlocked = false;        
+        m_CraftingCanvas.SetActive(true);
+         m_Unlocked = false;
+        m_CraftingCanvas.SetActive(false);
     }
 
     public void UnlockCrafting()

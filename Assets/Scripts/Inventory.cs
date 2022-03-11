@@ -114,6 +114,10 @@ public class Inventory : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.I))
             {
+                if (m_InventoryOpen)
+                {
+                    CanvasManager.Instance.Close();
+                }
                 m_InventoryOpen = !m_InventoryOpen;
             }
         }
