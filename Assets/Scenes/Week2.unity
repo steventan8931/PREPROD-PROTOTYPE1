@@ -22751,7 +22751,7 @@ PrefabInstance:
     - target: {fileID: 28454850444043741, guid: 188e9af7cd68e2444a9baf21daef1979,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4466412516496937517, guid: 188e9af7cd68e2444a9baf21daef1979,
         type: 3}
@@ -22828,6 +22828,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hitbox
       objectReference: {fileID: 0}
+    - target: {fileID: 6604281277060181055, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6654409728011707766, guid: 188e9af7cd68e2444a9baf21daef1979,
         type: 3}
       propertyPath: m_QuickBar
@@ -22903,6 +22908,11 @@ PrefabInstance:
       propertyPath: m_FireplaceUI
       value: 
       objectReference: {fileID: 2001068061}
+    - target: {fileID: 8406215119886786183, guid: 188e9af7cd68e2444a9baf21daef1979,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 188e9af7cd68e2444a9baf21daef1979, type: 3}
 --- !u!1001 &3491946807179411934

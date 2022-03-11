@@ -75,9 +75,13 @@ public class Inventory : MonoBehaviour
         //m_Table2Count = 0;
     }
 
-    private void Start()
+    private void Awake()
     {
         m_QuickBar = FindObjectOfType<QuickBar>();
+    }
+
+    private void Start()
+    {
         m_PressGText.enabled = false;
         m_Inventory.SetActive(true);
         ItemInInventory(m_WoodCount, m_WoodUI);

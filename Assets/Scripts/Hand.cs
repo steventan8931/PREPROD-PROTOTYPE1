@@ -20,6 +20,11 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
+        if (!m_QuickBar)
+        {
+            FindObjectOfType<QuickBar>();
+            return;
+        }
         //if (cacheSlotIndex != m_QuickBar.m_ActiveSlot)
         {
             if (m_QuickBar.m_Slots[m_QuickBar.m_ActiveSlot].GetComponent<QuickBarSlot>().m_SlotUsed)
