@@ -60,6 +60,7 @@ public class AudioManager : MonoBehaviour
                 m_Source.PlayOneShot(onhit);
                 break;
             case "enemyhit":
+                m_Source.volume = 0.5f;
                 m_Source.PlayOneShot(enemyhit);
                 break;
             case "playerhit":
