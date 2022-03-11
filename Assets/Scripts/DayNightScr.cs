@@ -12,13 +12,13 @@ public class DayNightScr : MonoBehaviour
     public GameObject sunImg;
     public GameObject moonImg;
 
-    public float m_HealthDecay = 5.0f;
+    public float m_HealthDecay = 1.0f;
     public CharacterMotor m_Player;
 
     void Start()
     {
         m_Player = FindObjectOfType<CharacterMotor>();
-        //switchToNight();
+        switchToNight();
     }
 
     // Update is called once per frame
