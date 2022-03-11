@@ -61,6 +61,20 @@ public class Inventory : MonoBehaviour
 
     private CanvasManager canvas;
 
+    public void ClearItems()
+    {
+        m_WoodCount = 0;
+        m_RockCount = 0;
+        m_AxeCount = 0;
+        m_PickaxeCount = 0;
+        m_BedrollCount = 0;
+        m_FireplaceCount = 0;
+        m_ChestCount = 0;
+        m_TentCount = 0;
+        m_Table1Count = 0;
+        m_Table2Count = 0;
+    }
+
     private void Start()
     {
         m_QuickBar = FindObjectOfType<QuickBar>();

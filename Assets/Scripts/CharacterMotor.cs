@@ -214,6 +214,7 @@ public class CharacterMotor : MonoBehaviour
             // death func
             if (!cacheDead)
             {
+                GetComponent<Inventory>().ClearItems();
                 GetComponent<Inventory>().Prompt("Press R to Revive");
                 m_Animation.ResetTrigger("Dying");
                 m_Animation.SetTrigger("Dying");
