@@ -73,7 +73,7 @@ public class ObjectRespwaner : MonoBehaviour
                 Debug.Log("no");
                 for (int i = 0; i < _ObjectCount - _List.Count; i++)
                 {
-                    cacheColliderPoint = new Vector3(Random.Range(13, 98), _Height, Random.Range(12.5f, 47));
+                    cacheColliderPoint = new Vector3(Random.Range(13, 85), _Height, Random.Range(20, 47));
                     transform.TransformPoint(cacheColliderPoint);
 
                     Debug.Log("Spawning" + _Prefab.name);
