@@ -11,9 +11,14 @@ public class DayNightScr : MonoBehaviour
     public Image dayNightImg;
     public GameObject sunImg;
     public GameObject moonImg;
+
+    public float m_HealthDecay = 5.0f;
+    public CharacterMotor m_Player;
+
     void Start()
     {
-        
+        m_Player = FindObjectOfType<CharacterMotor>();
+        //switchToNight();
     }
 
     // Update is called once per frame
@@ -57,6 +62,13 @@ public class DayNightScr : MonoBehaviour
         }
         if (timeDN > 0 && isNight == true)
         {
+            if (!m_Player.m_NearCampfire)
+            {
+                if (m_Player.hitpoints >= 0)
+                {
+                    m_Player.hitpoints -= m_HealthDecay * Time.deltaTime;
+                }
+            }
             float percentage = timeDN / NightTimeVal;
             float imageAval = 200 * percentage;
             int intAval = Mathf.FloorToInt(imageAval);

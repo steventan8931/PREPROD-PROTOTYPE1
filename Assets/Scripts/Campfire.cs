@@ -23,6 +23,7 @@ public class Campfire : MonoBehaviour
         if (other.GetComponent<CharacterMotor>())
         {
             m_IsColliding = false;
+            m_Player.m_NearCampfire = false;
         }
     }
 
@@ -30,6 +31,7 @@ public class Campfire : MonoBehaviour
     {
         if (m_IsColliding)
         {
+            m_Player.m_NearCampfire = true;
             if (m_Player.hitpoints <= 150)
             {
                 m_Player.hitpoints += m_HealthRegen * Time.deltaTime;
