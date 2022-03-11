@@ -9,6 +9,7 @@ public class ItemDrop : MonoBehaviour
     private Inventory cacheInventory;
     private CharacterMotor m_Player;
 
+    private AudioManager audio;
     private void OnTriggerStay(Collider _other)
     {
         if (_other.GetComponent<Inventory>() != null)
@@ -47,9 +48,10 @@ public class ItemDrop : MonoBehaviour
     {
         if (m_IsColliding)
         {
-            cacheInventory.Prompt("Press G to Gather");
-            if (Input.GetKeyDown(KeyCode.G))
+            cacheInventory.Prompt("Press F to Gather");
+            if (Input.GetKeyDown(KeyCode.F))
             {
+                AudioManager.Instance.PlayAudio("pop");
                 ChooseItem(cacheInventory);
                 cacheInventory.m_PressGText.enabled = false;
                 m_Player.m_Animation.ResetTrigger("Attacking");

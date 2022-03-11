@@ -145,6 +145,10 @@ MonoBehaviour:
   ghostChaseSpd: 0
   dmgVal: 25
   playerMotor: {fileID: 0}
+  isRight: 0
+  previousPos: {x: 0, y: 0, z: 0}
+  curSpeed: 0
+  isDead: 0
   patrolPoint: {x: 0, y: 0, z: 0}
   isPatrolPointSet: 0
   patrolPointRange: 5
@@ -173,8 +177,20 @@ MonoBehaviour:
       goalType: 0
       requiredAmount: 0
       currentAmount: 0
+      m_Inventory: {fileID: 0}
+      m_Crafting: {fileID: 0}
+      m_NPC: {fileID: 0}
+      m_Tent: {fileID: 0}
+      m_Cabin: {fileID: 0}
+      m_Table1: {fileID: 0}
+      m_Table2: {fileID: 0}
+      cacheNPC: {fileID: 0}
+      playerDialogue: {fileID: 0}
+      dayNight: {fileID: 0}
     isFinalQuest: 0
   enemyAnimator: {fileID: 2538319675862883568}
+  m_DamageVFX: {fileID: 8744511992248156411, guid: 68d2a9dc7fc32ad4b9b5ad6adc07514f,
+    type: 3}
 --- !u!114 &944249583522000995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +366,7 @@ PrefabInstance:
     - target: {fileID: -8889783272399133552, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8889783272399133552, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
@@ -395,12 +411,12 @@ PrefabInstance:
     - target: {fileID: -8463067402653751969, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.0026917458
+      value: 0.0026898384
       objectReference: {fileID: 0}
     - target: {fileID: -8463067402653751969, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Center.z
-      value: 2.0040858e-11
+      value: 0.00000023843862
       objectReference: {fileID: 0}
     - target: {fileID: -8463067402653751969, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
@@ -415,7 +431,7 @@ PrefabInstance:
     - target: {fileID: -8463067402653751969, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Extent.z
-      value: 0.00000001834847
+      value: 0.000000018348459
       objectReference: {fileID: 0}
     - target: {fileID: 4573368172035005879, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
@@ -430,7 +446,7 @@ PrefabInstance:
     - target: {fileID: 4573368172035005879, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Center.z
-      value: -0.000000015964883
+      value: 0.00000033740994
       objectReference: {fileID: 0}
     - target: {fileID: 4573368172035005879, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
@@ -445,7 +461,7 @@ PrefabInstance:
     - target: {fileID: 4573368172035005879, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}
       propertyPath: m_Bounds.m_Extent.z
-      value: 0.000000047824752
+      value: 0.00000016278099
       objectReference: {fileID: 0}
     - target: {fileID: 7186108299802543318, guid: c880658abdf21d14c91acf94ca63bec7,
         type: 3}

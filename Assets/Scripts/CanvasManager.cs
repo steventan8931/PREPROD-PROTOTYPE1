@@ -9,6 +9,8 @@ public class CanvasManager : MonoBehaviour
     public GameObject m_Crafting;
     public GameObject m_Chest;
 
+    public Crafting m_Craft;
+    public Inventory m_Inven;
     public bool m_CanOpen = true;
 
     private void Awake()
@@ -21,13 +23,60 @@ public class CanvasManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        m_Inven = FindObjectOfType<Inventory>();
+        m_Craft = FindObjectOfType<Crafting>();
     }
 
     private void Update()
     {
-        if (m_Inventory.activeInHierarchy || m_Chest.activeInHierarchy || m_Crafting.activeInHierarchy)
+        CheckValid();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            m_Inventory.SetActive(false);
+            m_Crafting.SetActive(false);
+            m_Chest.SetActive(false);
+            m_CanOpen = true;
+            m_Inven.m_InventoryOpen = false;
+            m_Craft.m_CraftingOpen = false;
+        }
+
+        if (!m_CanOpen)
+        {
+            m_Inven.m_InventoryOpen = false;
+            m_Craft.m_CraftingOpen = false;
+        }
+    }
+
+    private void CheckValid()
+    {
+        if (!m_Craft.m_CraftingOpen)
+        {
+            m_CanOpen = true;
+        }
+        else
         {
             m_CanOpen = false;
+            m_Inven.m_InventoryOpen = false;
+        }
+
+        if (!m_Inven.m_InventoryOpen)
+        {
+            m_CanOpen = true;
+        }
+        else
+        {
+            m_CanOpen = false;
+            m_Craft.m_CraftingOpen = false;
+        }
+
+
+
+        if (m_Chest.activeInHierarchy)
+        {
+            m_CanOpen = false;
+            return;
         }
         else
         {

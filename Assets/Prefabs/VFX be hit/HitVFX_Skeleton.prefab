@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6003564207163571396}
   - component: {fileID: 6976484822316702453}
   - component: {fileID: 4708783012721384742}
+  - component: {fileID: 2896051067531217392}
   m_Layer: 0
   m_Name: HitVFX_Skeleton
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125610882812932800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 49.64276, y: 2.01, z: 38.67688}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4862,3 +4863,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2896051067531217392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125610882812932800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b6f8140e7455e4cbd2f5c8276bc8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DecayTime: 2

@@ -27,6 +27,9 @@ public class CharacterMotor : MonoBehaviour
     public bool m_CanMove = true;
     public bool m_FinishedQuests = false;
 
+    public GameObject m_DamageVFX;
+    public bool m_NearCampfire;
+
     private void Start()
     {
         m_Rigid = GetComponent<Rigidbody>();
@@ -68,6 +71,7 @@ public class CharacterMotor : MonoBehaviour
                 m_Animation.SetBool("IsDead", false);
                 transform.position = m_SpawnPoint;
                 hitpoints = 150;
+                GetComponent<Inventory>().m_PressGText.enabled = false;
             }
             return;
         }
@@ -210,6 +214,8 @@ public class CharacterMotor : MonoBehaviour
             // death func
             if (!cacheDead)
             {
+                GetComponent<Inventory>().ClearItems();
+                GetComponent<Inventory>().Prompt("Press R to Revive");
                 m_Animation.ResetTrigger("Dying");
                 m_Animation.SetTrigger("Dying");
             }
@@ -218,6 +224,8 @@ public class CharacterMotor : MonoBehaviour
         }
         else
         {
+            Instantiate(m_DamageVFX,transform);
+            AudioManager.Instance.PlayAudio("playerhit");
             cacheDead = false;
         }
     }

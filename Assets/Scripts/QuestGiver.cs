@@ -21,6 +21,7 @@ public class QuestGiver : MonoBehaviour
 
     public Text questTitle;
     public Text questDescription;
+    public Image m_Stamp;
 
     public DialogueTrigger cacheNPC;
     public DialogueTrigger playerDialogue;
@@ -28,6 +29,11 @@ public class QuestGiver : MonoBehaviour
     public GameObject m_Table1;
     public GameObject m_Table2;
     public GameObject m_Cabin;
+
+    public float m_NextQuestDelay = 1.0f;
+    public float m_DelayTimer = 0.0f;
+
+    private AudioManager audio;
 
     private void Awake()
     {
@@ -52,6 +58,7 @@ public class QuestGiver : MonoBehaviour
         //Temp new quest panel
         questTitle = questWindow.transform.GetChild(1).GetComponent<Text>();
         questDescription = questWindow.transform.GetChild(2).GetComponent<Text>();
+        m_Stamp.enabled = false;
     }
     private void Start()
     {
@@ -73,10 +80,26 @@ public class QuestGiver : MonoBehaviour
         }
         if(CurrQuest.isCompleted && questIndex < quests.Length - 1)
         {
-            questIndex++;            
-            CurrQuest = quests[questIndex];
-            //AddNPCtoQuest();
-            refreshQuest();
+            if (!questWindow.activeInHierarchy)
+            {
+                openQuestWindow();
+            }
+            m_Stamp.enabled = true;
+            if (m_DelayTimer <= 0)
+            {
+                AudioManager.Instance.PlayAudio("stamp");
+            }
+            m_DelayTimer += Time.deltaTime;
+            if (m_DelayTimer > m_NextQuestDelay)
+            {
+                questIndex++;
+                CurrQuest = quests[questIndex];
+                //AddNPCtoQuest();
+                refreshQuest();
+                m_DelayTimer = 0;
+                m_Stamp.enabled = false;
+            }
+
         }
         if(Input.GetKeyDown(KeyCode.Q) )
         {

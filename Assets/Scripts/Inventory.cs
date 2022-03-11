@@ -61,6 +61,20 @@ public class Inventory : MonoBehaviour
 
     private CanvasManager canvas;
 
+    public void ClearItems()
+    {
+        m_WoodCount = 0;
+        m_RockCount = 0;
+        //m_AxeCount = 0;
+        //m_PickaxeCount = 0;
+        //m_BedrollCount = 0;
+        //m_FireplaceCount = 0;
+        //m_ChestCount = 0;
+        //m_TentCount = 0;
+        //m_Table1Count = 0;
+        //m_Table2Count = 0;
+    }
+
     private void Start()
     {
         m_QuickBar = FindObjectOfType<QuickBar>();
@@ -72,7 +86,7 @@ public class Inventory : MonoBehaviour
         //m_playerQuest = GameObject.FindGameObjectWithTag("QuestGiver").GetComponent<QuestGiver>().CurrQuest;
 
         //For when we need to lock inventory
-        //m_Unlocked = false;
+        m_Unlocked = false;
 
     }
 
@@ -112,7 +126,7 @@ public class Inventory : MonoBehaviour
         ItemInInventory(m_PickaxeCount, m_PickaxeUI);
         ItemInInventory(m_FireplaceCount, m_FireplaceUI);
         ItemInInventory(m_BedrollCount, m_BedrollUI);
-        ItemInInventory(m_TentCount, m_TentUI);
+        //ItemInInventory(m_TentCount, m_TentUI);
         ItemInInventory(m_ChestCount, m_ChestUI);
         ItemInInventory(m_NPCHouseCount, m_NPCHouseUI);
         ItemInInventory(m_Table1Count, m_Table1UI);

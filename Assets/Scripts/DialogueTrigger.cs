@@ -43,14 +43,14 @@ public class DialogueTrigger : MonoBehaviour
         {
             if (!m_IsTalking)
             {
-                m_Player.GetComponent<Inventory>().Prompt("Press G to Talk to the NPC");
+                m_Player.GetComponent<Inventory>().Prompt("Press F to Talk to the NPC");
             }
             else
             {
                 m_Player.GetComponent<Inventory>().m_PressGText.enabled = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.G))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 //If quest 1 hasnt been completed
                 if (m_QuestOneDialogue || !m_QuestOneCompleted)
@@ -70,9 +70,9 @@ public class DialogueTrigger : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            //if (Input.GetKeyDown(KeyCode.Space))
             {
-                DialogueManager.Instance.DisplayNextSentence();
+                //DialogueManager.Instance.DisplayNextSentence();
             }
 
         }
