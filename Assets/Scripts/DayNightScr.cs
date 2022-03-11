@@ -64,9 +64,14 @@ public class DayNightScr : MonoBehaviour
         {
             if (!m_Player.m_NearCampfire)
             {
-                if (m_Player.hitpoints >= 0)
+                if (m_Player.hitpoints > 0)
                 {
                     m_Player.hitpoints -= m_HealthDecay * Time.deltaTime;
+                }
+                else
+                {
+                    //player died
+                    m_Player.takeDmg(1);
                 }
             }
             float percentage = timeDN / NightTimeVal;
