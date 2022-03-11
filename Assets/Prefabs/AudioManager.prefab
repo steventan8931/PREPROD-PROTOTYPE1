@@ -146,7 +146,7 @@ MonoBehaviour:
   rockhit: {fileID: 8300000, guid: 8fcd86f252633764b9ec7428ee33188d, type: 3}
   treehit: {fileID: 8300000, guid: fd6c8d3382cf2e74287de2f53c4ca63a, type: 3}
   onhit: {fileID: 8300000, guid: 480acdeb03db12b41b173356292fc954, type: 3}
-  enemyhit: {fileID: 8300000, guid: 907338b7394b48940b4349886f6a03eb, type: 3}
+  enemyhit: {fileID: 8300000, guid: b626ea96a4307a44aafa3de9f62082e3, type: 3}
   playerhit: {fileID: 8300000, guid: 43982437b8b00f744a70a165eaa45399, type: 3}
   rockbreak: {fileID: 8300000, guid: 2ac293e64011e4042942289538c972cf, type: 3}
   crafting: {fileID: 8300000, guid: fb43ac817a9225a4096f823e757e5024, type: 3}
